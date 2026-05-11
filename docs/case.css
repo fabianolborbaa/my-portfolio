@@ -779,6 +779,128 @@
   padding-top: 0.6rem;
 }
 
+/* ─── HSL Problem list ──────────────────────────────────────────────── */
+
+.cs-hsl-problems {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.cs-hsl-problem {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 0 1rem;
+  padding: 1.75rem 2rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--white);
+  transition: background 0.2s;
+  align-items: start;
+}
+.cs-hsl-problem:last-child { border-bottom: none; }
+.cs-hsl-problem:hover { background: var(--cream); }
+
+.cs-hsl-problem__num {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  padding-top: 0.2rem;
+}
+
+.cs-hsl-problem__title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
+}
+
+.cs-hsl-problem p {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--ink-60);
+}
+
+/* ─── Timeline ──────────────────────────────────────────────────────── */
+
+.cs-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 1rem;
+}
+
+.cs-timeline__item {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 0 2rem;
+  padding-bottom: 2.5rem;
+}
+.cs-timeline__item--last { padding-bottom: 0; }
+
+.cs-timeline__marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.15rem;
+}
+
+.cs-timeline__year {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  white-space: nowrap;
+  margin-bottom: 0.6rem;
+}
+
+.cs-timeline__line {
+  width: 1px;
+  flex: 1;
+  background: var(--border);
+  min-height: 40px;
+}
+
+.cs-timeline__content {
+  padding-bottom: 0.5rem;
+}
+
+.cs-timeline__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.6rem;
+}
+
+.cs-timeline__text {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--ink-60);
+  margin-bottom: 1rem;
+}
+
+.cs-timeline__impact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cs-timeline__impact span {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-10);
+  padding: 0.3rem 0.75rem;
+  border-radius: 100px;
+  letter-spacing: -0.01em;
+}
+
 /* ─── Flow map ──────────────────────────────────────────────────────── */
 
 .cs-flow-map {

@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Turning Hospital Care Into a Trusted Digital Journey — Fabiano Borba</title>
+  <meta name="description" content="How a mobile hub reduced front-desk waiting time by 30% and gave patients predictable, self-serve access to care at Hospital Sírio-Libanês." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="case.css" />
+</head>
+<body class="case-page">
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">FB</a>
+      <ul class="nav__links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li>
+          <a href="https://assets.zyrosite.com/3LlCawH9FEhHTnpH/fabiano-borba_resume-LyhtnOKzYnafqVPW.pdf"
+             target="_blank" rel="noopener" class="nav__cta">Resume ↗</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="cs-hero">
+    <div class="cs-hero__img-wrap">
+      <img
+        src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1440,h=686,fit=crop/3LlCawH9FEhHTnpH/screenshot-2026-02-03-at-05.44.20-mWOFBfcLmU4rPNgI.png"
+        alt="Hospital Sírio-Libanês app — patient journey screens"
+        class="cs-hero__img"
+        loading="eager"
+      />
+      <div class="cs-hero__overlay"></div>
+    </div>
+    <div class="cs-hero__content container">
+      <a href="index.html#work" class="cs-back animate-in" style="--delay:0s">← All work</a>
+      <div class="cs-hero__text animate-in" style="--delay:.1s">
+        <span class="cs-label">03 · Healthcare · Mobile</span>
+        <h1 class="cs-hero__title">Turning hospital care<br />into a trusted digital journey</h1>
+        <p class="cs-hero__sub">A mobile hub that gave patients predictable, self-serve access to care — before, during, and after every touchpoint at one of Latin America's top hospitals.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- META BAR -->
+  <div class="cs-meta animate-in" style="--delay:.2s">
+    <div class="container">
+      <div class="cs-meta__grid">
+        <div class="cs-meta__item">
+          <span class="cs-meta__label">Role</span>
+          <span class="cs-meta__val">Product Designer</span>
+        </div>
+        <div class="cs-meta__item">
+          <span class="cs-meta__label">Client</span>
+          <span class="cs-meta__val">Hospital Sírio-Libanês</span>
+        </div>
+        <div class="cs-meta__item">
+          <span class="cs-meta__label">Duration</span>
+          <span class="cs-meta__val">12 months · 2021–2022</span>
+        </div>
+        <div class="cs-meta__item">
+          <span class="cs-meta__label">Focus</span>
+          <span class="cs-meta__val">Service Design · Mobile · IA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="cs-body">
+
+    <!-- 1. CONTEXT -->
+    <section class="cs-section">
+      <div class="container cs-section__inner cs-section__inner--2col">
+        <div class="cs-section__label-col">
+          <span class="section-label">Context</span>
+        </div>
+        <div class="cs-section__content">
+          <p class="cs-lead">
+            Hospital Sírio-Libanês is one of Latin America's most important medical centres —
+            a philanthropic institution in São Paulo serving around <strong>120,000 patients per year</strong>,
+            recognised for high-complexity treatments.
+          </p>
+          <p class="cs-body-text">
+            Despite the quality of clinical care, the patient experience was running on manual
+            processes. Check-in required physical presence. Queues were unpredictable.
+            Meal orders were paper-based. Exams and documents were scattered. For a patient
+            already under stress, every friction point compounded the anxiety.
+          </p>
+          <p class="cs-body-text" style="margin-top:1rem">
+            The brief was to build a patient app. The real job was something harder:
+            design an experience worthy of the hospital's reputation — before, during,
+            and after every touchpoint.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FULL IMAGE 1 -->
+    <div class="cs-full-img">
+      <img
+        src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=558,fit=crop/3LlCawH9FEhHTnpH/screenshot-2026-02-03-at-05.43.41-Wnh3mPdGzwtSoP12.png"
+        alt="HSL app screens overview"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- 2. THE PROBLEM -->
+    <section class="cs-section cs-section--alt">
+      <div class="container cs-section__inner cs-section__inner--2col">
+        <div class="cs-section__label-col">
+          <span class="section-label">The problem</span>
+        </div>
+        <div class="cs-section__content">
+          <h2 class="cs-h2">When friction compounds<br />anxiety</h2>
+          <p class="cs-body-text cs-body-text--intro">
+            The hospital's clinical excellence didn't extend to the administrative experience.
+            Three pressure points converged:
+          </p>
+
+          <div class="cs-hsl-problems">
+            <div class="cs-hsl-problem">
+              <div class="cs-hsl-problem__num">01</div>
+              <div>
+                <h3 class="cs-hsl-problem__title">Check-in as a bottleneck</h3>
+                <p>Manual front-desk processes created long queues and unpredictable wait times. Every patient had to physically register, re-enter data, and wait with no visibility into their status. For someone already anxious about a procedure, the queue was the worst possible start.</p>
+              </div>
+            </div>
+            <div class="cs-hsl-problem">
+              <div class="cs-hsl-problem__num">02</div>
+              <div>
+                <h3 class="cs-hsl-problem__title">Disconnected touchpoints</h3>
+                <p>Appointments, inpatient services, documents, and exam results lived in separate systems — or on paper. Patients navigated multiple channels for tasks that should have been one. Every reconnection point was a potential for error, frustration, or a call to front desk.</p>
+              </div>
+            </div>
+            <div class="cs-hsl-problem">
+              <div class="cs-hsl-problem__num">03</div>
+              <div>
+                <h3 class="cs-hsl-problem__title">Operational cost of paper</h3>
+                <p>Meal ordering, form handling, and document management were paper-based. The operational cost — in time, in staff effort, in rework — was significant. And the patient experience reflected it.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSIGHT BAR -->
+    <div class="cs-insight-bar">
+      <div class="container">
+        <p class="cs-insight-text">
+          In a hospital, uncertainty isn't just a UX problem —<br />
+          it's a <em>care problem.</em>
+        </p>
+        <p class="cs-insight-sub">
+          Anxiety affects how patients experience treatment. Predictability isn't a
+          nice-to-have. It's part of the clinical mission.
+        </p>
+      </div>
+    </div>
+
+    <!-- 3. THE MISSION + REFRAME -->
+    <section class="cs-section">
+      <div class="container cs-section__inner cs-section__inner--2col">
+        <div class="cs-section__label-col">
+          <span class="section-label">The mission</span>
+        </div>
+        <div class="cs-section__content">
+          <h2 class="cs-h2">Make patients protagonists<br />of their own health</h2>
+          <p class="cs-body-text cs-body-text--intro">
+            The product mission — <em>"Tornar as pessoas protagonistas da sua própria saúde"</em> —
+            was more than a tagline. It defined the design direction: not a service portal,
+            not a hospital brochure, but a tool that gives patients genuine control
+            over their own care journey.
+          </p>
+
+          <div class="cs-two-panel">
+            <div class="cs-panel">
+              <div class="cs-panel__icon">🏥</div>
+              <h3 class="cs-panel__title">What the hospital needed</h3>
+              <p class="cs-panel__text">Reduce front-desk volume, eliminate paper-based processes, and lower operational cost without compromising care quality.</p>
+            </div>
+            <div class="cs-panel">
+              <div class="cs-panel__icon">🧑‍⚕️</div>
+              <h3 class="cs-panel__title">What the patient needed</h3>
+              <p class="cs-panel__text">Predictability, clarity, and autonomy — knowing what's happening, what comes next, and how to act — without depending on a person at a desk.</p>
+            </div>
+          </div>
+
+          <div class="cs-reframe">
+            <span class="cs-reframe__label">The design direction</span>
+            <p class="cs-reframe__text">
+              "Um ponto que acolhe, uma ponte que nutre relacionamentos" — a point that
+              welcomes, a bridge that nurtures. The app needed to feel like
+              <strong>the hospital extending its care into the patient's daily life,</strong>
+              not like software bolted onto an administrative process.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. APPROACH — Timeline -->
+    <section class="cs-section cs-section--alt">
+      <div class="container cs-section__inner cs-section__inner--2col">
+        <div class="cs-section__label-col">
+          <span class="section-label">Approach</span>
+        </div>
+        <div class="cs-section__content">
+          <h2 class="cs-h2">Shipped in phases.<br />Prioritised by impact.</h2>
+          <p class="cs-body-text cs-body-text--intro">
+            I recommended shipping fewer flows first — but with higher robustness at
+            the most critical moments — rather than expanding scope quickly and creating
+            inconsistency. The 12-month arc reflected that bet.
+          </p>
+
+          <div class="cs-timeline">
+
+            <div class="cs-timeline__item">
+              <div class="cs-timeline__marker">
+                <span class="cs-timeline__year">2021</span>
+                <div class="cs-timeline__line"></div>
+              </div>
+              <div class="cs-timeline__content">
+                <h3 class="cs-timeline__title">Phase 01 — Reduce uncertainty</h3>
+                <p class="cs-timeline__text">
+                  The foundation: target the highest-friction, highest-volume moments first.
+                  Pre check-in reduced desk time and eliminated repeated data entry.
+                  Real-time queue tracking made status and next steps transparent.
+                  Information architecture and navigation patterns lowered cognitive load
+                  across the whole app.
+                </p>
+                <div class="cs-timeline__impact">
+                  <span>↓ 30% reception waiting time</span>
+                  <span>600+ monthly appointments improved</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cs-timeline__item">
+              <div class="cs-timeline__marker">
+                <span class="cs-timeline__year">2021–22</span>
+                <div class="cs-timeline__line"></div>
+              </div>
+              <div class="cs-timeline__content">
+                <h3 class="cs-timeline__title">Phase 02 — Expand value</h3>
+                <p class="cs-timeline__text">
+                  Once the foundation proved reliable, we expanded into new journey domains.
+                  Digital meal ordering gave inpatients direct control over their diet — replacing
+                  paper forms and manual adjustments. Remote care improved continuity across
+                  touchpoints. Centralised exam and document access eliminated the most common
+                  reason patients called the front desk.
+                </p>
+                <div class="cs-timeline__impact">
+                  <span>10,000+ digital meals ordered</span>
+                  <span>3,000+ appointments via app</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cs-timeline__item cs-timeline__item--last">
+              <div class="cs-timeline__marker">
+                <span class="cs-timeline__year">2022</span>
+              </div>
+              <div class="cs-timeline__content">
+                <h3 class="cs-timeline__title">Phase 03 — Consolidate</h3>
+                <p class="cs-timeline__text">
+                  The app became the central digital touchpoint — before, during, and after
+                  every hospital visit. Population Health (Saúde Populacional) extended
+                  the platform to corporate health partnerships, bringing 500,000+ managed
+                  lives onto a single app within ~3 months.
+                </p>
+                <div class="cs-timeline__impact">
+                  <span>1.5M exams available in-app</span>
+                  <span>500K+ lives under management</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREENS BAND -->
+    <div class="cs-full-img">
+      <img
+        src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=558,fit=crop/3LlCawH9FEhHTnpH/screenshot-2026-02-03-at-05.44.09-6dtDQaqEwVEMKpP6.png"
+        alt="HSL app — check-in and queue tracking screens"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- 5. DESIGN DECISIONS -->
+    <section class="cs-section">
+      <div class="container cs-section__inner cs-section__inner--2col">
+        <div class="cs-section__label-col">
+          <span class="section-label">Design decisions</span>
+        </div>
+        <div class="cs-section__content">
+          <h2 class="cs-h2">Three decisions that<br />shaped everything</h2>
+          <p class="cs-body-text cs-body-text--intro">
+            The brief was large enough to justify almost any direction. These three
+            decisions defined which direction was worth defending.
+          </p>
+
+          <div class="cs-pillars">
+
+            <div class="cs-pillar">
+              <div class="cs-pillar__num">01</div>
+              <div class="cs-pillar__body">
+                <h3 class="cs-pillar__title">Predictability as a product feature</h3>
+                <p class="cs-pillar__text">
+                  Every critical state had an explicit label: "waiting to be called,"
+                  "check-in completed," "your exam is ready." Strong confirmations on
+                  critical actions. Guidance centred on what the patient should do now,
+                  not on internal hospital processes.
+                </p>
+                <div class="cs-pillar__rejected">
+                  <span>The alternative we resisted</span>
+                  <p>Generic status messages ("processing," "pending") that leave patients to interpret their own situation — and reach for the phone to ask a human instead.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="cs-pillar">
+              <div class="cs-pillar__num">02</div>
+              <div class="cs-pillar__body">
+                <h3 class="cs-pillar__title">Patient-task IA, not org-chart IA</h3>
+                <p class="cs-pillar__text">
+                  Navigation was built around patient tasks and journey moments — before,
+                  during, after — not around the hospital's internal departments. Plain-language
+                  labels, action-oriented microcopy, fewer paths to the same action.
+                </p>
+                <div class="cs-pillar__rejected">
+                  <span>The alternative we resisted</span>
+                  <p>A structure mirroring hospital departments — Cardiology, Nutrition, Administration — that makes sense internally but forces patients to understand the org to find what they need.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="cs-pillar">
+              <div class="cs-pillar__num">03</div>
+              <div class="cs-pillar__body">
+                <h3 class="cs-pillar__title">Guardrails that reduce rework</h3>
+                <p class="cs-pillar__text">
+                  In-context instructions and validation before the error state. Clear
+                  hierarchy and unambiguous CTAs. Consistent patterns across features so
+                  that what patients learn in check-in transfers to meal ordering and exams.
+                </p>
+                <div class="cs-pillar__rejected">
+                  <span>The alternative we resisted</span>
+                  <p>Error messages only at submission — which generates support calls, rework, and the kind of frustration that erodes trust faster than any design can rebuild it.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. FEATURES IN PRACTICE -->
+    <section class="cs-section cs-section--alt">
+      <div class="container cs-section__inner cs-section__inner--2col">
+        <div class="cs-section__label-col">
+          <span class="section-label">The features</span>
+        </div>
+        <div class="cs-section__content">
+          <h2 class="cs-h2">Three features.<br />One journey.</h2>
+          <p class="cs-body-text cs-body-text--intro">
+            Each feature addressed a specific moment of friction. Together, they covered
+            the patient journey end to end.
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="cs-steps">
+
+          <div class="cs-step">
+            <div class="cs-step__header">
+              <span class="cs-step__num">01</span>
+              <div>
+                <h3 class="cs-step__title">Pre check-in — Before you arrive</h3>
+                <p class="cs-step__tag">Highest volume · Highest friction · Phase 01 priority</p>
+              </div>
+            </div>
+            <div class="cs-step__body">
+              <div class="cs-step__img">
+                <img
+                  src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=884,fit=crop,trim=0;780.3330689928629;0;780.3330689928629/3LlCawH9FEhHTnpH/screenshot-2026-02-03-at-05.43.57-s3RnNOZ7oSfxRGcG.png"
+                  alt="Pre check-in and queue tracking screens"
+                  loading="lazy"
+                />
+              </div>
+              <div class="cs-step__text">
+                <p>
+                  From home, patients open their appointment, submit their arrival info,
+                  and monitor the queue in real time. When they arrive at the hospital,
+                  check-in takes seconds — no paperwork, no repeated questions, no waiting
+                  in a line to talk to someone.
+                </p>
+                <p>
+                  Queue tracking was designed around explicit state messages rather than
+                  vague progress bars. "You're 3rd in line. Estimated wait: 12 minutes."
+                  That specificity was a deliberate choice — it reduces the anxiety of
+                  not knowing, which is often worse than a longer wait.
+                </p>
+                <div class="cs-step__why">
+                  <span class="cs-step__why-label">The outcome</span>
+                  <p>30% reduction in average reception waiting time. Over 600 additional monthly appointments handled without increased front-desk load.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-step">
+            <div class="cs-step__header">
+              <span class="cs-step__num">02</span>
+              <div>
+                <h3 class="cs-step__title">Digital meal ordering — While you're here</h3>
+                <p class="cs-step__tag">Inpatient experience · Replaces paper process · Phase 02</p>
+              </div>
+            </div>
+            <div class="cs-step__body">
+              <div class="cs-step__img">
+                <img
+                  src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=558,fit=crop/3LlCawH9FEhHTnpH/screenshot-2026-02-03-at-05.43.41-Wnh3mPdGzwtSoP12.png"
+                  alt="Digital meal ordering interface"
+                  loading="lazy"
+                />
+              </div>
+              <div class="cs-step__text">
+                <p>
+                  As soon as a patient is admitted and entitled to hospital meals, the
+                  app surfaces a dedicated section: menus created by nutritionists,
+                  tailored to their care plan. Patients choose and modify their meals
+                  directly — no paper forms, no repeating orders to a staff member.
+                </p>
+                <p>
+                  For a patient spending days in a hospital, this is not a small thing.
+                  Having control over something as basic as what you eat is a meaningful
+                  part of feeling like a person, not a case number.
+                </p>
+                <div class="cs-step__why">
+                  <span class="cs-step__why-label">The outcome</span>
+                  <p>10,000+ digital meals ordered or modified. Significant reduction in paper consumption and staff time spent on manual meal adjustments.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-step">
+            <div class="cs-step__header">
+              <span class="cs-step__num">03</span>
+              <div>
+                <h3 class="cs-step__title">Exams &amp; Population Health — After you leave</h3>
+                <p class="cs-step__tag">Continuity of care · 500K+ lives · Phase 03</p>
+              </div>
+            </div>
+            <div class="cs-step__body">
+              <div class="cs-step__img">
+                <img
+                  src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=558,fit=crop/3LlCawH9FEhHTnpH/screenshot-2026-02-03-at-05.44.09-6dtDQaqEwVEMKpP6.png"
+                  alt="Exams, documents and Population Health platform"
+                  loading="lazy"
+                />
+              </div>
+              <div class="cs-step__text">
+                <p>
+                  1.5 million exam results centralised in one place, accessible to
+                  patients securely. 3,000+ appointments booked without calling reception.
+                  The app became the patient's long-term relationship with the hospital —
+                  not just a visit companion.
+                </p>
+                <p>
+                  Population Health (Saúde Populacional) extended the platform to corporate
+                  partnerships: companies with employee health plans managing 500,000+ lives
+                  could now access all their benefits through a single app, in digital or
+                  hybrid care models. Delivered in approximately 3 months.
+                </p>
+                <div class="cs-step__why">
+                  <span class="cs-step__why-label">The outcome</span>
+                  <p>1.5M exams available in-app. 500K+ lives under management. 3,000+ appointments self-scheduled. The front desk became a last resort, not a first step.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DESIGN SYSTEM -->
+    <div class="cs-full-img">
+      <img
+        src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/3LlCawH9FEhHTnpH/ds-tempo-B7C9VmjWlL56wNl2.jpg"
+        alt="HSL design system — Tempo"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- 7. IMPACT -->
+    <section class="cs-section cs-section--dark">
+      <div class="container cs-section__inner cs-section__inner--2col">
+        <div class="cs-section__label-col">
+          <span class="section-label" style="color:rgba(200,96,42,0.75)">Impact</span>
+        </div>
+        <div class="cs-section__content">
+          <h2 class="cs-h2" style="color:#fff">Scale happens when the product<br />reduces friction for patients <em style="font-family:var(--font-serif);font-weight:400;color:var(--accent)">and</em> for operations.</h2>
+
+          <div class="cs-metrics" style="margin-top:3rem">
+            <div class="cs-metric">
+              <span class="cs-metric__val">−30%</span>
+              <span class="cs-metric__label">Reception waiting time</span>
+              <span class="cs-metric__reason">Pre check-in + real-time queue tracking eliminated the need to arrive early and stand in line</span>
+            </div>
+            <div class="cs-metric">
+              <span class="cs-metric__val">10K+</span>
+              <span class="cs-metric__label">Digital meals ordered</span>
+              <span class="cs-metric__reason">Paper-based meal ordering fully replaced, reducing staff rework and giving patients dietary autonomy</span>
+            </div>
+            <div class="cs-metric">
+              <span class="cs-metric__val">3K+</span>
+              <span class="cs-metric__label">Appointments self-scheduled</span>
+              <span class="cs-metric__reason">Front desk calls replaced by in-app booking — without removing the human option for those who need it</span>
+            </div>
+            <div class="cs-metric">
+              <span class="cs-metric__val">1.5M</span>
+              <span class="cs-metric__label">Exams available in-app</span>
+              <span class="cs-metric__reason">Centralised exam access removed the single most common reason patients contacted front desk after a visit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESIGN SYSTEM 2 -->
+    <div class="cs-full-img">
+      <img
+        src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/3LlCawH9FEhHTnpH/design-system-DydkmIU1AGrOaNZi.jpg"
+        alt="HSL design system components and patterns"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- 8. TAKEAWAYS -->
+    <section class="cs-section">
+      <div class="container cs-section__inner cs-section__inner--2col">
+        <div class="cs-section__label-col">
+          <span class="section-label">What I learned</span>
+        </div>
+        <div class="cs-section__content">
+          <h2 class="cs-h2">The real takeaways</h2>
+          <div class="cs-learnings">
+            <div class="cs-learning">
+              <span class="cs-learning__icon">→</span>
+              <p><strong>In healthcare, predictability is part of care.</strong> Reducing uncertainty about what happens next isn't a UX nicety — it directly affects how patients experience their treatment and recover. This shaped every copy decision, every status label, every confirmation message.</p>
+            </div>
+            <div class="cs-learning">
+              <span class="cs-learning__icon">→</span>
+              <p><strong>Robustness at critical moments beats breadth of features.</strong> Shipping fewer flows with higher quality at high-stakes touchpoints (check-in, discharge, exam results) produced more durable trust than a wide but shallow feature set would have.</p>
+            </div>
+            <div class="cs-learning">
+              <span class="cs-learning__icon">→</span>
+              <p><strong>Org-chart IA is the enemy of patient-centred design.</strong> The pressure to structure navigation around internal departments is constant — stakeholders think in departments, not in patient tasks. Defending journey-based IA requires persistent advocacy, not just a good argument.</p>
+            </div>
+            <div class="cs-learning">
+              <span class="cs-learning__icon">→</span>
+              <p><strong>Operational efficiency and patient experience are the same problem.</strong> Every time we reduced a call to the front desk, we improved both the patient's experience and the hospital's operational cost. That alignment was the strongest argument for every design decision.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CASE NAV -->
+  <div class="cs-nav-footer">
+    <div class="container">
+      <a href="case-c4ar.html" class="cs-nav-footer__back">← Designing Trust at the Worst Moment</a>
+      <a href="index.html#work" class="cs-nav-footer__next">
+        <span class="cs-nav-footer__next-label">Back to work</span>
+        <span class="cs-nav-footer__next-title">See all case studies →</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__name">Fabiano Borba</span>
+        <div class="footer__links">
+          <a href="https://linkedin.com/in/fabianoborba" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="index.html">Portfolio</a>
+        </div>
+        <span class="footer__copy">© 2025</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
