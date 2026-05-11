@@ -558,6 +558,227 @@
   letter-spacing: -0.01em;
 }
 
+/* ─── Rejected approach box ─────────────────────────────────────────── */
+
+.cs-rejected-box {
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.cs-rejected__header {
+  padding: 0.6rem 1.5rem;
+  background: var(--border);
+  display: flex;
+  align-items: center;
+}
+
+.cs-rejected__label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-60);
+}
+
+.cs-rejected__items {
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-rejected__item {
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+}
+.cs-rejected__item:last-child { border-bottom: none; }
+
+.cs-rejected__x {
+  font-size: 0.75rem;
+  color: #E05252;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  width: 1rem;
+  text-align: center;
+}
+
+.cs-rejected__item strong {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+  letter-spacing: -0.01em;
+}
+
+.cs-rejected__item p {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--ink-60);
+}
+
+/* ─── Insight bar sub-text ──────────────────────────────────────────── */
+
+.cs-insight-sub {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink-60);
+  text-align: center;
+  max-width: 600px;
+  margin: 1rem auto 0;
+}
+
+.cs-insight-sub em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--accent);
+}
+
+/* ─── Reframe callout ───────────────────────────────────────────────── */
+
+.cs-reframe {
+  margin-top: 2.5rem;
+  padding: 1.5rem 2rem;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-10);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.cs-reframe__label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+
+.cs-reframe__text {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+.cs-reframe__text strong {
+  font-weight: 700;
+}
+
+/* ─── Hard call decision ─────────────────────────────────────────────── */
+
+.cs-decision {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1.5px;
+  background: var(--border);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.cs-decision__side {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cs-decision__side--no { background: #FDF6F6; }
+.cs-decision__side--yes { background: #F4F8F4; }
+
+.cs-decision__marker {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.cs-decision__side--no .cs-decision__marker { color: #C05252; }
+.cs-decision__side--yes .cs-decision__marker { color: #3D8B50; }
+
+.cs-decision__side p {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--ink-60);
+}
+
+.cs-decision__divider {
+  background: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--ink-30);
+  letter-spacing: 0.05em;
+}
+
+/* ─── Updated pillars (with body + rejected) ────────────────────────── */
+
+.cs-pillar {
+  padding: 2rem;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 0 1rem;
+  transition: background 0.2s;
+  align-items: start;
+}
+.cs-pillar:last-child { border-bottom: none; }
+.cs-pillar:hover { background: var(--cream); }
+
+.cs-pillar__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cs-pillar__rejected {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: var(--cream);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.cs-section--alt .cs-pillar__rejected {
+  background: var(--white);
+}
+
+.cs-pillar__rejected span {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #C05252;
+  margin-bottom: 0.4rem;
+}
+
+.cs-pillar__rejected p {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--ink-60);
+}
+
+/* ─── Metric reason ─────────────────────────────────────────────────── */
+
+.cs-metric__reason {
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.3);
+  font-style: italic;
+  margin-top: 0.25rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 0.6rem;
+}
+
 /* ─── Scroll fade (reuse from main) ────────────────────────────────── */
 
 .fade-up {

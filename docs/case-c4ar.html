@@ -75,7 +75,7 @@
 
   <main class="cs-body">
 
-    <!-- CONTEXT -->
+    <!-- 1. CONTEXT -->
     <section class="cs-section">
       <div class="container cs-section__inner cs-section__inner--2col">
         <div class="cs-section__label-col">
@@ -83,45 +83,115 @@
         </div>
         <div class="cs-section__content">
           <p class="cs-lead">
-            A premium travel subscription offered a "Cancel for Any Reason" benefit — but when
-            customers needed to use it, they had to call. At the worst possible moment, they
-            were forced to <strong>relive the problem out loud</strong>, hold on the line,
-            and hope the agent got it right.
+            A premium travel subscription offered a "Cancel for Any Reason" benefit — but
+            when customers needed to use it, they had to call. At the worst possible moment,
+            they were forced to <strong>relive the problem out loud</strong>, hold on the
+            line, and hope the agent got it right.
           </p>
           <p class="cs-body-text">
-            The benefit was designed to give autonomy. In practice, it only felt reliable when
-            a human mediated trust. That gap — between what the product promised and what it
-            delivered at crunch time — was the problem worth solving.
+            The benefit was designed to give autonomy. In practice, it only felt reliable
+            when a human mediated trust. That gap — between what the product promised and
+            what it delivered under pressure — was the problem worth solving.
+          </p>
+          <p class="cs-body-text" style="margin-top:1rem">
+            CFAR adoption was growing faster than the product could handle. The contact
+            center load was disproportionate, each interaction inconsistent, and the cost
+            of scaling through people alone was unsustainable.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- FULL IMAGE -->
+    <!-- FULL IMAGE 1 -->
     <div class="cs-full-img">
       <img
         src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/3LlCawH9FEhHTnpH/chatgpt-image-feb-2-2026-07_21_08-pm-uXnkkc8kGMLNfHGL.png"
-        alt="Customer journey context — high-stress travel disruption"
+        alt="The moment customers had to call — high-stress travel disruption"
         loading="lazy"
       />
     </div>
 
-    <!-- WHERE NEEDS CONVERGED -->
+    <!-- 2. THE OBVIOUS ANSWER — AND WHY IT WAS WRONG -->
+    <section class="cs-section cs-section--alt">
+      <div class="container cs-section__inner cs-section__inner--2col">
+        <div class="cs-section__label-col">
+          <span class="section-label">The obvious answer</span>
+        </div>
+        <div class="cs-section__content">
+          <h2 class="cs-h2">What everyone would have done</h2>
+          <p class="cs-body-text cs-body-text--intro">
+            The instinct was clear: make the benefit more visible. Surface it on the booking
+            confirmation. Push a notification when a flight gets delayed. Add a banner at
+            the top of the app. More visibility, more adoption, better metrics.
+          </p>
+
+          <div class="cs-rejected-box">
+            <div class="cs-rejected__header">
+              <span class="cs-rejected__label">Rejected approach</span>
+            </div>
+            <div class="cs-rejected__items">
+              <div class="cs-rejected__item">
+                <span class="cs-rejected__x">✕</span>
+                <div>
+                  <strong>Show the benefit to everyone, always</strong>
+                  <p>Increases visibility metrics. Also surfaces a cancellation option to users who never need it — adding cognitive noise at exactly the wrong moments.</p>
+                </div>
+              </div>
+              <div class="cs-rejected__item">
+                <span class="cs-rejected__x">✕</span>
+                <div>
+                  <strong>Optimise the call flow instead of replacing it</strong>
+                  <p>Reduces average handle time. Doesn't solve the core problem: customers shouldn't have to call at all. Scaling a broken experience is not design.</p>
+                </div>
+              </div>
+              <div class="cs-rejected__item">
+                <span class="cs-rejected__x">✕</span>
+                <div>
+                  <strong>Add more information to the benefit page</strong>
+                  <p>The problem wasn't lack of information. Customers weren't confused — they were scared. No amount of copy cures doubt at crunch time.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="cs-body-text" style="margin-top: 2rem">
+            The real insight came from looking at what customers actually asked when they
+            called. It wasn't "how does this work?" It was two simpler, scarier questions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSIGHT BAR -->
+    <div class="cs-insight-bar">
+      <div class="container">
+        <p class="cs-insight-text">
+          "Will this actually work?"&nbsp;&nbsp;·&nbsp;&nbsp;"What happens after I cancel?"
+        </p>
+        <p class="cs-insight-sub">
+          Not policy questions. Certainty questions. The product had an information problem
+          disguised as a <em>trust problem.</em>
+        </p>
+      </div>
+    </div>
+
+    <!-- 3. THE REAL PROBLEM -->
     <section class="cs-section">
       <div class="container cs-section__inner cs-section__inner--2col">
         <div class="cs-section__label-col">
-          <span class="section-label">The Problem</span>
+          <span class="section-label">The problem</span>
         </div>
         <div class="cs-section__content">
-          <h2 class="cs-h2">Where customer anxiety<br />met operational cost</h2>
-          <div class="cs-two-panel">
+          <h2 class="cs-h2">Two pressures pulling<br />in the same direction</h2>
 
+          <div class="cs-two-panel">
             <div class="cs-panel">
               <div class="cs-panel__icon">👤</div>
               <h3 class="cs-panel__title">From the customer's side</h3>
               <p class="cs-panel__text">
-                The most common questions weren't about policy details. They were about certainty.
-                People weren't confused — they were scared.
+                People calling weren't confused about the policy. They were scared it
+                wouldn't work for them, specifically, right now. The call was a search
+                for certainty — not information.
               </p>
               <div class="cs-callout">
                 <span>"Will this actually work?"</span>
@@ -133,126 +203,176 @@
               <div class="cs-panel__icon">📊</div>
               <h3 class="cs-panel__title">From the business's side</h3>
               <p class="cs-panel__text">
-                CFAR cancellations were generating a disproportionate volume of contact center
-                contacts. Adoption was growing faster than product maturity could handle.
+                CFAR cancellations were generating disproportionate contact center volume.
+                Adoption was growing faster than product maturity could handle.
               </p>
               <ul class="cs-list">
-                <li>Expensive to operate at scale</li>
-                <li>Inconsistent across agents</li>
+                <li>Expensive to operate at any scale</li>
+                <li>Quality inconsistent across agents</li>
                 <li>Hard to scale without increasing friction</li>
+                <li>Reputational risk if the experience broke under load</li>
               </ul>
             </div>
+          </div>
 
+          <div class="cs-reframe">
+            <span class="cs-reframe__label">Reframe</span>
+            <p class="cs-reframe__text">
+              A benefit designed to give autonomy only felt reliable when someone mediated trust.
+              The job wasn't to design a cancellation flow — it was to design
+              <strong>certainty at scale.</strong>
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- INSIGHT QUOTE -->
-    <div class="cs-insight-bar">
-      <div class="container">
-        <p class="cs-insight-text">
-          A benefit designed to give autonomy only felt reliable when someone
-          <em>mediated</em> trust. That's not a feature. That's a design debt.
-        </p>
-      </div>
-    </div>
-
-    <!-- COMPANY LOGOS -->
-    <div class="cs-img-band">
-      <img
-        src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1440,h=64,fit=crop,trim=1.7560975609756098;0;1.7560975609756098;0/3LlCawH9FEhHTnpH/group-189-cD3IpcI45jl8feC1.png"
-        alt="Partner ecosystem"
-        loading="lazy"
-        class="cs-img-band__img"
-      />
-    </div>
-
-    <!-- APPROACH -->
+    <!-- 4. THE HARD CALL -->
     <section class="cs-section cs-section--alt">
       <div class="container cs-section__inner cs-section__inner--2col">
         <div class="cs-section__label-col">
-          <span class="section-label">Design Approach</span>
+          <span class="section-label">The hard call</span>
         </div>
         <div class="cs-section__content">
-          <h2 class="cs-h2">Three principles that guided<br />every decision</h2>
+          <h2 class="cs-h2">Choosing relevance<br />over visibility</h2>
           <p class="cs-body-text cs-body-text--intro">
-            The work was less about adding elements and more about removing the wrong incentives.
-            Three pillars shaped the entire flow.
+            The most contested decision in the project: don't show the benefit to users
+            who can't use it. On the surface, this looks like hiding a premium feature.
+            In practice, showing a cancellation option to an ineligible user creates
+            false hope — which is worse than no option at all.
+          </p>
+
+          <div class="cs-decision">
+            <div class="cs-decision__side cs-decision__side--no">
+              <span class="cs-decision__marker">What growth wanted</span>
+              <p>Surface CFAR everywhere. More exposure = more perceived value = better subscription retention metrics.</p>
+            </div>
+            <div class="cs-decision__divider" aria-hidden="true">vs</div>
+            <div class="cs-decision__side cs-decision__side--yes">
+              <span class="cs-decision__marker">What the design did</span>
+              <p>Gate the flow on eligibility. Only eligible users see the option. The benefit only exists when it can actually be used.</p>
+            </div>
+          </div>
+
+          <p class="cs-body-text" style="margin-top: 2rem">
+            Not every value needs to be pushed. Not every short-term metric is worth the
+            reputational risk of promising something you can't deliver.
+            This was the principle that shaped every screen that followed.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. THREE PRINCIPLES -->
+    <section class="cs-section">
+      <div class="container cs-section__inner cs-section__inner--2col">
+        <div class="cs-section__label-col">
+          <span class="section-label">Design principles</span>
+        </div>
+        <div class="cs-section__content">
+          <h2 class="cs-h2">Three decisions that<br />shaped the flow</h2>
+          <p class="cs-body-text cs-body-text--intro">
+            Each principle came from rejecting a simpler path. The work was less about
+            adding elements and more about removing the wrong incentives.
           </p>
 
           <div class="cs-pillars">
-
             <div class="cs-pillar">
               <div class="cs-pillar__num">01</div>
-              <h3 class="cs-pillar__title">Relevance before visibility</h3>
-              <p class="cs-pillar__text">
-                The flow should only exist for people who could actually use it.
-                Showing a benefit to ineligible users erodes trust faster than not showing it at all.
-                Not every value needs to be pushed.
-              </p>
+              <div class="cs-pillar__body">
+                <h3 class="cs-pillar__title">Relevance before visibility</h3>
+                <p class="cs-pillar__text">
+                  The flow only exists for users who can actually use it. Ineligible users
+                  never see it.
+                </p>
+                <div class="cs-pillar__rejected">
+                  <span>Rejected: show to all, filter at confirmation</span>
+                  <p>Creates false hope for ineligible users exactly when they need certainty most. A benefit that fails at the moment of use is worse than no benefit.</p>
+                </div>
+              </div>
             </div>
 
             <div class="cs-pillar">
               <div class="cs-pillar__num">02</div>
-              <h3 class="cs-pillar__title">Reduce cognitive load at the moment of doubt</h3>
-              <p class="cs-pillar__text">
-                Provide the right information at the right time. Answer the key doubts before
-                the confirmation step. Make outcomes predictable. Avoid post-action surprises.
-                Reducing cognitive load protects both conversion and trust.
-              </p>
+              <div class="cs-pillar__body">
+                <h3 class="cs-pillar__title">Answer doubt before the decision</h3>
+                <p class="cs-pillar__text">
+                  Outcomes are made explicit before the user confirms. No surprises
+                  after the action.
+                </p>
+                <div class="cs-pillar__rejected">
+                  <span>Rejected: show outcome only on confirmation screen</span>
+                  <p>Users in doubt don't convert. And users who convert without understanding the outcome generate more calls than those who didn't convert at all.</p>
+                </div>
+              </div>
             </div>
 
             <div class="cs-pillar">
               <div class="cs-pillar__num">03</div>
-              <h3 class="cs-pillar__title">Close the loop after the action</h3>
-              <p class="cs-pillar__text">
-                The post-cancellation experience is not a receipt — it's the moment trust is either
-                confirmed or lost. Treat wallet credit as proof the benefit worked. Factual confirmation,
-                straightforward guidance, explicit next steps.
-              </p>
+              <div class="cs-pillar__body">
+                <h3 class="cs-pillar__title">Treat the receipt as proof</h3>
+                <p class="cs-pillar__text">
+                  The post-cancellation screen isn't a formality — it's the moment
+                  trust is confirmed or lost.
+                </p>
+                <div class="cs-pillar__rejected">
+                  <span>Rejected: standard confirmation + email follow-up</span>
+                  <p>Email gets ignored at high-stress moments. The wallet credit needs to be visible and explicitly framed as "the benefit worked" — not buried in a receipt.</p>
+                </div>
+              </div>
             </div>
-
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SCREENS -->
-    <section class="cs-section">
+    <!-- 6. DESIGN IN ACTION -->
+    <section class="cs-section cs-section--alt">
       <div class="container cs-section__inner cs-section__inner--2col">
         <div class="cs-section__label-col">
           <span class="section-label">Design</span>
         </div>
         <div class="cs-section__content">
-          <h2 class="cs-h2">The flow in practice</h2>
+          <h2 class="cs-h2">The decisions, visible</h2>
+          <p class="cs-body-text cs-body-text--intro">
+            Each screen carries a specific job. The goal wasn't a beautiful flow —
+            it was a flow where nothing was left to interpretation.
+          </p>
         </div>
       </div>
 
       <div class="cs-screens">
         <div class="cs-screens__row">
-          <figure class="cs-figure cs-figure--wide">
+          <figure class="cs-figure">
             <img
               src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=730,fit=crop,trim=43.2;0;43.2;0/3LlCawH9FEhHTnpH/group-3-1XmoSxBNhhzGJcly.png"
-              alt="CFAR flow — eligibility and benefit reveal"
+              alt="Eligibility gate screen"
               loading="lazy"
             />
-            <figcaption>Eligibility gate — only eligible users enter the flow</figcaption>
+            <figcaption>
+              <strong>Principle 01 in action.</strong> The flow is invisible to ineligible users.
+              Those who see it have already passed the gate — which means the question
+              "will this work for me?" is answered before they even ask it.
+            </figcaption>
           </figure>
           <figure class="cs-figure">
             <img
               src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=1159,fit=crop,trim=0;19.937799043062203;0;19.937799043062203/3LlCawH9FEhHTnpH/group-1895-W0ehDdaWyEGZIdEs.png"
-              alt="CFAR flow — confirmation and outcome preview"
+              alt="Pre-confirmation outcome screen"
               loading="lazy"
             />
-            <figcaption>Pre-confirmation — outcomes made predictable before the decision</figcaption>
+            <figcaption>
+              <strong>Principle 02 in action.</strong> Before any commitment, the user sees
+              exactly what they'll receive, when, and how. The cognitive load at the
+              decision moment drops to near zero.
+            </figcaption>
           </figure>
         </div>
 
         <div class="cs-screens__hero-img">
           <img
             src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/3LlCawH9FEhHTnpH/iphone-12-pro-ozqugc20vG34kN7j.png"
-            alt="CFAR mobile experience — full device view"
+            alt="Full CFAR mobile flow"
             loading="lazy"
           />
         </div>
@@ -261,68 +381,71 @@
           <figure class="cs-figure">
             <img
               src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=730,fit=crop,trim=0;75.0077519379845;0;75.0077519379845/3LlCawH9FEhHTnpH/rectangle2-d9ntEJhmEhVfpBpL.png"
-              alt="Post-cancellation confirmation — wallet credit confirmation"
+              alt="Post-cancellation wallet credit confirmation"
               loading="lazy"
             />
-            <figcaption>Post-cancellation — credit confirmation as proof the benefit worked</figcaption>
+            <figcaption>
+              <strong>Principle 03 in action.</strong> The wallet credit isn't buried — it's
+              the headline. "You got a refund, Fabiano" is not a receipt. It's proof
+              the benefit worked. This screen is why NPS went up.
+            </figcaption>
           </figure>
-          <figure class="cs-figure cs-figure--wide">
+          <figure class="cs-figure">
             <img
               src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=514,fit=crop/3LlCawH9FEhHTnpH/chatgpt-image-feb-2-2026-07_02_50-pm-CBBDxSiYQBqGERi3.png"
-              alt="Design context and user journey mapping"
+              alt="Journey mapping and design research"
               loading="lazy"
             />
-            <figcaption>Mapping the emotional journey — from panic to resolved</figcaption>
+            <figcaption>
+              <strong>Where the principles came from.</strong> Mapping the emotional arc —
+              from disruption panic to resolved — made clear that the product was failing
+              at certainty, not at functionality.
+            </figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <!-- IMPACT -->
+    <!-- 7. IMPACT — connected to decisions -->
     <section class="cs-section cs-section--dark">
       <div class="container cs-section__inner cs-section__inner--2col">
         <div class="cs-section__label-col">
-          <span class="section-label" style="color: rgba(200,96,42,0.75)">Impact</span>
+          <span class="section-label" style="color:rgba(200,96,42,0.75)">Impact</span>
         </div>
         <div class="cs-section__content">
-          <h2 class="cs-h2" style="color:#fff">Numbers that matter</h2>
-          <p class="cs-body-text" style="color:rgba(255,255,255,0.55); margin-bottom: 3rem;">
-            Customer autonomy and operational efficiency aren't opposing forces.
-            This project proved they compound.
+          <h2 class="cs-h2" style="color:#fff">What moved, and why</h2>
+          <p class="cs-body-text" style="color:rgba(255,255,255,0.55); margin-bottom:3rem">
+            Each metric connects to a specific decision — not to the project as a whole.
+            That's the difference between design that delivers and design that decorates.
           </p>
 
           <div class="cs-metrics">
             <div class="cs-metric">
-              <span class="cs-metric__val">+8.2%</span>
-              <span class="cs-metric__label">Prime subscriptions</span>
-            </div>
-            <div class="cs-metric">
               <span class="cs-metric__val">−27.5%</span>
-              <span class="cs-metric__label">Cancellation-related<br />contact center calls</span>
+              <span class="cs-metric__label">Cancellation-related calls</span>
+              <span class="cs-metric__reason">Eligibility gate + pre-confirmation clarity removed the need to call</span>
             </div>
             <div class="cs-metric">
               <span class="cs-metric__val">−9%</span>
-              <span class="cs-metric__label">Additional reduction in<br />residual call volume</span>
+              <span class="cs-metric__label">Residual call volume</span>
+              <span class="cs-metric__reason">Post-cancellation closure screen answered follow-up questions before they arose</span>
             </div>
             <div class="cs-metric">
               <span class="cs-metric__val">+1.3</span>
-              <span class="cs-metric__label">NPS points at the<br />cancellation moment</span>
+              <span class="cs-metric__label">NPS at cancellation moment</span>
+              <span class="cs-metric__reason">Users who cancelled felt the benefit worked — because the receipt said so, clearly</span>
+            </div>
+            <div class="cs-metric">
+              <span class="cs-metric__val">+8.2%</span>
+              <span class="cs-metric__label">Prime subscriptions</span>
+              <span class="cs-metric__reason">Trust in the benefit at the worst moment translated into retention confidence</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FINAL IMAGE -->
-    <div class="cs-full-img">
-      <img
-        src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/3LlCawH9FEhHTnpH/screenshot-2026-02-02-at-19.47.44-pMPrraUlxF9SdfiR.png"
-        alt="Final design overview"
-        loading="lazy"
-      />
-    </div>
-
-    <!-- TAKEAWAYS -->
+    <!-- 8. TAKEAWAYS -->
     <section class="cs-section">
       <div class="container cs-section__inner cs-section__inner--2col">
         <div class="cs-section__label-col">
@@ -333,19 +456,19 @@
           <div class="cs-learnings">
             <div class="cs-learning">
               <span class="cs-learning__icon">→</span>
-              <p><strong>Trust is a product asset, not just a brand asset.</strong> The moment a user doubts whether a benefit will work, the benefit has already failed — regardless of whether it delivers.</p>
+              <p><strong>Trust is a product asset, not just a brand asset.</strong> The moment a user doubts whether a benefit will work, the benefit has already failed — regardless of whether it eventually delivers.</p>
             </div>
             <div class="cs-learning">
               <span class="cs-learning__icon">→</span>
-              <p><strong>Not every optimisation should be visible.</strong> The best UX work here removed things — wrong incentives, unnecessary steps, premature information — rather than adding them.</p>
+              <p><strong>Not every optimisation should be visible.</strong> The best work here removed things — wrong incentives, unnecessary steps, premature information — rather than adding them.</p>
             </div>
             <div class="cs-learning">
               <span class="cs-learning__icon">→</span>
-              <p><strong>Strong exception flows balance empathy and scale.</strong> Designing for the worst moment requires both — you can't optimise for efficiency at the cost of feeling human.</p>
+              <p><strong>Strong exception flows balance empathy and scale.</strong> You can't optimise for operational efficiency at the cost of feeling human. When it works, they compound.</p>
             </div>
             <div class="cs-learning">
               <span class="cs-learning__icon">→</span>
-              <p><strong>Seniority shows up when design protects the business without sacrificing the customer.</strong> That's the hardest line to walk, and the most important one.</p>
+              <p><strong>Seniority shows up when design protects the business without sacrificing the customer.</strong> Pushing back on "more visibility" in favour of relevance was the hardest and most valuable call in the project.</p>
             </div>
           </div>
         </div>
