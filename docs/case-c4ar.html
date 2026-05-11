@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Designing Trust at the Worst Moment — Fabiano Borba</title>
+  <meta name="description" content="How I turned a high-stress cancellation journey into a self-service experience customers trust — reducing support calls by 27.5% and lifting NPS." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="case.css" />
+</head>
+<body class="case-page">
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">FB</a>
+      <ul class="nav__links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li>
+          <a href="https://assets.zyrosite.com/3LlCawH9FEhHTnpH/fabiano-borba_resume-LyhtnOKzYnafqVPW.pdf"
+             target="_blank" rel="noopener" class="nav__cta">Resume ↗</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="cs-hero">
+    <div class="cs-hero__img-wrap">
+      <img
+        src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/3LlCawH9FEhHTnpH/frame-1156371-Nlv2hl2MAAKiOLIa.png"
+        alt="C4AR product screens"
+        class="cs-hero__img"
+        loading="eager"
+      />
+      <div class="cs-hero__overlay"></div>
+    </div>
+    <div class="cs-hero__content container">
+      <a href="index.html#work" class="cs-back animate-in" style="--delay:0s">← All work</a>
+      <div class="cs-hero__text animate-in" style="--delay:.1s">
+        <span class="cs-label">01 · Trust &amp; Critical UX</span>
+        <h1 class="cs-hero__title">Designing trust<br />at the worst moment</h1>
+        <p class="cs-hero__sub">Turning a premium insurance benefit that forced anxious customers to call support into a clear, self-service flow — at scale.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- META BAR -->
+  <div class="cs-meta animate-in" style="--delay:.2s">
+    <div class="container">
+      <div class="cs-meta__grid">
+        <div class="cs-meta__item">
+          <span class="cs-meta__label">Role</span>
+          <span class="cs-meta__val">Senior Product Designer</span>
+        </div>
+        <div class="cs-meta__item">
+          <span class="cs-meta__label">Industry</span>
+          <span class="cs-meta__val">Travel · Subscription</span>
+        </div>
+        <div class="cs-meta__item">
+          <span class="cs-meta__label">Focus</span>
+          <span class="cs-meta__val">UX Strategy · Service Design</span>
+        </div>
+        <div class="cs-meta__item">
+          <span class="cs-meta__label">Outcome</span>
+          <span class="cs-meta__val">Self-serve CFAR flow at scale</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="cs-body">
+
+    <!-- CONTEXT -->
+    <section class="cs-section">
+      <div class="container cs-section__inner cs-section__inner--2col">
+        <div class="cs-section__label-col">
+          <span class="section-label">Context</span>
+        </div>
+        <div class="cs-section__content">
+          <p class="cs-lead">
+            A premium travel subscription offered a "Cancel for Any Reason" benefit — but when
+            customers needed to use it, they had to call. At the worst possible moment, they
+            were forced to <strong>relive the problem out loud</strong>, hold on the line,
+            and hope the agent got it right.
+          </p>
+          <p class="cs-body-text">
+            The benefit was designed to give autonomy. In practice, it only felt reliable when
+            a human mediated trust. That gap — between what the product promised and what it
+            delivered at crunch time — was the problem worth solving.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FULL IMAGE -->
+    <div class="cs-full-img">
+      <img
+        src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/3LlCawH9FEhHTnpH/chatgpt-image-feb-2-2026-07_21_08-pm-uXnkkc8kGMLNfHGL.png"
+        alt="Customer journey context — high-stress travel disruption"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- WHERE NEEDS CONVERGED -->
+    <section class="cs-section">
+      <div class="container cs-section__inner cs-section__inner--2col">
+        <div class="cs-section__label-col">
+          <span class="section-label">The Problem</span>
+        </div>
+        <div class="cs-section__content">
+          <h2 class="cs-h2">Where customer anxiety<br />met operational cost</h2>
+          <div class="cs-two-panel">
+
+            <div class="cs-panel">
+              <div class="cs-panel__icon">👤</div>
+              <h3 class="cs-panel__title">From the customer's side</h3>
+              <p class="cs-panel__text">
+                The most common questions weren't about policy details. They were about certainty.
+                People weren't confused — they were scared.
+              </p>
+              <div class="cs-callout">
+                <span>"Will this actually work?"</span>
+                <span>"What happens after I cancel?"</span>
+              </div>
+            </div>
+
+            <div class="cs-panel">
+              <div class="cs-panel__icon">📊</div>
+              <h3 class="cs-panel__title">From the business's side</h3>
+              <p class="cs-panel__text">
+                CFAR cancellations were generating a disproportionate volume of contact center
+                contacts. Adoption was growing faster than product maturity could handle.
+              </p>
+              <ul class="cs-list">
+                <li>Expensive to operate at scale</li>
+                <li>Inconsistent across agents</li>
+                <li>Hard to scale without increasing friction</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSIGHT QUOTE -->
+    <div class="cs-insight-bar">
+      <div class="container">
+        <p class="cs-insight-text">
+          A benefit designed to give autonomy only felt reliable when someone
+          <em>mediated</em> trust. That's not a feature. That's a design debt.
+        </p>
+      </div>
+    </div>
+
+    <!-- COMPANY LOGOS -->
+    <div class="cs-img-band">
+      <img
+        src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1440,h=64,fit=crop,trim=1.7560975609756098;0;1.7560975609756098;0/3LlCawH9FEhHTnpH/group-189-cD3IpcI45jl8feC1.png"
+        alt="Partner ecosystem"
+        loading="lazy"
+        class="cs-img-band__img"
+      />
+    </div>
+
+    <!-- APPROACH -->
+    <section class="cs-section cs-section--alt">
+      <div class="container cs-section__inner cs-section__inner--2col">
+        <div class="cs-section__label-col">
+          <span class="section-label">Design Approach</span>
+        </div>
+        <div class="cs-section__content">
+          <h2 class="cs-h2">Three principles that guided<br />every decision</h2>
+          <p class="cs-body-text cs-body-text--intro">
+            The work was less about adding elements and more about removing the wrong incentives.
+            Three pillars shaped the entire flow.
+          </p>
+
+          <div class="cs-pillars">
+
+            <div class="cs-pillar">
+              <div class="cs-pillar__num">01</div>
+              <h3 class="cs-pillar__title">Relevance before visibility</h3>
+              <p class="cs-pillar__text">
+                The flow should only exist for people who could actually use it.
+                Showing a benefit to ineligible users erodes trust faster than not showing it at all.
+                Not every value needs to be pushed.
+              </p>
+            </div>
+
+            <div class="cs-pillar">
+              <div class="cs-pillar__num">02</div>
+              <h3 class="cs-pillar__title">Reduce cognitive load at the moment of doubt</h3>
+              <p class="cs-pillar__text">
+                Provide the right information at the right time. Answer the key doubts before
+                the confirmation step. Make outcomes predictable. Avoid post-action surprises.
+                Reducing cognitive load protects both conversion and trust.
+              </p>
+            </div>
+
+            <div class="cs-pillar">
+              <div class="cs-pillar__num">03</div>
+              <h3 class="cs-pillar__title">Close the loop after the action</h3>
+              <p class="cs-pillar__text">
+                The post-cancellation experience is not a receipt — it's the moment trust is either
+                confirmed or lost. Treat wallet credit as proof the benefit worked. Factual confirmation,
+                straightforward guidance, explicit next steps.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREENS -->
+    <section class="cs-section">
+      <div class="container cs-section__inner cs-section__inner--2col">
+        <div class="cs-section__label-col">
+          <span class="section-label">Design</span>
+        </div>
+        <div class="cs-section__content">
+          <h2 class="cs-h2">The flow in practice</h2>
+        </div>
+      </div>
+
+      <div class="cs-screens">
+        <div class="cs-screens__row">
+          <figure class="cs-figure cs-figure--wide">
+            <img
+              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=730,fit=crop,trim=43.2;0;43.2;0/3LlCawH9FEhHTnpH/group-3-1XmoSxBNhhzGJcly.png"
+              alt="CFAR flow — eligibility and benefit reveal"
+              loading="lazy"
+            />
+            <figcaption>Eligibility gate — only eligible users enter the flow</figcaption>
+          </figure>
+          <figure class="cs-figure">
+            <img
+              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=1159,fit=crop,trim=0;19.937799043062203;0;19.937799043062203/3LlCawH9FEhHTnpH/group-1895-W0ehDdaWyEGZIdEs.png"
+              alt="CFAR flow — confirmation and outcome preview"
+              loading="lazy"
+            />
+            <figcaption>Pre-confirmation — outcomes made predictable before the decision</figcaption>
+          </figure>
+        </div>
+
+        <div class="cs-screens__hero-img">
+          <img
+            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/3LlCawH9FEhHTnpH/iphone-12-pro-ozqugc20vG34kN7j.png"
+            alt="CFAR mobile experience — full device view"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="cs-screens__row">
+          <figure class="cs-figure">
+            <img
+              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=730,fit=crop,trim=0;75.0077519379845;0;75.0077519379845/3LlCawH9FEhHTnpH/rectangle2-d9ntEJhmEhVfpBpL.png"
+              alt="Post-cancellation confirmation — wallet credit confirmation"
+              loading="lazy"
+            />
+            <figcaption>Post-cancellation — credit confirmation as proof the benefit worked</figcaption>
+          </figure>
+          <figure class="cs-figure cs-figure--wide">
+            <img
+              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=514,fit=crop/3LlCawH9FEhHTnpH/chatgpt-image-feb-2-2026-07_02_50-pm-CBBDxSiYQBqGERi3.png"
+              alt="Design context and user journey mapping"
+              loading="lazy"
+            />
+            <figcaption>Mapping the emotional journey — from panic to resolved</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPACT -->
+    <section class="cs-section cs-section--dark">
+      <div class="container cs-section__inner cs-section__inner--2col">
+        <div class="cs-section__label-col">
+          <span class="section-label" style="color: rgba(200,96,42,0.75)">Impact</span>
+        </div>
+        <div class="cs-section__content">
+          <h2 class="cs-h2" style="color:#fff">Numbers that matter</h2>
+          <p class="cs-body-text" style="color:rgba(255,255,255,0.55); margin-bottom: 3rem;">
+            Customer autonomy and operational efficiency aren't opposing forces.
+            This project proved they compound.
+          </p>
+
+          <div class="cs-metrics">
+            <div class="cs-metric">
+              <span class="cs-metric__val">+8.2%</span>
+              <span class="cs-metric__label">Prime subscriptions</span>
+            </div>
+            <div class="cs-metric">
+              <span class="cs-metric__val">−27.5%</span>
+              <span class="cs-metric__label">Cancellation-related<br />contact center calls</span>
+            </div>
+            <div class="cs-metric">
+              <span class="cs-metric__val">−9%</span>
+              <span class="cs-metric__label">Additional reduction in<br />residual call volume</span>
+            </div>
+            <div class="cs-metric">
+              <span class="cs-metric__val">+1.3</span>
+              <span class="cs-metric__label">NPS points at the<br />cancellation moment</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL IMAGE -->
+    <div class="cs-full-img">
+      <img
+        src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/3LlCawH9FEhHTnpH/screenshot-2026-02-02-at-19.47.44-pMPrraUlxF9SdfiR.png"
+        alt="Final design overview"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- TAKEAWAYS -->
+    <section class="cs-section">
+      <div class="container cs-section__inner cs-section__inner--2col">
+        <div class="cs-section__label-col">
+          <span class="section-label">What I learned</span>
+        </div>
+        <div class="cs-section__content">
+          <h2 class="cs-h2">The real takeaways</h2>
+          <div class="cs-learnings">
+            <div class="cs-learning">
+              <span class="cs-learning__icon">→</span>
+              <p><strong>Trust is a product asset, not just a brand asset.</strong> The moment a user doubts whether a benefit will work, the benefit has already failed — regardless of whether it delivers.</p>
+            </div>
+            <div class="cs-learning">
+              <span class="cs-learning__icon">→</span>
+              <p><strong>Not every optimisation should be visible.</strong> The best UX work here removed things — wrong incentives, unnecessary steps, premature information — rather than adding them.</p>
+            </div>
+            <div class="cs-learning">
+              <span class="cs-learning__icon">→</span>
+              <p><strong>Strong exception flows balance empathy and scale.</strong> Designing for the worst moment requires both — you can't optimise for efficiency at the cost of feeling human.</p>
+            </div>
+            <div class="cs-learning">
+              <span class="cs-learning__icon">→</span>
+              <p><strong>Seniority shows up when design protects the business without sacrificing the customer.</strong> That's the hardest line to walk, and the most important one.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CASE NAV -->
+  <div class="cs-nav-footer">
+    <div class="container">
+      <a href="index.html#work" class="cs-nav-footer__back">← Back to all work</a>
+      <a href="https://fabianoborba.com/cropwise-open-platform" target="_blank" rel="noopener" class="cs-nav-footer__next">
+        <span class="cs-nav-footer__next-label">Next case</span>
+        <span class="cs-nav-footer__next-title">Designing Criteria Before Designing Solutions →</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__name">Fabiano Borba</span>
+        <div class="footer__links">
+          <a href="https://linkedin.com/in/fabianoborba" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="index.html">Portfolio</a>
+        </div>
+        <span class="footer__copy">© 2025</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
