@@ -330,78 +330,247 @@
     <section class="cs-section cs-section--alt">
       <div class="container cs-section__inner cs-section__inner--2col">
         <div class="cs-section__label-col">
-          <span class="section-label">Design</span>
+          <span class="section-label">The flow</span>
         </div>
         <div class="cs-section__content">
-          <h2 class="cs-h2">The decisions, visible</h2>
+          <h2 class="cs-h2">Six screens.<br />Each with one job.</h2>
           <p class="cs-body-text cs-body-text--intro">
-            Each screen carries a specific job. The goal wasn't a beautiful flow —
-            it was a flow where nothing was left to interpretation.
+            The full flow is called "Equal Proeminence in Flight Cancellation."
+            That title captures the core tension: showing two refund options — cash and
+            travel credit — with identical visual weight, and letting the user decide.
+            Every screen is a consequence of that commitment.
           </p>
         </div>
       </div>
 
-      <div class="cs-screens">
-        <div class="cs-screens__row">
-          <figure class="cs-figure">
-            <img
-              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=730,fit=crop,trim=43.2;0;43.2;0/3LlCawH9FEhHTnpH/group-3-1XmoSxBNhhzGJcly.png"
-              alt="Eligibility gate screen"
-              loading="lazy"
-            />
-            <figcaption>
-              <strong>Principle 01 in action.</strong> The flow is invisible to ineligible users.
-              Those who see it have already passed the gate — which means the question
-              "will this work for me?" is answered before they even ask it.
-            </figcaption>
-          </figure>
-          <figure class="cs-figure">
-            <img
-              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=1159,fit=crop,trim=0;19.937799043062203;0;19.937799043062203/3LlCawH9FEhHTnpH/group-1895-W0ehDdaWyEGZIdEs.png"
-              alt="Pre-confirmation outcome screen"
-              loading="lazy"
-            />
-            <figcaption>
-              <strong>Principle 02 in action.</strong> Before any commitment, the user sees
-              exactly what they'll receive, when, and how. The cognitive load at the
-              decision moment drops to near zero.
-            </figcaption>
-          </figure>
-        </div>
-
-        <div class="cs-screens__hero-img">
+      <!-- Flow map -->
+      <div class="cs-flow-map">
+        <div class="container">
           <img
-            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/3LlCawH9FEhHTnpH/iphone-12-pro-ozqugc20vG34kN7j.png"
-            alt="Full CFAR mobile flow"
+            src="flow-c4ar.png"
+            alt="Complete CFAR flow map — Equal Proeminence in Flight Cancellation"
             loading="lazy"
           />
+          <p class="cs-flow-map__caption">
+            The complete flow: entry → refund choice → pre-confirmation → modal → success (Prime / non-Prime) → error state.
+            Red lines mark the negative path. Grey arrows are the retry loop.
+          </p>
         </div>
+      </div>
 
-        <div class="cs-screens__row">
-          <figure class="cs-figure">
+      <!-- Step-by-step walkthrough -->
+      <div class="container">
+        <div class="cs-steps">
+
+          <!-- Step 01 -->
+          <div class="cs-step">
+            <div class="cs-step__header">
+              <span class="cs-step__num">01</span>
+              <div>
+                <h3 class="cs-step__title">Entry — Cancel your trip</h3>
+                <p class="cs-step__tag">Eligibility gate · Relevance before visibility</p>
+              </div>
+            </div>
+            <div class="cs-step__body">
+              <div class="cs-step__img">
+                <img
+                  src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=730,fit=crop,trim=43.2;0;43.2;0/3LlCawH9FEhHTnpH/group-3-1XmoSxBNhhzGJcly.png"
+                  alt="Cancel your trip entry screen"
+                  loading="lazy"
+                />
+              </div>
+              <div class="cs-step__text">
+                <p>
+                  The user arrives here from their trip page — flight disrupted, stress
+                  already high. The screen shows their trip details and surfaces the
+                  cancellation path.
+                </p>
+                <p>
+                  The critical decision happens before this screen renders: users who
+                  aren't eligible for CFAR never see this flow. There's no locked option,
+                  no greyed-out button, no explanation of what they're missing.
+                  The benefit simply doesn't appear.
+                </p>
+                <div class="cs-step__why">
+                  <span class="cs-step__why-label">Why</span>
+                  <p>A locked option at the moment of panic is worse than no option.
+                  It adds confusion without adding value. Eligibility is checked silently,
+                  upstream — so if you're here, you can use it.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 02 -->
+          <div class="cs-step">
+            <div class="cs-step__header">
+              <span class="cs-step__num">02</span>
+              <div>
+                <h3 class="cs-step__title">Equal proeminence — Choose your refund type</h3>
+                <p class="cs-step__tag">The contested screen · Core design decision</p>
+              </div>
+            </div>
+            <div class="cs-step__body">
+              <div class="cs-step__img">
+                <img
+                  src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=1159,fit=crop,trim=0;19.937799043062203;0;19.937799043062203/3LlCawH9FEhHTnpH/group-1895-W0ehDdaWyEGZIdEs.png"
+                  alt="Refund type selection — equal proeminence"
+                  loading="lazy"
+                />
+              </div>
+              <div class="cs-step__text">
+                <p>
+                  Two refund options — cash refund and travel credit — presented with
+                  equal visual weight. The Prime badge is visible, contextualising the
+                  credit option as part of the subscription benefit. But neither option
+                  is pushed harder than the other.
+                </p>
+                <p>
+                  This was the most contested call in the project. The business case
+                  for foregrounding credit was obvious: credit stays inside the ecosystem,
+                  cash leaves it. Product wanted the credit option more prominent.
+                </p>
+                <div class="cs-step__why">
+                  <span class="cs-step__why-label">Why equal weight</span>
+                  <p>A user who chooses credit because they were pushed — not because
+                  they understood — is a support ticket waiting to happen. Informed choice
+                  produces fewer regrets, fewer calls, and better NPS. The long-term
+                  cost of a manipulative UI here was higher than the short-term gain.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 03 -->
+          <div class="cs-step">
+            <div class="cs-step__header">
+              <span class="cs-step__num">03</span>
+              <div>
+                <h3 class="cs-step__title">Pre-confirmation — Understand the offer</h3>
+                <p class="cs-step__tag">Answer doubt before the decision · No post-action surprises</p>
+              </div>
+            </div>
+            <div class="cs-step__body">
+              <div class="cs-step__img">
+                <img
+                  src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=730,fit=crop,trim=0;75.0077519379845;0;75.0077519379845/3LlCawH9FEhHTnpH/rectangle2-d9ntEJhmEhVfpBpL.png"
+                  alt="Pre-confirmation detail screen"
+                  loading="lazy"
+                />
+              </div>
+              <div class="cs-step__text">
+                <p>
+                  Before any confirmation, the user sees the full breakdown: exact amount,
+                  how they'll receive it, and what happens next. If the credit value depends
+                  on the airline — an edge case that's genuinely uncertain — the screen says
+                  so explicitly, with a clear explanation.
+                </p>
+                <p>
+                  The instinct was to hide uncertainty and only surface it if the worst
+                  happened. The decision was the opposite: surface it here, with context,
+                  so the user makes an informed choice rather than discovering a caveat
+                  after committing.
+                </p>
+                <div class="cs-step__why">
+                  <span class="cs-step__why-label">Why</span>
+                  <p>Users who confirm without understanding the outcome generate more
+                  calls than users who don't confirm at all. Transparency at this step is
+                  not a conversion risk — it's a trust investment.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 04 — Hero image break -->
+          <div class="cs-step cs-step--hero">
             <img
-              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=730,fit=crop,trim=0;75.0077519379845;0;75.0077519379845/3LlCawH9FEhHTnpH/rectangle2-d9ntEJhmEhVfpBpL.png"
-              alt="Post-cancellation wallet credit confirmation"
+              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/3LlCawH9FEhHTnpH/iphone-12-pro-ozqugc20vG34kN7j.png"
+              alt="CFAR confirmation modal on device"
               loading="lazy"
             />
-            <figcaption>
-              <strong>Principle 03 in action.</strong> The wallet credit isn't buried — it's
-              the headline. "You got a refund, Fabiano" is not a receipt. It's proof
-              the benefit worked. This screen is why NPS went up.
-            </figcaption>
-          </figure>
-          <figure class="cs-figure">
-            <img
-              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=768,h=514,fit=crop/3LlCawH9FEhHTnpH/chatgpt-image-feb-2-2026-07_02_50-pm-CBBDxSiYQBqGERi3.png"
-              alt="Journey mapping and design research"
-              loading="lazy"
-            />
-            <figcaption>
-              <strong>Where the principles came from.</strong> Mapping the emotional arc —
-              from disruption panic to resolved — made clear that the product was failing
-              at certainty, not at functionality.
-            </figcaption>
-          </figure>
+            <div class="cs-step__hero-caption">
+              <span class="cs-step__num">04</span>
+              <div>
+                <h3 class="cs-step__title">Confirmation — "Cancel your trip?"</h3>
+                <p>Dark modal overlay. One action, one exit. No "are you sure?" loops, no guilt-trip copy.
+                The user has already seen the outcome — this is just the commit moment.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 05 -->
+          <div class="cs-step">
+            <div class="cs-step__header">
+              <span class="cs-step__num">05</span>
+              <div>
+                <h3 class="cs-step__title">Success — "You got a refund, Fabiano."</h3>
+                <p class="cs-step__tag">The receipt as proof · Treat the confirmation as closure</p>
+              </div>
+            </div>
+            <div class="cs-step__body">
+              <div class="cs-step__img">
+                <img
+                  src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/3LlCawH9FEhHTnpH/frame-1156371-Nlv2hl2MAAKiOLIa.png"
+                  alt="Success screen — You've cancelled your trip"
+                  loading="lazy"
+                />
+              </div>
+              <div class="cs-step__text">
+                <p>
+                  The credit amount — €180.00 — is the headline, not a footnote.
+                  "You've cancelled your trip. You got a refund, Fabiano." is not a
+                  receipt. It's confirmation that the benefit worked, addressed personally.
+                </p>
+                <p>
+                  "Next steps" are explicit and sequenced: download the app → open your
+                  wallet → use your credit on any flight → book your next trip.
+                  There's no ambiguity about what happens next. The experience
+                  ends with agency, not just acknowledgement.
+                </p>
+                <p>
+                  The screen was designed across three breakpoints — mobile web,
+                  app, and desktop — because the cancellation moment doesn't happen
+                  in a controlled environment.
+                </p>
+                <div class="cs-step__why">
+                  <span class="cs-step__why-label">Why this is where NPS moved</span>
+                  <p>The original confirmation screen said "Your cancellation has been processed."
+                  Transactional, cold, no proof. The new screen closes the emotional loop: you
+                  were scared it wouldn't work. It worked. Here's your money. This is why
+                  NPS at the cancellation moment went up by 1.3 points.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 06 -->
+          <div class="cs-step cs-step--error">
+            <div class="cs-step__header">
+              <span class="cs-step__num">06</span>
+              <div>
+                <h3 class="cs-step__title">Error — "Your trip wasn't cancelled this time."</h3>
+                <p class="cs-step__tag">Edge case · No dead ends</p>
+              </div>
+            </div>
+            <div class="cs-step__body cs-step__body--error">
+              <div class="cs-step__text cs-step__text--full">
+                <p>
+                  When the cancellation fails — airline timeout, eligibility check mismatch,
+                  any unexpected state — the screen is honest about it. Red icon, clear message,
+                  no vague "something went wrong." And critically: the flow loops back.
+                  The user can try again without losing context.
+                </p>
+                <div class="cs-step__why">
+                  <span class="cs-step__why-label">Why this matters</span>
+                  <p>An error state in a high-stress flow is a trust test. A dead end here
+                  would send every failed case straight to the contact center — undoing
+                  everything the flow was designed to prevent. The error state was
+                  treated with the same design rigour as the success state.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
