@@ -1083,7 +1083,8 @@
   align-items: flex-end;
   justify-content: center;
   gap: 1.5rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
 }
 
 .cs-embed__unit {
@@ -1091,6 +1092,7 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  flex-shrink: 0;
 }
 
 .cs-embed__label {
@@ -1102,9 +1104,9 @@
 }
 
 .cs-embed--trio .cs-embed__device {
-  width: 300px;
-  height: 650px;
-  border-radius: 40px;
+  width: 240px;
+  height: 520px;
+  border-radius: 34px;
   box-shadow:
     0 0 0 8px #1c1c1e,
     0 0 0 10px #2c2c2e,
@@ -1112,24 +1114,26 @@
     0 10px 20px rgba(0,0,0,0.1);
 }
 
+/* 120px branded header — sits above the iframe, same color as app header */
 .cs-embed--trio .cs-embed__statusbar {
-  height: 36px;
-  padding: 0 14px 6px;
+  height: 120px;
+  padding: 10px 14px 0;
+  align-items: flex-start;
 }
 
 .cs-embed--trio .cs-embed__statusbar-time {
   font-size: 12px;
 }
 
-/* iframe renders at native 375×812, zoom scales it to fit 300×650 device.
-   top:36px keeps the status bar visible (cross-origin iframes paint above z-index siblings) */
+/* iframe renders at native 375×812, zoom scales to fit device width.
+   top:120px keeps the header visible (cross-origin iframes paint above z-index siblings) */
 .cs-embed--trio .cs-embed__device iframe {
   position: absolute;
-  top: 36px;
+  top: 120px;
   left: 0;
   width: 375px;
   height: 812px;
-  zoom: 0.8;
+  zoom: 0.64;
   border: none;
   display: block;
   opacity: 0;
@@ -1137,53 +1141,33 @@
 }
 
 .cs-embed--trio .cs-embed__skeleton {
-  top: 36px;
+  top: 120px;
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 860px) {
   .cs-embed--trio {
-    gap: 0.75rem;
-  }
-  .cs-embed--trio .cs-embed__device {
-    width: 240px;
-    height: 520px;
-    border-radius: 32px;
-  }
-  .cs-embed--trio .cs-embed__statusbar { height: 30px; padding: 0 12px 5px; }
-  .cs-embed--trio .cs-embed__statusbar-time { font-size: 11px; }
-  .cs-embed--trio .cs-embed__device iframe { zoom: calc(240 / 375); }
-  .cs-embed--trio .cs-embed__skeleton { top: 30px; }
-}
-
-@media (max-width: 780px) {
-  .cs-embed--trio {
-    gap: 0.5rem;
+    gap: 1rem;
   }
   .cs-embed--trio .cs-embed__device {
     width: 200px;
     height: 434px;
     border-radius: 28px;
   }
-  .cs-embed--trio .cs-embed__statusbar { height: 26px; padding: 0 10px 4px; }
-  .cs-embed--trio .cs-embed__statusbar-time { font-size: 10px; }
-  .cs-embed--trio .cs-embed__device iframe { zoom: calc(200 / 375); }
-  .cs-embed--trio .cs-embed__skeleton { top: 26px; }
+  .cs-embed--trio .cs-embed__device iframe { zoom: 0.5333; }
 }
 
 @media (max-width: 640px) {
   .cs-embed--trio {
     flex-direction: column;
     align-items: center;
+    overflow-x: visible;
   }
   .cs-embed--trio .cs-embed__device {
     width: 280px;
     height: 607px;
     border-radius: 38px;
   }
-  .cs-embed--trio .cs-embed__statusbar { height: 34px; padding: 0 14px 6px; }
-  .cs-embed--trio .cs-embed__statusbar-time { font-size: 12px; }
-  .cs-embed--trio .cs-embed__device iframe { zoom: calc(280 / 375); }
-  .cs-embed--trio .cs-embed__skeleton { top: 34px; }
+  .cs-embed--trio .cs-embed__device iframe { zoom: 0.7467; }
 }
 
 @media (max-width: 540px) {
