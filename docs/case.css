@@ -1142,25 +1142,48 @@
 
 @media (max-width: 1040px) {
   .cs-embed--trio {
-    gap: 1rem;
+    gap: 0.75rem;
   }
   .cs-embed--trio .cs-embed__device {
-    width: 260px;
-    height: 563px;
-    border-radius: 34px;
+    width: 240px;
+    height: 520px;
+    border-radius: 32px;
   }
+  .cs-embed--trio .cs-embed__statusbar { height: 30px; padding: 0 12px 5px; }
+  .cs-embed--trio .cs-embed__statusbar-time { font-size: 11px; }
+  .cs-embed--trio .cs-embed__device iframe { zoom: calc(240 / 375); }
+  .cs-embed--trio .cs-embed__skeleton { top: 30px; }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 780px) {
+  .cs-embed--trio {
+    gap: 0.5rem;
+  }
+  .cs-embed--trio .cs-embed__device {
+    width: 200px;
+    height: 434px;
+    border-radius: 28px;
+  }
+  .cs-embed--trio .cs-embed__statusbar { height: 26px; padding: 0 10px 4px; }
+  .cs-embed--trio .cs-embed__statusbar-time { font-size: 10px; }
+  .cs-embed--trio .cs-embed__device iframe { zoom: calc(200 / 375); }
+  .cs-embed--trio .cs-embed__skeleton { top: 26px; }
+}
+
+@media (max-width: 640px) {
   .cs-embed--trio {
     flex-direction: column;
     align-items: center;
   }
   .cs-embed--trio .cs-embed__device {
-    width: 300px;
-    height: 650px;
-    border-radius: 40px;
+    width: 280px;
+    height: 607px;
+    border-radius: 38px;
   }
+  .cs-embed--trio .cs-embed__statusbar { height: 34px; padding: 0 14px 6px; }
+  .cs-embed--trio .cs-embed__statusbar-time { font-size: 12px; }
+  .cs-embed--trio .cs-embed__device iframe { zoom: calc(280 / 375); }
+  .cs-embed--trio .cs-embed__skeleton { top: 34px; }
 }
 
 @media (max-width: 540px) {
