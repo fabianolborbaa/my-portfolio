@@ -1077,6 +1077,92 @@
   border-top: none;
 }
 
+/* Three-device layout */
+.cs-embed--trio {
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.cs-embed__unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cs-embed__label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-30);
+}
+
+.cs-embed--trio .cs-embed__device {
+  width: 300px;
+  height: 650px;
+  border-radius: 40px;
+  box-shadow:
+    0 0 0 8px #1c1c1e,
+    0 0 0 10px #2c2c2e,
+    0 32px 64px rgba(0,0,0,0.18),
+    0 10px 20px rgba(0,0,0,0.1);
+}
+
+.cs-embed--trio .cs-embed__statusbar {
+  height: 36px;
+  padding: 0 14px 6px;
+}
+
+.cs-embed--trio .cs-embed__statusbar-time {
+  font-size: 12px;
+}
+
+/* iframe renders at native 375×812, zoom scales it to fit 300×650 device.
+   top:36px keeps the status bar visible (cross-origin iframes paint above z-index siblings) */
+.cs-embed--trio .cs-embed__device iframe {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  width: 375px;
+  height: 812px;
+  zoom: 0.8;
+  border: none;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.42s ease;
+}
+
+.cs-embed--trio .cs-embed__skeleton {
+  top: 36px;
+}
+
+@media (max-width: 1040px) {
+  .cs-embed--trio {
+    gap: 1rem;
+  }
+  .cs-embed--trio .cs-embed__device {
+    width: 260px;
+    height: 563px;
+    border-radius: 34px;
+  }
+}
+
+@media (max-width: 860px) {
+  .cs-embed--trio {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cs-embed--trio .cs-embed__device {
+    width: 300px;
+    height: 650px;
+    border-radius: 40px;
+  }
+}
+
 @media (max-width: 540px) {
   .cs-embed__device {
     width: 100%;
