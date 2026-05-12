@@ -527,32 +527,55 @@
                 place; what changed was the scale of the audience it could serve.
               </p>
             </div>
-            <div class="cs-feature__mockup" aria-hidden="true">
-              <div class="cs-feature__phone">
-                <div class="cs-feature__phone-header">
-                  <div class="cs-feature__ph-line cs-feature__ph-line--title"></div>
-                  <div class="cs-feature__ph-line cs-feature__ph-line--sub"></div>
-                </div>
-                <div class="cs-feature__phone-body">
-                  <div class="cs-feature__ph-stat-row">
-                    <div class="cs-feature__ph-stat"></div>
-                    <div class="cs-feature__ph-stat"></div>
-                  </div>
-                  <div class="cs-feature__ph-card">
-                    <div class="cs-feature__ph-line"></div>
-                    <div class="cs-feature__ph-line cs-feature__ph-line--short"></div>
-                  </div>
-                  <div class="cs-feature__ph-card">
-                    <div class="cs-feature__ph-line"></div>
-                    <div class="cs-feature__ph-line cs-feature__ph-line--short"></div>
+            <div class="cs-feature__mockup">
+              <div class="cs-embed__device" id="pophealth-device">
+                <div class="cs-embed__statusbar" style="background:#1749a6" aria-hidden="true">
+                  <span class="cs-embed__statusbar-time">9:41</span>
+                  <div class="cs-embed__statusbar-icons">
+                    <svg width="17" height="12" viewBox="0 0 17 12" fill="none"><rect x="0" y="7" width="3" height="5" rx="1" fill="white" opacity="0.4"/><rect x="4.5" y="4.5" width="3" height="7.5" rx="1" fill="white" opacity="0.6"/><rect x="9" y="2" width="3" height="10" rx="1" fill="white" opacity="0.8"/><rect x="13.5" y="0" width="3" height="12" rx="1" fill="white"/></svg>
+                    <svg width="16" height="12" viewBox="0 0 16 12" fill="white"><path d="M8 9.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/><path d="M8 6C6.07 6 4.34 6.76 3.05 8l1.41 1.41C5.42 8.5 6.64 8 8 8s2.58.5 3.54 1.41L12.95 8C11.66 6.76 9.93 6 8 6z" opacity="0.7"/><path d="M8 2C4.96 2 2.21 3.23.34 5.22l1.41 1.41C3.38 4.88 5.57 4 8 4s4.62.88 6.25 2.63l1.41-1.41C13.79 3.23 11.04 2 8 2z" opacity="0.4"/></svg>
+                    <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x="0.5" y="0.5" width="20" height="11" rx="3.5" stroke="white" stroke-opacity="0.35"/><rect x="2" y="2" width="16" height="8" rx="2" fill="white"/><path d="M22 4v4a2 2 0 0 0 0-4z" fill="white" opacity="0.4"/></svg>
                   </div>
                 </div>
+                <div class="cs-embed__skeleton" id="pophealth-skeleton" aria-hidden="true">
+                  <div class="cs-embed__sk-header" style="background:#1749a6; height:96px"></div>
+                  <div class="cs-embed__sk-body">
+                    <div class="cs-embed__sk-lines">
+                      <div class="cs-embed__sk-line"></div>
+                      <div class="cs-embed__sk-line cs-embed__sk-line--short"></div>
+                    </div>
+                    <div class="cs-embed__sk-card" style="height:80px; margin-top:1rem"></div>
+                    <div class="cs-embed__sk-card" style="height:80px; margin-top:0.75rem"></div>
+                    <div class="cs-embed__sk-card" style="height:80px; margin-top:0.75rem"></div>
+                  </div>
+                </div>
+                <iframe src="https://fabianolborbaa.github.io/hsl-app/home.html" title="HSL — Population health" allow="fullscreen"></iframe>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <script>
+      (function () {
+        var device = document.getElementById('pophealth-device');
+        if (!device) return;
+        function reveal() {
+          device.classList.add('device-visible');
+          setTimeout(function () {
+            var s = document.getElementById('pophealth-skeleton');
+            if (s) { s.style.opacity = '0'; setTimeout(function () { if (s.parentNode) s.parentNode.removeChild(s); }, 420); }
+            var iframe = device.querySelector('iframe');
+            if (iframe) iframe.classList.add('iframe-ready');
+          }, 900);
+        }
+        if (!window.IntersectionObserver) { reveal(); return; }
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) { reveal(); io.disconnect(); } });
+        }, { threshold: 0.08 });
+        io.observe(device);
+      })();
+    </script>
 
     <!-- DESIGN SYSTEM 2 -->
     <div class="cs-full-img">
