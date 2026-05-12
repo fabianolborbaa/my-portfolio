@@ -1144,6 +1144,10 @@
   top: 120px;
 }
 
+.cs-embed--trio .cs-embed__device iframe.iframe-ready {
+  opacity: 1;
+}
+
 @media (max-width: 860px) {
   .cs-embed--trio {
     gap: 1rem;
