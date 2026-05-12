@@ -393,7 +393,7 @@
       </div>
     </section>
 
-    <!-- DESIGN SYSTEM EMBED -->
+    <!-- DESIGN SYSTEM -->
     <section class="cs-section">
       <div class="container cs-section__inner cs-section__inner--2col">
         <div class="cs-section__label-col">
@@ -402,53 +402,42 @@
         <div class="cs-section__content">
           <h2 class="cs-h2">Tempo — the component library<br />built for HSL.</h2>
           <p class="cs-body-text">
-            A shared token-based design system covering typography, colour, spacing,
-            and the full component set used across all patient-facing surfaces.
-            Built in parallel with the product to keep design and engineering in sync
-            from day one.
+            A shared token-based system covering typography, colour, spacing,
+            and the full component set used across all patient-facing surfaces —
+            built in parallel with the product to keep design and engineering in sync.
           </p>
         </div>
       </div>
-      <div class="cs-ds-embed">
-        <div class="cs-ds-embed__skeleton" id="ds-skeleton" aria-hidden="true">
-          <div class="cs-ds-embed__sk-header"></div>
-          <div class="cs-ds-embed__sk-body">
-            <div class="cs-ds-embed__sk-col">
-              <div class="cs-ds-embed__sk-line"></div>
-              <div class="cs-ds-embed__sk-card" style="height:80px"></div>
-              <div class="cs-ds-embed__sk-card" style="height:60px"></div>
-            </div>
-            <div class="cs-ds-embed__sk-col">
-              <div class="cs-ds-embed__sk-line"></div>
-              <div class="cs-ds-embed__sk-card" style="height:100px"></div>
-              <div class="cs-ds-embed__sk-card" style="height:60px"></div>
-            </div>
-            <div class="cs-ds-embed__sk-col">
-              <div class="cs-ds-embed__sk-line"></div>
-              <div class="cs-ds-embed__sk-card" style="height:80px"></div>
-              <div class="cs-ds-embed__sk-card" style="height:80px"></div>
-            </div>
-          </div>
-        </div>
-        <iframe
-          id="ds-iframe"
-          src="https://fabianolborbaa.github.io/hsl-app/components.html"
-          title="HSL — Tempo design system"
-          allow="fullscreen"
-          style="opacity:0;transition:opacity 0.4s ease"
-        ></iframe>
-      </div>
     </section>
+    <iframe
+      id="ds-iframe"
+      class="cs-ds-iframe"
+      src="https://fabianolborbaa.github.io/hsl-app/components.html"
+      title="HSL — Tempo design system"
+      scrolling="no"
+    ></iframe>
     <script>
       (function () {
         var iframe = document.getElementById('ds-iframe');
-        var skeleton = document.getElementById('ds-skeleton');
         if (!iframe) return;
         iframe.addEventListener('load', function () {
-          iframe.style.opacity = '1';
-          if (skeleton) {
-            skeleton.style.opacity = '0';
-            setTimeout(function () { if (skeleton.parentNode) skeleton.parentNode.removeChild(skeleton); }, 420);
+          try {
+            var doc = iframe.contentDocument;
+            var s = doc.createElement('style');
+            s.textContent = 'html,body{background:#F5F3EE!important;margin:0;overflow:hidden}';
+            doc.head.appendChild(s);
+            function sync() {
+              var h = doc.documentElement.scrollHeight;
+              if (h > 0) iframe.style.height = h + 'px';
+            }
+            sync();
+            if (window.ResizeObserver) {
+              new ResizeObserver(sync).observe(doc.documentElement);
+            }
+            setTimeout(sync, 400);
+            setTimeout(sync, 1200);
+          } catch (e) {
+            iframe.style.height = '2000px';
           }
         });
       })();
