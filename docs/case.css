@@ -1471,6 +1471,46 @@
 
 /* ─── Design system embed ────────────────────────────────────────────── */
 
+/* ─── Demo / Interact mode toggle ───────────────────────────────────── */
+
+.cs-demo-toggle {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: var(--border);
+  border-radius: 999px;
+  padding: 3px;
+  margin-bottom: 1rem;
+  width: fit-content;
+}
+
+.cs-demo-toggle__btn {
+  padding: 5px 14px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-30);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  line-height: 1;
+}
+
+.cs-demo-toggle__btn--active {
+  background: var(--white);
+  color: var(--ink);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.10);
+}
+
+.cs-demo-toggle__btn:not(.cs-demo-toggle__btn--active):hover {
+  color: var(--ink-60);
+}
+
+/* ─── ds-iframe ──────────────────────────────────────────────────────── */
+
 .cs-ds-iframe {
   display: block;
   width: 100%;
@@ -1499,7 +1539,8 @@
 .cs-feature__mockup {
   flex-shrink: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   padding-top: 0.25rem;
 }
 

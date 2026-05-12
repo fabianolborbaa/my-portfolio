@@ -352,6 +352,10 @@
         <div class="cs-section__content">
           <div class="cs-feature cs-feature--reverse">
             <div class="cs-feature__mockup">
+              <div class="cs-demo-toggle" id="menu-toggle" role="group" aria-label="Mode">
+                <button class="cs-demo-toggle__btn cs-demo-toggle__btn--active" data-mode="demo" type="button">Demo</button>
+                <button class="cs-demo-toggle__btn" data-mode="interact" type="button">Interact</button>
+              </div>
               <div class="cs-embed__device" id="menu-device">
                 <div class="cs-embed__statusbar" style="background:#1749a6" aria-hidden="true">
                   <span class="cs-embed__statusbar-time">9:41</span>
@@ -398,6 +402,7 @@
       (function () {
         var device = document.getElementById('menu-device');
         if (!device) return;
+
         function reveal() {
           device.classList.add('device-visible');
           setTimeout(function () {
@@ -412,6 +417,24 @@
           entries.forEach(function (e) { if (e.isIntersecting) { reveal(); io.disconnect(); } });
         }, { threshold: 0.08 });
         io.observe(device);
+
+        // Mode toggle
+        var toggle = document.getElementById('menu-toggle');
+        if (toggle) {
+          toggle.addEventListener('click', function (e) {
+            var btn = e.target.closest('[data-mode]');
+            if (!btn) return;
+            var mode = btn.dataset.mode;
+            toggle.querySelectorAll('.cs-demo-toggle__btn').forEach(function (b) {
+              b.classList.toggle('cs-demo-toggle__btn--active', b === btn);
+            });
+            var iframe = device.querySelector('iframe');
+            if (iframe) {
+              var base = 'https://fabianolborbaa.github.io/hsl-app/menu.html';
+              iframe.src = mode === 'demo' ? base + '?demo=1' : base;
+            }
+          });
+        }
       })();
     </script>
 
