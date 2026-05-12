@@ -889,6 +889,55 @@
   letter-spacing: -0.01em;
 }
 
+/* ─── Live embed ────────────────────────────────────────────────────── */
+
+.cs-embed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 3rem var(--space-md);
+  background: var(--ink);
+}
+
+.cs-embed__device {
+  width: 390px;
+  height: 780px;
+  border-radius: 44px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 10px #1a1a1a,
+    0 0 0 12px #2a2a2a,
+    0 40px 80px rgba(0,0,0,0.6);
+  position: relative;
+  background: #000;
+  flex-shrink: 0;
+}
+
+.cs-embed__device iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.cs-embed__link {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.4);
+  transition: color 0.2s;
+  letter-spacing: -0.01em;
+}
+.cs-embed__link:hover { color: rgba(255,255,255,0.8); }
+
+@media (max-width: 540px) {
+  .cs-embed__device {
+    width: 100%;
+    height: 680px;
+    border-radius: 24px;
+  }
+}
+
 /* ─── Flow map ──────────────────────────────────────────────────────── */
 
 .cs-flow-map {
