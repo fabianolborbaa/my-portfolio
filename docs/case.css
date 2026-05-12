@@ -1077,14 +1077,15 @@
   border-top: none;
 }
 
-/* Three-device layout */
+/* Three-device layout — full native size, minimal padding, scrollable */
 .cs-embed--trio {
   flex-direction: row;
   align-items: flex-end;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 3rem;
   flex-wrap: nowrap;
   overflow-x: auto;
+  padding: 3rem 2rem;
 }
 
 .cs-embed__unit {
@@ -1104,36 +1105,33 @@
 }
 
 .cs-embed--trio .cs-embed__device {
-  width: 240px;
-  height: 520px;
-  border-radius: 34px;
+  width: 375px;
+  height: 812px;
+  border-radius: 48px;
   box-shadow:
-    0 0 0 8px #1c1c1e,
-    0 0 0 10px #2c2c2e,
-    0 32px 64px rgba(0,0,0,0.18),
-    0 10px 20px rgba(0,0,0,0.1);
+    0 0 0 10px #1c1c1e,
+    0 0 0 12px #2c2c2e,
+    0 48px 96px rgba(0,0,0,0.22),
+    0 16px 32px rgba(0,0,0,0.12);
 }
 
-/* Status bar only — app's own 120px header shows naturally below */
 .cs-embed--trio .cs-embed__statusbar {
-  height: 36px;
-  padding: 0 14px 6px;
+  height: 44px;
+  padding: 0 20px 8px;
   align-items: flex-end;
 }
 
 .cs-embed--trio .cs-embed__statusbar-time {
-  font-size: 12px;
+  font-size: 15px;
 }
 
-/* iframe renders at native 375×812, zoom scales to fit device width.
-   top:36px keeps the status bar visible (cross-origin iframes paint above z-index siblings) */
+/* iframe at full native size — no zoom needed */
 .cs-embed--trio .cs-embed__device iframe {
   position: absolute;
-  top: 36px;
+  top: 44px;
   left: 0;
   width: 375px;
   height: 812px;
-  zoom: 0.64;
   border: none;
   display: block;
   opacity: 0;
@@ -1141,23 +1139,11 @@
 }
 
 .cs-embed--trio .cs-embed__skeleton {
-  top: 36px;
+  top: 44px;
 }
 
 .cs-embed--trio .cs-embed__device iframe.iframe-ready {
   opacity: 1;
-}
-
-@media (max-width: 860px) {
-  .cs-embed--trio {
-    gap: 1rem;
-  }
-  .cs-embed--trio .cs-embed__device {
-    width: 200px;
-    height: 434px;
-    border-radius: 28px;
-  }
-  .cs-embed--trio .cs-embed__device iframe { zoom: 0.5333; }
 }
 
 @media (max-width: 640px) {
@@ -1165,22 +1151,11 @@
     flex-direction: column;
     align-items: center;
     overflow-x: visible;
+    gap: 3rem;
+    padding: 2rem 1rem;
   }
-  .cs-embed--trio .cs-embed__device {
-    width: 280px;
-    height: 607px;
-    border-radius: 38px;
-  }
-  .cs-embed--trio .cs-embed__device iframe { zoom: 0.7467; }
 }
 
-@media (max-width: 540px) {
-  .cs-embed__device {
-    width: 100%;
-    height: 700px;
-    border-radius: 32px;
-  }
-}
 
 /* ─── Flow map ──────────────────────────────────────────────────────── */
 
