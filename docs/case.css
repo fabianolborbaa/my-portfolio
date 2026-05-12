@@ -143,10 +143,15 @@
   align-items: flex-start;
 }
 
+.cs-section__inner--2col {
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
 .cs-section__inner--2col .cs-section__label-col {
-  width: 160px;
+  width: auto;
   flex-shrink: 0;
-  padding-top: 0.2rem;
+  padding-top: 0;
 }
 
 .cs-section__content { flex: 1; min-width: 0; }
@@ -1373,16 +1378,7 @@
 /* ─── Responsive ────────────────────────────────────────────────────── */
 
 @media (max-width: 860px) {
-  .cs-section__inner--2col {
-    flex-direction: column;
-    gap: var(--space-md);
-  }
-
-  .cs-section__inner--2col .cs-section__label-col {
-    width: auto;
-  }
-
-  .cs-two-panel {
+.cs-two-panel {
     grid-template-columns: 1fr;
   }
 
