@@ -423,9 +423,6 @@
         iframe.addEventListener('load', function () {
           try {
             var doc = iframe.contentDocument;
-            var s = doc.createElement('style');
-            s.textContent = 'html,body{background:#F5F3EE!important;margin:0;overflow:hidden}';
-            doc.head.appendChild(s);
             function sync() {
               var h = doc.documentElement.scrollHeight;
               if (h > 0) iframe.style.height = h + 'px';
@@ -434,8 +431,8 @@
             if (window.ResizeObserver) {
               new ResizeObserver(sync).observe(doc.documentElement);
             }
-            setTimeout(sync, 400);
-            setTimeout(sync, 1200);
+            setTimeout(sync, 500);
+            setTimeout(sync, 1500);
           } catch (e) {
             iframe.style.height = '2000px';
           }
