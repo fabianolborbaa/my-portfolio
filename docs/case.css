@@ -1114,11 +1114,11 @@
     0 10px 20px rgba(0,0,0,0.1);
 }
 
-/* 120px branded header — sits above the iframe, same color as app header */
+/* Status bar only — app's own 120px header shows naturally below */
 .cs-embed--trio .cs-embed__statusbar {
-  height: 120px;
-  padding: 10px 14px 0;
-  align-items: flex-start;
+  height: 36px;
+  padding: 0 14px 6px;
+  align-items: flex-end;
 }
 
 .cs-embed--trio .cs-embed__statusbar-time {
@@ -1126,10 +1126,10 @@
 }
 
 /* iframe renders at native 375×812, zoom scales to fit device width.
-   top:120px keeps the header visible (cross-origin iframes paint above z-index siblings) */
+   top:36px keeps the status bar visible (cross-origin iframes paint above z-index siblings) */
 .cs-embed--trio .cs-embed__device iframe {
   position: absolute;
-  top: 120px;
+  top: 36px;
   left: 0;
   width: 375px;
   height: 812px;
@@ -1141,7 +1141,7 @@
 }
 
 .cs-embed--trio .cs-embed__skeleton {
-  top: 120px;
+  top: 36px;
 }
 
 .cs-embed--trio .cs-embed__device iframe.iframe-ready {
