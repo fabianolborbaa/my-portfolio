@@ -5,48 +5,12 @@
 /* ─── Hero ──────────────────────────────────────────────────────────── */
 
 .cs-hero {
-  position: relative;
-  height: 90svh;
-  min-height: 560px;
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
-}
-
-.cs-hero__img-wrap {
-  position: absolute;
-  inset: 0;
-}
-
-.cs-hero__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  transform: scale(1.04);
-  animation: heroZoom 1.4s var(--ease) both;
-}
-
-@keyframes heroZoom {
-  from { transform: scale(1.08); }
-  to   { transform: scale(1.04); }
-}
-
-.cs-hero__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(15,14,12,0.15) 0%,
-    rgba(15,14,12,0.35) 40%,
-    rgba(15,14,12,0.82) 100%
-  );
+  padding-top: 8rem;
+  padding-bottom: 3.5rem;
+  background: var(--cream);
 }
 
 .cs-hero__content {
-  position: relative;
-  z-index: 2;
-  padding-bottom: 4rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -58,11 +22,11 @@
   gap: 0.4rem;
   font-size: 0.8rem;
   font-weight: 500;
-  color: rgba(255,255,255,0.6);
+  color: var(--ink-60);
   transition: color 0.2s;
   letter-spacing: -0.01em;
 }
-.cs-back:hover { color: #fff; }
+.cs-back:hover { color: var(--ink); }
 
 .cs-label {
   display: inline-block;
@@ -76,20 +40,44 @@
 
 .cs-hero__title {
   font-family: var(--font-sans);
-  font-size: clamp(2.4rem, 6vw, 5.2rem);
+  font-size: clamp(2.6rem, 6vw, 5.5rem);
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.0;
   letter-spacing: -0.04em;
-  color: #fff;
-  max-width: 16ch;
+  color: var(--ink);
+  max-width: 18ch;
 }
 
 .cs-hero__sub {
-  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
   line-height: 1.65;
-  color: rgba(255,255,255,0.65);
+  color: var(--ink-60);
   max-width: 560px;
   font-weight: 400;
+}
+
+/* ─── Hero featured image ───────────────────────────────────────────── */
+
+.cs-hero-image {
+  width: 100%;
+  overflow: hidden;
+  background: var(--ink);
+  max-height: 72vh;
+}
+
+.cs-hero-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 72vh;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  animation: heroZoom 1.4s var(--ease) both;
+}
+
+@keyframes heroZoom {
+  from { transform: scale(1.04); }
+  to   { transform: scale(1); }
 }
 
 /* ─── Meta Bar ──────────────────────────────────────────────────────── */
