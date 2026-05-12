@@ -895,46 +895,193 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
-  padding: 3rem var(--space-md);
-  background: var(--ink);
+  gap: 2rem;
+  padding: 4rem var(--space-md);
+  background: var(--cream);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .cs-embed__device {
-  width: 390px;
-  height: 780px;
-  border-radius: 44px;
+  width: 375px;
+  height: 812px;
+  border-radius: 48px;
   overflow: hidden;
   box-shadow:
-    0 0 0 10px #1a1a1a,
-    0 0 0 12px #2a2a2a,
-    0 40px 80px rgba(0,0,0,0.6);
+    0 0 0 10px #1c1c1e,
+    0 0 0 12px #2c2c2e,
+    0 48px 96px rgba(0,0,0,0.22),
+    0 16px 32px rgba(0,0,0,0.12);
   position: relative;
   background: #000;
   flex-shrink: 0;
+  /* entrance animation */
+  opacity: 0;
+  transform: translateY(52px) scale(0.96);
+  transition: opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1);
+}
+
+.cs-embed__device.device-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* iOS status bar overlay */
+.cs-embed__statusbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 44px;
+  background: #1749a6;
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 0 20px 8px;
+  pointer-events: none;
+}
+
+.cs-embed__statusbar-time {
+  font-family: -apple-system, 'SF Pro Text', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.03em;
+}
+
+.cs-embed__statusbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+/* Skeleton loading state */
+.cs-embed__skeleton {
+  position: absolute;
+  top: 44px; /* sits below the status bar overlay, same offset as iframe */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  background: #fff;
+  overflow: hidden;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.cs-embed__sk-header {
+  height: 84px;
+  background: #1749a6;
+}
+
+.cs-embed__sk-body {
+  padding: 28px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  background: #fff;
+}
+
+@keyframes embedShimmer {
+  from { background-position: -560px 0; }
+  to   { background-position:  560px 0; }
+}
+
+.cs-embed__sk-line,
+.cs-embed__sk-hero,
+.cs-embed__sk-circle,
+.cs-embed__sk-card {
+  background: linear-gradient(90deg, #ececec 25%, #f7f7f7 50%, #ececec 75%);
+  background-size: 560px 100%;
+  animation: embedShimmer 1.5s infinite linear;
+  border-radius: 6px;
+}
+
+.cs-embed__sk-hero {
+  height: 118px;
+  border-radius: 10px;
+}
+
+.cs-embed__sk-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cs-embed__sk-line { height: 12px; }
+.cs-embed__sk-line--short { width: 60%; }
+
+.cs-embed__sk-row {
+  display: flex;
+  gap: 20px;
+  padding: 0 8px;
+}
+
+.cs-embed__sk-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.cs-embed__sk-grid-section {
+  background: #f3f4f6;
+  margin: 0 -16px;
+  padding: 24px 16px;
+}
+
+.cs-embed__sk-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.cs-embed__sk-card {
+  height: 88px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #e2e2e2 25%, #ebebeb 50%, #e2e2e2 75%);
+  background-size: 560px 100%;
 }
 
 .cs-embed__device iframe {
+  position: absolute;
+  top: 44px; /* pushed below the status bar overlay */
+  left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 44px);
   border: none;
   display: block;
+  opacity: 0;
+  transition: opacity 0.42s ease;
+}
+.cs-embed__device iframe.iframe-ready {
+  opacity: 1;
 }
 
 .cs-embed__link {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 500;
-  color: rgba(255,255,255,0.4);
+  color: var(--ink-30);
   transition: color 0.2s;
   letter-spacing: -0.01em;
 }
-.cs-embed__link:hover { color: rgba(255,255,255,0.8); }
+.cs-embed__link:hover { color: var(--ink); }
+
+/* Hero position variant — tighter top, no top border */
+.cs-embed--hero {
+  padding-top: 3rem;
+  border-top: none;
+}
 
 @media (max-width: 540px) {
   .cs-embed__device {
     width: 100%;
-    height: 680px;
-    border-radius: 24px;
+    height: 700px;
+    border-radius: 32px;
   }
 }
 
