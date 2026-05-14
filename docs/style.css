@@ -565,6 +565,7 @@ img { display: block; max-width: 100%; }
   left: 50%;
   transform: translateX(-50%);
   width: 260px;
+  max-width: none;
   height: auto;
   opacity: 0.18;
 }
