@@ -512,6 +512,7 @@ img { display: block; max-width: 100%; }
 
 .case {
   background: var(--white);
+  min-height: 360px;
   display: flex;
   flex-direction: row;
   transition: background 0.22s;
@@ -552,9 +553,10 @@ img { display: block; max-width: 100%; }
 }
 .case--featured .case__visual {
   color: rgba(255,255,255,1);
+  padding: var(--space-md);
 }
 .case--featured .case__visual svg {
-  opacity: 0.12;
+  opacity: 0.18;
 }
 .case--featured:hover { background: #1a1917; }
 
@@ -578,12 +580,6 @@ img { display: block; max-width: 100%; }
 }
 .case--featured .case__tag { color: rgba(200, 96, 42, 0.75); }
 
-.case__num {
-  font-size: 0.72rem;
-  color: var(--ink-30);
-  font-variant-numeric: tabular-nums;
-}
-.case--featured .case__num { color: rgba(255,255,255,0.25); }
 
 .case__content {
   flex: 1;
