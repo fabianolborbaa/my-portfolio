@@ -556,6 +556,8 @@ img { display: block; max-width: 100%; }
   color: rgba(255,255,255,1);
   padding: 0;
   overflow: hidden;
+  height: 420px;
+  align-self: flex-start;
 }
 .case--featured .case__visual svg {
   position: absolute;
@@ -898,6 +900,10 @@ img { display: block; max-width: 100%; }
   }
   .case__visual {
     width: 100%;
+  }
+  .case--featured .case__visual {
+    height: 300px;
+    align-self: auto;
   }
 
   .about__grid {
