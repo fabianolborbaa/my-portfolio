@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modify trip</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=8" />
+  </head>
+  <body>
+    <main class="phone-frame" aria-label="Modify trip menu">
+      <div class="status-bar" aria-hidden="true">
+        <img src="./assets/status-bar.png" alt="" />
+      </div>
+
+      <header class="top-bar">
+        <button class="icon-button" type="button" aria-label="Go back">
+          <svg class="material-svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.42-1.41L7.83 13H20v-2Z" />
+          </svg>
+        </button>
+        <h1>Modify trip</h1>
+      </header>
+
+      <section class="trip-summary" aria-labelledby="page-title">
+        <p>Booking number: 694953577</p>
+        <h2 id="page-title">Cancel your trip</h2>
+      </section>
+
+      <nav class="menu-list" aria-label="Trip modification options">
+        <a class="menu-card" href="./cancel.html">
+          <span class="menu-card-copy">
+            <strong>Cancel your trip</strong>
+            <span>
+              If you are unable to fly due to illness, accident or other
+              personal reasons
+            </span>
+          </span>
+          <svg class="card-arrow" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m10 6 6 6-6 6-1.41-1.41L13.17 12 8.59 7.41 10 6Z" />
+          </svg>
+        </a>
+
+        <a class="menu-card" href="#">
+          <span class="menu-card-copy">
+            <strong>Change your travel dates</strong>
+            <span>Need to delay your trip? Want to come home early? No problem!</span>
+          </span>
+          <svg class="card-arrow" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m10 6 6 6-6 6-1.41-1.41L13.17 12 8.59 7.41 10 6Z" />
+          </svg>
+        </a>
+      </nav>
+
+      <div class="home-indicator" aria-hidden="true">
+        <span></span>
+      </div>
+    </main>
+    <script src="./script.js?v=4"></script>
+  </body>
+</html>
