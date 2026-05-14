@@ -559,12 +559,10 @@ img { display: block; max-width: 100%; }
 }
 .case--featured .case__visual svg {
   position: absolute;
-  top: var(--space-md);
-  bottom: -40px;
+  top: var(--space-sm);
   left: 50%;
   transform: translateX(-50%);
-  width: auto;
-  max-width: none;
+  width: 260px;
   height: auto;
   opacity: 0.18;
 }
