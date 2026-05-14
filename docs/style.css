@@ -559,7 +559,7 @@ img { display: block; max-width: 100%; }
   justify-content: center;
 }
 .case--featured .case__visual svg {
-  width: 250px;
+  width: 220px;
   max-width: none;
   height: auto;
   flex-shrink: 0;
