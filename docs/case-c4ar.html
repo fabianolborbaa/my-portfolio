@@ -345,17 +345,197 @@
 
       <!-- Flow map -->
       <div class="cs-flow-map">
-        <div class="container">
-          <img
-            src="flow-c4ar.png"
-            alt="Complete CFAR flow map — Equal Proeminence in Flight Cancellation"
-            loading="lazy"
-          />
-          <p class="cs-flow-map__caption">
-            The complete flow: entry → refund choice → pre-confirmation → modal → success (Prime / non-Prime) → error state.
-            Red lines mark the negative path. Grey arrows are the retry loop.
-          </p>
-        </div>
+        <svg viewBox="0 0 668 475" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" font-family="Space Grotesk, system-ui, sans-serif">
+
+          <!-- ══ SCREEN A: Entry / Nearby trip (15,195,65,106) ══ -->
+          <rect class="wf-stroke" style="--d:.2s"  x="15"  y="195" width="65" height="106" rx="5"/>
+          <line class="wf-stroke" style="--d:.25s" x1="15"  y1="213" x2="80"  y2="213" stroke-opacity=".25"/>
+          <rect class="wf-fill"   style="--d:.28s" x="23"  y="200" width="32" height="5"  rx="1.5" fill="currentColor" fill-opacity=".3"  stroke="none"/>
+          <line class="wf-stroke" style="--d:.32s" x1="23"  y1="224" x2="72"  y2="224" stroke-opacity=".2"/>
+          <line class="wf-stroke" style="--d:.35s" x1="23"  y1="234" x2="65"  y2="234" stroke-opacity=".18"/>
+          <line class="wf-stroke" style="--d:.38s" x1="23"  y1="244" x2="70"  y2="244" stroke-opacity=".18"/>
+          <line class="wf-stroke" style="--d:.41s" x1="23"  y1="254" x2="60"  y2="254" stroke-opacity=".15"/>
+          <line class="wf-stroke" style="--d:.44s" x1="23"  y1="264" x2="67"  y2="264" stroke-opacity=".15"/>
+          <text class="wf-fill"   style="--d:.48s" x="47"   y="312" text-anchor="middle" font-size="6" fill="currentColor" fill-opacity=".45">Entry</text>
+
+          <!-- ══ ARROW A → B ══ -->
+          <line    class="wf-stroke" style="--d:.53s" x1="80"  y1="248" x2="102" y2="248"/>
+          <polyline class="wf-stroke" style="--d:.58s" points="96,244 102,248 96,252"/>
+
+          <!-- ══ SCREEN B: Cancel / Choose (102,195,65,106) ══ -->
+          <rect class="wf-stroke" style="--d:.63s" x="102" y="195" width="65" height="106" rx="5"/>
+          <line class="wf-stroke" style="--d:.68s" x1="102" y1="213" x2="167" y2="213" stroke-opacity=".25"/>
+          <rect class="wf-fill"   style="--d:.71s" x="110" y="200" width="36" height="5"  rx="1.5" fill="currentColor" fill-opacity=".3"  stroke="none"/>
+          <rect class="wf-stroke" style="--d:.75s" x="110" y="222" width="49" height="20" rx="3"   stroke-opacity=".35"/>
+          <rect class="wf-stroke" style="--d:.79s" x="110" y="246" width="49" height="20" rx="3"   stroke-opacity=".35"/>
+          <line class="wf-stroke" style="--d:.82s" x1="115" y1="230" x2="145" y2="230" stroke-opacity=".2"/>
+          <line class="wf-stroke" style="--d:.85s" x1="115" y1="254" x2="138" y2="254" stroke-opacity=".2"/>
+          <rect class="wf-fill"   style="--d:.88s" x="110" y="272" width="49" height="11" rx="3"   fill="currentColor" fill-opacity=".25" stroke="none"/>
+          <text class="wf-fill"   style="--d:.91s" x="134"  y="312" text-anchor="middle" font-size="6" fill="currentColor" fill-opacity=".45">Cancel</text>
+
+          <!-- ══ ARROW B → C ══ -->
+          <line    class="wf-stroke" style="--d:.96s"  x1="167" y1="248" x2="189" y2="248"/>
+          <polyline class="wf-stroke" style="--d:1.01s" points="183,244 189,248 183,252"/>
+
+          <!-- ══ SCREEN C: Refund details (189,195,65,106) ══ -->
+          <rect class="wf-stroke" style="--d:1.06s" x="189" y="195" width="65" height="106" rx="5"/>
+          <line class="wf-stroke" style="--d:1.11s" x1="189" y1="213" x2="254" y2="213" stroke-opacity=".25"/>
+          <rect class="wf-fill"   style="--d:1.14s" x="197" y="200" width="36" height="5"  rx="1.5" fill="currentColor" fill-opacity=".3"  stroke="none"/>
+          <rect class="wf-fill"   style="--d:1.18s" x="197" y="220" width="49" height="30" rx="4"   fill="currentColor" fill-opacity=".18" stroke="none"/>
+          <rect class="wf-fill"   style="--d:1.22s" x="203" y="226" width="30" height="10" rx="2"   fill="currentColor" fill-opacity=".3"  stroke="none"/>
+          <line class="wf-stroke" style="--d:1.26s" x1="197" y1="260" x2="246" y2="260" stroke-opacity=".2"/>
+          <line class="wf-stroke" style="--d:1.29s" x1="197" y1="268" x2="238" y2="268" stroke-opacity=".18"/>
+          <rect class="wf-fill"   style="--d:1.33s" x="197" y="276" width="49" height="10" rx="3"   fill="currentColor" fill-opacity=".25" stroke="none"/>
+          <rect class="wf-stroke" style="--d:1.36s" x="197" y="288" width="49" height="8"  rx="3"   stroke-opacity=".3"/>
+          <text class="wf-fill"   style="--d:1.4s"  x="221"  y="312" text-anchor="middle" font-size="6" fill="currentColor" fill-opacity=".45">Details</text>
+
+          <!-- ══ ARROW C → C2 (down, negative path) ══ -->
+          <line    class="wf-stroke" style="--d:1.28s" x1="221" y1="301" x2="221" y2="345"/>
+          <polyline class="wf-stroke" style="--d:1.33s" points="217,339 221,345 225,339"/>
+
+          <!-- ══ ARROW C → D ══ -->
+          <line    class="wf-stroke" style="--d:1.44s" x1="254" y1="248" x2="276" y2="248"/>
+          <polyline class="wf-stroke" style="--d:1.49s" points="270,244 276,248 270,252"/>
+
+          <!-- ══ SCREEN D: Confirm modal (276,211,65,74) ══ -->
+          <rect class="wf-stroke" style="--d:1.54s" x="276" y="211" width="65" height="74" rx="5"/>
+          <line class="wf-stroke" style="--d:1.57s" x1="330" y1="217" x2="335" y2="222" stroke-opacity=".35"/>
+          <line class="wf-stroke" style="--d:1.57s" x1="335" y1="217" x2="330" y2="222" stroke-opacity=".35"/>
+          <rect class="wf-fill"   style="--d:1.61s" x="284" y="228" width="38" height="5"  rx="1.5" fill="currentColor" fill-opacity=".3"  stroke="none"/>
+          <line class="wf-stroke" style="--d:1.65s" x1="284" y1="240" x2="333" y2="240" stroke-opacity=".18"/>
+          <line class="wf-stroke" style="--d:1.68s" x1="284" y1="248" x2="326" y2="248" stroke-opacity=".15"/>
+          <rect class="wf-fill"   style="--d:1.72s" x="284" y="258" width="49" height="10" rx="3"   fill="currentColor" fill-opacity=".25" stroke="none"/>
+          <rect class="wf-stroke" style="--d:1.75s" x="284" y="270" width="49" height="10" rx="3"   stroke-opacity=".3"/>
+          <text class="wf-fill"   style="--d:1.78s" x="308"  y="296" text-anchor="middle" font-size="6" fill="currentColor" fill-opacity=".45">Confirm</text>
+
+          <!-- ══ ARROW D → E (Free Trip, curves up) ══ -->
+          <path    class="wf-stroke" style="--d:1.84s" d="M341,225 C356,210 358,130 363,113" stroke-opacity=".7"/>
+          <polyline class="wf-stroke" style="--d:1.94s" points="357,109 363,113 357,117"/>
+          <text class="wf-fill"   style="--d:1.89s" x="356"  y="176" text-anchor="end" font-size="6.5" fill="currentColor" fill-opacity=".5" font-style="italic">Free Trip</text>
+
+          <!-- ══ ARROW D → F (Prime, straight right) ══ -->
+          <line    class="wf-stroke" style="--d:1.84s" x1="341" y1="248" x2="363" y2="248"/>
+          <polyline class="wf-stroke" style="--d:1.94s" points="357,244 363,248 357,252"/>
+          <text class="wf-fill"   style="--d:1.89s" x="352"  y="243" text-anchor="middle" font-size="6.5" fill="currentColor" fill-opacity=".5" font-style="italic">Prime</text>
+
+          <!-- ══ SCREEN E: Success / Free Trip (363,60,65,106) ══ -->
+          <rect class="wf-stroke" style="--d:2.0s"  x="363" y="60"  width="65" height="106" rx="5"/>
+          <line class="wf-stroke" style="--d:2.05s" x1="363" y1="78"  x2="428" y2="78"  stroke-opacity=".25"/>
+          <rect class="wf-fill"   style="--d:2.08s" x="371" y="65"  width="34" height="5"  rx="1.5" fill="currentColor" fill-opacity=".3"  stroke="none"/>
+          <rect class="wf-fill"   style="--d:2.12s" x="371" y="85"  width="49" height="36" rx="4"   fill="currentColor" fill-opacity=".2"  stroke="none"/>
+          <rect class="wf-fill"   style="--d:2.16s" x="377" y="91"  width="28" height="10" rx="2"   fill="currentColor" fill-opacity=".35" stroke="none"/>
+          <line class="wf-stroke" style="--d:2.2s"  x1="371" y1="110" x2="415" y2="110" stroke-opacity=".18"/>
+          <line class="wf-stroke" style="--d:2.24s" x1="371" y1="130" x2="415" y2="130" stroke-opacity=".18"/>
+          <line class="wf-stroke" style="--d:2.27s" x1="371" y1="140" x2="408" y2="140" stroke-opacity=".15"/>
+          <rect class="wf-fill"   style="--d:2.3s"  x="371" y="150" width="49" height="10" rx="3"   fill="currentColor" fill-opacity=".22" stroke="none"/>
+          <text class="wf-fill"   style="--d:2.33s" x="395"  y="177" text-anchor="middle" font-size="6" fill="currentColor" fill-opacity=".45">Free success</text>
+
+          <!-- ══ SCREEN F: Success / Prime (363,195,65,106) ══ -->
+          <rect class="wf-stroke" style="--d:2.0s"  x="363" y="195" width="65" height="106" rx="5"/>
+          <line class="wf-stroke" style="--d:2.05s" x1="363" y1="213" x2="428" y2="213" stroke-opacity=".25"/>
+          <rect class="wf-fill"   style="--d:2.08s" x="371" y="200" width="34" height="5"  rx="1.5" fill="currentColor" fill-opacity=".3"  stroke="none"/>
+          <rect class="wf-fill"   style="--d:2.12s" x="371" y="220" width="49" height="36" rx="4"   fill="currentColor" fill-opacity=".2"  stroke="none"/>
+          <rect class="wf-fill"   style="--d:2.16s" x="377" y="226" width="28" height="10" rx="2"   fill="currentColor" fill-opacity=".35" stroke="none"/>
+          <rect class="wf-fill"   style="--d:2.19s" x="377" y="238" width="20" height="5"  rx="2"   fill="currentColor" fill-opacity=".18" stroke="none"/>
+          <line class="wf-stroke" style="--d:2.23s" x1="371" y1="265" x2="415" y2="265" stroke-opacity=".18"/>
+          <line class="wf-stroke" style="--d:2.26s" x1="371" y1="275" x2="408" y2="275" stroke-opacity=".15"/>
+          <rect class="wf-fill"   style="--d:2.29s" x="371" y="283" width="49" height="10" rx="3"   fill="currentColor" fill-opacity=".22" stroke="none"/>
+          <text class="wf-fill"   style="--d:2.32s" x="395"  y="312" text-anchor="middle" font-size="6" fill="currentColor" fill-opacity=".45">Prime success</text>
+
+          <!-- ══ ARROW E → SECTION 1 ══ -->
+          <line    class="wf-stroke" style="--d:2.4s"  x1="428" y1="113" x2="443" y2="107"/>
+          <polyline class="wf-stroke" style="--d:2.45s" points="437,103 443,107 437,111"/>
+
+          <!-- ══ ARROW F → SECTION 2 ══ -->
+          <line    class="wf-stroke" style="--d:2.4s"  x1="428" y1="248" x2="443" y2="237"/>
+          <polyline class="wf-stroke" style="--d:2.45s" points="437,233 443,237 437,241"/>
+
+          <!-- ══ SECTION 1: Free Trip results (443,42,215,130) ══ -->
+          <rect class="wf-stroke" style="--d:2.5s"  x="443" y="42"  width="215" height="130" rx="5" stroke-opacity=".4"/>
+          <text class="wf-fill"   style="--d:2.55s" x="451"  y="57"  font-size="8"  fill="currentColor" fill-opacity=".6">Free Trip — next steps</text>
+          <text class="wf-fill"   style="--d:2.59s" x="472"  y="71"  text-anchor="middle" font-size="6" fill="currentColor" fill-opacity=".4">Mobile</text>
+          <text class="wf-fill"   style="--d:2.59s" x="520"  y="71"  text-anchor="middle" font-size="6" fill="currentColor" fill-opacity=".4">App</text>
+          <text class="wf-fill"   style="--d:2.59s" x="596"  y="71"  text-anchor="middle" font-size="6" fill="currentColor" fill-opacity=".4">Desktop</text>
+          <!-- Mobile mini phone -->
+          <rect class="wf-stroke" style="--d:2.63s" x="453" y="76"  width="38" height="68" rx="3" stroke-opacity=".5"/>
+          <line class="wf-stroke" style="--d:2.67s" x1="453" y1="86"  x2="491" y2="86"  stroke-opacity=".25"/>
+          <rect class="wf-fill"   style="--d:2.7s"  x="457" y="79"  width="20" height="4"  rx="1"   fill="currentColor" fill-opacity=".3"  stroke="none"/>
+          <line class="wf-stroke" style="--d:2.73s" x1="457" y1="94"  x2="483" y2="94"  stroke-opacity=".2"/>
+          <line class="wf-stroke" style="--d:2.76s" x1="457" y1="101" x2="479" y2="101" stroke-opacity=".18"/>
+          <rect class="wf-fill"   style="--d:2.79s" x="457" y="132" width="30" height="7"  rx="2"   fill="currentColor" fill-opacity=".2"  stroke="none"/>
+          <!-- App mini phone -->
+          <rect class="wf-stroke" style="--d:2.85s" x="501" y="76"  width="38" height="68" rx="3" stroke-opacity=".5"/>
+          <line class="wf-stroke" style="--d:2.89s" x1="501" y1="86"  x2="539" y2="86"  stroke-opacity=".25"/>
+          <rect class="wf-fill"   style="--d:2.92s" x="505" y="79"  width="20" height="4"  rx="1"   fill="currentColor" fill-opacity=".3"  stroke="none"/>
+          <line class="wf-stroke" style="--d:2.95s" x1="505" y1="94"  x2="531" y2="94"  stroke-opacity=".2"/>
+          <line class="wf-stroke" style="--d:2.98s" x1="505" y1="101" x2="527" y2="101" stroke-opacity=".18"/>
+          <rect class="wf-fill"   style="--d:3.01s" x="505" y="132" width="30" height="7"  rx="2"   fill="currentColor" fill-opacity=".2"  stroke="none"/>
+          <!-- Desktop mini -->
+          <rect class="wf-stroke" style="--d:3.06s" x="548" y="82"  width="96" height="52" rx="3" stroke-opacity=".5"/>
+          <line class="wf-stroke" style="--d:3.1s"  x1="548" y1="94"  x2="644" y2="94"  stroke-opacity=".25"/>
+          <rect class="wf-fill"   style="--d:3.13s" x="552" y="85"  width="60" height="5"  rx="1.5" fill="currentColor" fill-opacity=".12" stroke="none"/>
+          <line class="wf-stroke" style="--d:3.16s" x1="554" y1="102" x2="638" y2="102" stroke-opacity=".2"/>
+          <line class="wf-stroke" style="--d:3.19s" x1="554" y1="110" x2="626" y2="110" stroke-opacity=".18"/>
+          <rect class="wf-fill"   style="--d:3.22s" x="554" y="120" width="60" height="8"  rx="2"   fill="currentColor" fill-opacity=".18" stroke="none"/>
+
+          <!-- ══ SECTION 2: Prime results (443,172,215,130) ══ -->
+          <rect class="wf-stroke" style="--d:2.5s"  x="443" y="172" width="215" height="130" rx="5" stroke-opacity=".4"/>
+          <text class="wf-fill"   style="--d:2.55s" x="451"  y="187" font-size="8"  fill="currentColor" fill-opacity=".6">Prime — next steps</text>
+          <text class="wf-fill"   style="--d:2.59s" x="472"  y="201" text-anchor="middle" font-size="6" fill="currentColor" fill-opacity=".4">Mobile</text>
+          <text class="wf-fill"   style="--d:2.59s" x="520"  y="201" text-anchor="middle" font-size="6" fill="currentColor" fill-opacity=".4">App</text>
+          <text class="wf-fill"   style="--d:2.59s" x="596"  y="201" text-anchor="middle" font-size="6" fill="currentColor" fill-opacity=".4">Desktop</text>
+          <!-- Mobile mini phone S2 -->
+          <rect class="wf-stroke" style="--d:2.63s" x="453" y="206" width="38" height="68" rx="3" stroke-opacity=".5"/>
+          <line class="wf-stroke" style="--d:2.67s" x1="453" y1="216" x2="491" y2="216" stroke-opacity=".25"/>
+          <rect class="wf-fill"   style="--d:2.7s"  x="457" y="209" width="20" height="4"  rx="1"   fill="currentColor" fill-opacity=".3"  stroke="none"/>
+          <line class="wf-stroke" style="--d:2.73s" x1="457" y1="224" x2="483" y2="224" stroke-opacity=".2"/>
+          <line class="wf-stroke" style="--d:2.76s" x1="457" y1="231" x2="479" y2="231" stroke-opacity=".18"/>
+          <rect class="wf-fill"   style="--d:2.79s" x="457" y="262" width="30" height="7"  rx="2"   fill="currentColor" fill-opacity=".2"  stroke="none"/>
+          <!-- App mini phone S2 -->
+          <rect class="wf-stroke" style="--d:2.85s" x="501" y="206" width="38" height="68" rx="3" stroke-opacity=".5"/>
+          <line class="wf-stroke" style="--d:2.89s" x1="501" y1="216" x2="539" y2="216" stroke-opacity=".25"/>
+          <rect class="wf-fill"   style="--d:2.92s" x="505" y="209" width="20" height="4"  rx="1"   fill="currentColor" fill-opacity=".3"  stroke="none"/>
+          <line class="wf-stroke" style="--d:2.95s" x1="505" y1="224" x2="531" y2="224" stroke-opacity=".2"/>
+          <line class="wf-stroke" style="--d:2.98s" x1="505" y1="231" x2="527" y2="231" stroke-opacity=".18"/>
+          <rect class="wf-fill"   style="--d:3.01s" x="505" y="262" width="30" height="7"  rx="2"   fill="currentColor" fill-opacity=".2"  stroke="none"/>
+          <!-- Desktop mini S2 -->
+          <rect class="wf-stroke" style="--d:3.06s" x="548" y="212" width="96" height="52" rx="3" stroke-opacity=".5"/>
+          <line class="wf-stroke" style="--d:3.1s"  x1="548" y1="224" x2="644" y2="224" stroke-opacity=".25"/>
+          <rect class="wf-fill"   style="--d:3.13s" x="552" y="215" width="60" height="5"  rx="1.5" fill="currentColor" fill-opacity=".12" stroke="none"/>
+          <line class="wf-stroke" style="--d:3.16s" x1="554" y1="232" x2="638" y2="232" stroke-opacity=".2"/>
+          <line class="wf-stroke" style="--d:3.19s" x1="554" y1="240" x2="626" y2="240" stroke-opacity=".18"/>
+          <rect class="wf-fill"   style="--d:3.22s" x="554" y="250" width="60" height="8"  rx="2"   fill="currentColor" fill-opacity=".18" stroke="none"/>
+
+          <!-- ══ SCREEN C2: Cancel variant (189,345,65,106) ══ -->
+          <rect class="wf-stroke" style="--d:1.38s" x="189" y="345" width="65" height="106" rx="5"/>
+          <line class="wf-stroke" style="--d:1.43s" x1="189" y1="363" x2="254" y2="363" stroke-opacity=".25"/>
+          <rect class="wf-fill"   style="--d:1.46s" x="197" y="350" width="36" height="5"  rx="1.5" fill="currentColor" fill-opacity=".3"  stroke="none"/>
+          <rect class="wf-fill"   style="--d:1.5s"  x="197" y="370" width="49" height="28" rx="4"   fill="currentColor" fill-opacity=".14" stroke="none"/>
+          <line class="wf-stroke" style="--d:1.54s" x1="197" y1="408" x2="238" y2="408" stroke-opacity=".2"/>
+          <rect class="wf-fill"   style="--d:1.58s" x="197" y="416" width="49" height="10" rx="3"   fill="currentColor" fill-opacity=".22" stroke="none"/>
+          <rect class="wf-stroke" style="--d:1.61s" x="197" y="428" width="49" height="8"  rx="3"   stroke-opacity=".28"/>
+          <text class="wf-fill"   style="--d:1.65s" x="221"  y="462" text-anchor="middle" font-size="6" fill="currentColor" fill-opacity=".45">Variant</text>
+
+          <!-- ══ ARROW C2 → G (red, negative path) ══ -->
+          <line    class="wf-stroke" style="--d:1.7s"  x1="254" y1="398" x2="363" y2="398" stroke="#c53030" stroke-opacity=".75"/>
+          <polyline class="wf-stroke" style="--d:1.78s" points="357,394 363,398 357,402"   stroke="#c53030" stroke-opacity=".75"/>
+          <text class="wf-fill"   style="--d:1.74s" x="308"  y="392" text-anchor="middle" font-size="5.5" fill="#c53030" fill-opacity=".65" font-style="italic">Cancellation Funnel</text>
+
+          <!-- ══ SCREEN G: Error (363,345,65,106) ══ -->
+          <rect class="wf-stroke" style="--d:1.83s" x="363" y="345" width="65" height="106" rx="5"/>
+          <line class="wf-stroke" style="--d:1.88s" x1="363" y1="363" x2="428" y2="363" stroke-opacity=".25"/>
+          <rect class="wf-fill"   style="--d:1.91s" x="371" y="350" width="34" height="5"  rx="1.5" fill="currentColor" fill-opacity=".25" stroke="none"/>
+          <circle class="wf-stroke" style="--d:1.95s" cx="395" cy="390" r="14"              stroke="#c53030" stroke-opacity=".7"/>
+          <line   class="wf-stroke" style="--d:2.01s" x1="395" y1="381" x2="395" y2="393"  stroke="#c53030" stroke-opacity=".7"/>
+          <circle class="wf-fill"   style="--d:2.06s" cx="395" cy="398" r="2"               fill="#c53030"   fill-opacity=".7"  stroke="none"/>
+          <rect class="wf-fill"     style="--d:2.1s"  x="371" y="418" width="49" height="11" rx="3"   fill="currentColor" fill-opacity=".2"  stroke="none"/>
+          <text class="wf-fill"   style="--d:2.14s" x="395"  y="462" text-anchor="middle" font-size="6" fill="currentColor" fill-opacity=".45">Error</text>
+
+        </svg>
+        <p class="cs-flow-map__caption">
+          The complete flow: entry → refund choice → confirmation modal → success (Free Trip / Prime) → error state.
+          Red path marks the negative / cancellation funnel route.
+        </p>
       </div>
 
       <!-- Step-by-step walkthrough -->

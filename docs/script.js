@@ -22,6 +22,16 @@ const observer = new IntersectionObserver((entries) => {
 
 fadeEls.forEach(el => observer.observe(el));
 
+// Flow map wireframe reveal
+const flowMap = document.querySelector('.cs-flow-map');
+if (flowMap) {
+  new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('is-visible'); }
+    });
+  }, { threshold: 0.05 }).observe(flowMap);
+}
+
 // Stagger children inside groups
 document.querySelectorAll('.cases, .skills__list, .companies__grid, .contact__inner').forEach(group => {
   [...group.children].forEach((child, i) => {

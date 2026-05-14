@@ -1172,15 +1172,13 @@
   background: var(--white);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  padding: 2.5rem 0;
+  padding: 2.5rem var(--space-md);
   margin: 2rem 0;
 }
 
-.cs-flow-map img {
+.cs-flow-map svg {
   width: 100%;
   height: auto;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border);
   display: block;
 }
 
@@ -1189,6 +1187,21 @@
   color: var(--ink-60);
   margin-top: 0.75rem;
   line-height: 1.5;
+}
+
+/* ─── Flow map wireframe draw animation ─────────────────────────────── */
+.cs-flow-map svg .wf-stroke {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+}
+.cs-flow-map svg .wf-fill {
+  opacity: 0;
+}
+.cs-flow-map.is-visible svg .wf-stroke {
+  animation: wfDraw 0.8s cubic-bezier(0.37, 0, 0.63, 1) var(--d, 0s) both;
+}
+.cs-flow-map.is-visible svg .wf-fill {
+  animation: wfFade 0.6s cubic-bezier(0.37, 0, 0.63, 1) var(--d, 0s) both;
 }
 
 /* ─── Step walkthrough ──────────────────────────────────────────────── */
