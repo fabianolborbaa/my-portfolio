@@ -560,9 +560,11 @@ img { display: block; max-width: 100%; }
 .case--featured .case__visual svg {
   position: absolute;
   top: var(--space-md);
+  bottom: -40px;
   left: 50%;
   transform: translateX(-50%);
-  width: 220px;
+  width: auto;
+  max-width: none;
   height: auto;
   opacity: 0.18;
 }
