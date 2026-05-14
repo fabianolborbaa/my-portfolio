@@ -153,6 +153,32 @@ img { display: block; max-width: 100%; }
   }
 }
 
+@keyframes wfDraw {
+  from { stroke-dashoffset: 1200; }
+  to   { stroke-dashoffset: 0; }
+}
+@keyframes wfFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Wireframe draw — base state (hidden) */
+.case--featured .case__visual svg .wf-stroke {
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+}
+.case--featured .case__visual svg .wf-fill {
+  opacity: 0;
+}
+
+/* Wireframe draw — triggered when card enters viewport */
+.case--featured.is-visible .case__visual svg .wf-stroke {
+  animation: wfDraw 0.8s cubic-bezier(0.37, 0, 0.63, 1) var(--d, 0s) both;
+}
+.case--featured.is-visible .case__visual svg .wf-fill {
+  animation: wfFade 0.6s cubic-bezier(0.37, 0, 0.63, 1) var(--d, 0s) both;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
