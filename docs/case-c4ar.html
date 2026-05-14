@@ -64,14 +64,53 @@
     </div>
   </div>
 
-  <!-- HERO FEATURED IMAGE -->
+  <!-- HERO FEATURED — live confirmed.html in phone mockup -->
   <div class="cs-hero-image animate-in" style="--delay:.3s">
-    <img
-      src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/3LlCawH9FEhHTnpH/frame-1156371-Nlv2hl2MAAKiOLIa.png"
-      alt="C4AR — Cancel For Any Reason self-service flow"
-      loading="eager"
-    />
+    <div class="cs-hero-device-scale">
+      <div class="cs-embed__device cs-hero-device" id="c4ar-hero-device">
+        <div class="cs-embed__statusbar cs-hero-statusbar" aria-hidden="true">
+          <span class="cs-embed__statusbar-time">9:41</span>
+          <div class="cs-embed__statusbar-icons">
+            <svg width="17" height="12" viewBox="0 0 17 12" fill="none"><rect x="0" y="7" width="3" height="5" rx="1" fill="#000" opacity="0.4"/><rect x="4.5" y="4.5" width="3" height="7.5" rx="1" fill="#000" opacity="0.6"/><rect x="9" y="2" width="3" height="10" rx="1" fill="#000" opacity="0.8"/><rect x="13.5" y="0" width="3" height="12" rx="1" fill="#000"/></svg>
+            <svg width="16" height="12" viewBox="0 0 16 12" fill="#000"><path d="M8 9.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/><path d="M8 6C6.07 6 4.34 6.76 3.05 8l1.41 1.41C5.42 8.5 6.64 8 8 8s2.58.5 3.54 1.41L12.95 8C11.66 6.76 9.93 6 8 6z" opacity="0.7"/><path d="M8 2C4.96 2 2.21 3.23.34 5.22l1.41 1.41C3.38 4.88 5.57 4 8 4s4.62.88 6.25 2.63l1.41-1.41C13.79 3.23 11.04 2 8 2z" opacity="0.4"/></svg>
+            <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x="0.5" y="0.5" width="20" height="11" rx="3.5" stroke="#000" stroke-opacity="0.35"/><rect x="2" y="2" width="16" height="8" rx="2" fill="#000"/><path d="M22 4v4a2 2 0 0 0 0-4z" fill="#000" opacity="0.4"/></svg>
+          </div>
+        </div>
+        <div class="cs-embed__skeleton" id="c4ar-hero-skeleton" aria-hidden="true">
+          <div class="cs-embed__sk-header" style="background:#fff;height:64px;border-bottom:1px solid #eef2f6"></div>
+          <div class="cs-embed__sk-body" style="gap:18px;padding:22px 20px;background:#fff">
+            <div class="cs-embed__sk-lines"><div class="cs-embed__sk-line" style="width:48%;height:9px"></div><div class="cs-embed__sk-line" style="height:20px;width:85%"></div></div>
+            <div class="cs-embed__sk-lines"><div class="cs-embed__sk-line" style="width:62%;height:13px"></div><div class="cs-embed__sk-line"></div><div class="cs-embed__sk-line cs-embed__sk-line--short"></div></div>
+            <div class="cs-embed__sk-card" style="height:150px;border-radius:14px"></div>
+            <div class="cs-embed__sk-card" style="height:50px;border-radius:12px"></div>
+            <div class="cs-embed__sk-card" style="height:50px;border-radius:12px"></div>
+          </div>
+        </div>
+        <iframe src="c4ar-app/confirmed.html" title="C4AR — Cancellation confirmed screen" loading="eager" scrolling="no"></iframe>
+      </div>
+    </div>
   </div>
+
+  <script>
+    (function () {
+      var device = document.getElementById('c4ar-hero-device');
+      if (!device) return;
+      function reveal() {
+        device.classList.add('device-visible');
+        setTimeout(function () {
+          var s = document.getElementById('c4ar-hero-skeleton');
+          if (s) { s.style.opacity = '0'; setTimeout(function () { if (s.parentNode) s.parentNode.removeChild(s); }, 420); }
+          var iframe = device.querySelector('iframe');
+          if (iframe) iframe.classList.add('iframe-ready');
+        }, 1000);
+      }
+      if (!window.IntersectionObserver) { reveal(); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { reveal(); io.disconnect(); } });
+      }, { threshold: 0.08 });
+      io.observe(device);
+    })();
+  </script>
 
   <main class="cs-body">
 
@@ -345,43 +384,526 @@
 
       <!-- Flow map -->
       <div class="cs-flow-map">
-        <svg viewBox="0 0 800 520" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" font-family="Space Grotesk, system-ui, sans-serif">
+        <svg viewBox="0 0 1500 760" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" font-family="Space Grotesk, system-ui, sans-serif">
 
-          <!-- ══ SCREEN 1: My Trips / Entry ══ -->
-          <!-- Phone frame -->
-          <rect class="wf-stroke" style="--d:.2s"  x="40" y="210" width="52" height="92" rx="6" stroke-opacity=".45"/>
-          <!-- Camera -->
-          <circle class="wf-stroke" style="--d:.25s" cx="55" cy="218" r="3"   stroke-opacity=".38"/>
-          <circle class="wf-fill"   style="--d:.28s" cx="55" cy="218" r="1.2" fill="currentColor" fill-opacity=".35" stroke="none"/>
-          <!-- Speaker -->
-          <rect class="wf-stroke" style="--d:.28s" x="62" y="215" width="18" height="5" rx="2.5" stroke-opacity=".32"/>
-          <!-- Screen top edge -->
-          <line class="wf-stroke" style="--d:.32s" x1="40" y1="226" x2="92"  y2="226" stroke-opacity=".18"/>
+          <!-- ══════════════════════════════════════════════════════════ -->
+          <!-- SCREEN 1 · Modify trip menu  (x=24 y=32 w=90 h=175)     -->
+          <!-- ══════════════════════════════════════════════════════════ -->
+          <!-- ── S1 · Modify trip menu ─────────────────────────────── -->
+          <text class="wf-fill" style="--d:.10s" x="69" y="24" text-anchor="middle" font-size="6" font-weight="600" letter-spacing="0.5" fill="var(--accent)" fill-opacity=".65" stroke="none">MODIFY TRIP MENU</text>
+          <rect class="wf-stroke" style="--d:.20s" x="24" y="32" width="90" height="175" rx="11" stroke-opacity=".45"/>
+          <circle class="wf-stroke" style="--d:.26s" cx="61" cy="42" r="4"   stroke-opacity=".38"/>
+          <circle class="wf-fill"   style="--d:.30s" cx="61" cy="42" r="1.6" fill="currentColor" fill-opacity=".35" stroke="none"/>
+          <rect   class="wf-stroke" style="--d:.30s" x="69" y="39" width="26" height="6" rx="3" stroke-opacity=".32"/>
+          <line   class="wf-stroke" style="--d:.36s" x1="24" y1="54" x2="114" y2="54" stroke-opacity=".18"/>
+          <polyline class="wf-stroke" style="--d:.42s" points="30.5,64 28.5,66 30.5,68" stroke-opacity=".45"/>
+          <rect     class="wf-fill"   style="--d:.46s" x="52" y="61" width="34" height="8" rx="2" fill="currentColor" fill-opacity=".25" stroke="none"/>
+          <line     class="wf-stroke" style="--d:.50s" x1="24" y1="77" x2="114" y2="77" stroke-opacity=".15"/>
+          <!-- card 1: Cancel your trip -->
+          <rect     class="wf-stroke" style="--d:.54s" x="32" y="85" width="74" height="32" rx="4" stroke-opacity=".35"/>
+          <rect     class="wf-fill"   style="--d:.58s" x="38" y="97" width="40" height="7" rx="2" fill="currentColor" fill-opacity=".28" stroke="none"/>
+          <polyline class="wf-stroke" style="--d:.62s" points="99.5,99 101,101 99.5,103" stroke-opacity=".38"/>
+          <!-- card 2: Change travel dates -->
+          <rect     class="wf-stroke" style="--d:.66s" x="32" y="125" width="74" height="32" rx="4" stroke-opacity=".35"/>
+          <rect     class="wf-fill"   style="--d:.70s" x="38" y="137" width="48" height="7" rx="2" fill="currentColor" fill-opacity=".28" stroke="none"/>
+          <polyline class="wf-stroke" style="--d:.74s" points="99.5,139 101,141 99.5,143" stroke-opacity=".38"/>
 
-          <!-- List item 1 -->
-          <line class="wf-stroke" style="--d:.36s" x1="40"  y1="235" x2="92"  y2="235" stroke-opacity=".1"/>
-          <rect class="wf-fill"   style="--d:.39s" x="48"  y="237" width="30" height="4" rx="1" fill="currentColor" fill-opacity=".22" stroke="none"/>
-          <line class="wf-stroke" style="--d:.42s" x1="48"  y1="244" x2="82"  y2="244" stroke-opacity=".15"/>
-          <polyline class="wf-stroke" style="--d:.44s" points="86,239 88,241 86,243" stroke-opacity=".28"/>
+          <!-- ── Arrow S1→S2  L-shape dashed ───────────────────────── -->
+          <path     class="wf-stroke" style="--d:.80s" d="M 114,101 H 144 Q 148,101 148,105 V 163 Q 148,167 152,167 H 178" stroke-opacity=".48"/>
+          <polyline class="wf-stroke" style="--d:.92s" points="174,163 178,167 174,171" stroke-opacity=".48"/>
 
-          <!-- List item 2 -->
-          <line class="wf-stroke" style="--d:.47s" x1="40"  y1="249" x2="92"  y2="249" stroke-opacity=".1"/>
-          <rect class="wf-fill"   style="--d:.5s"  x="48"  y="251" width="28" height="4" rx="1" fill="currentColor" fill-opacity=".2"  stroke="none"/>
-          <line class="wf-stroke" style="--d:.53s" x1="48"  y1="258" x2="76"  y2="258" stroke-opacity=".13"/>
-          <polyline class="wf-stroke" style="--d:.55s" points="86,253 88,255 86,257" stroke-opacity=".28"/>
+          <g transform="translate(40,0)">
+          <!-- ── S2 · Trip Management (collapsed) ───────────────────── -->
+          <text class="wf-fill" style="--d:.96s" x="183" y="24" text-anchor="middle" font-size="6" font-weight="600" letter-spacing="0.5" fill="var(--accent)" fill-opacity=".65" stroke="none">TRIP MANAGEMENT</text>
+          <rect class="wf-stroke" style="--d:1.02s" x="138" y="32" width="90" height="175" rx="11" stroke-opacity=".45"/>
+          <circle class="wf-stroke" style="--d:1.08s" cx="175" cy="42" r="4"   stroke-opacity=".38"/>
+          <circle class="wf-fill"   style="--d:1.12s" cx="175" cy="42" r="1.6" fill="currentColor" fill-opacity=".35" stroke="none"/>
+          <rect   class="wf-stroke" style="--d:1.12s" x="183" y="39" width="26" height="6" rx="3" stroke-opacity=".32"/>
+          <line   class="wf-stroke" style="--d:1.17s" x1="138" y1="54" x2="228" y2="54" stroke-opacity=".18"/>
+          <polyline class="wf-stroke" style="--d:1.22s" points="144.5,64 142.5,66 144.5,68" stroke-opacity=".45"/>
+          <rect     class="wf-fill"   style="--d:1.26s" x="162" y="61" width="42" height="8" rx="2" fill="currentColor" fill-opacity=".25" stroke="none"/>
+          <line     class="wf-stroke" style="--d:1.30s" x1="138" y1="77" x2="228" y2="77" stroke-opacity=".15"/>
+          <rect class="wf-fill" style="--d:1.34s" x="146" y="84" width="62" height="9" rx="2" fill="currentColor" fill-opacity=".25" stroke="none"/>
+          <line class="wf-stroke" style="--d:1.38s" x1="138" y1="100" x2="228" y2="100" stroke-opacity=".12"/>
+          <!-- accordion 1: cash collapsed -->
+          <rect     class="wf-fill"   style="--d:1.42s" x="146" y="107" width="56" height="5" rx="1.5" fill="currentColor" fill-opacity=".22" stroke="none"/>
+          <polyline class="wf-stroke" style="--d:1.46s" points="219,109 221,111 223,109" stroke-opacity=".38"/>
+          <line     class="wf-stroke" style="--d:1.50s" x1="138" y1="117" x2="228" y2="117" stroke-opacity=".12"/>
+          <!-- accordion 2: credit collapsed -->
+          <rect     class="wf-fill"   style="--d:1.54s" x="146" y="124" width="54" height="5" rx="1.5" fill="currentColor" fill-opacity=".22" stroke="none"/>
+          <polyline class="wf-stroke" style="--d:1.58s" points="219,126 221,128 223,126" stroke-opacity=".38"/>
+          <line     class="wf-stroke" style="--d:1.62s" x1="138" y1="134" x2="228" y2="134" stroke-opacity=".12"/>
+          <rect class="wf-fill" style="--d:1.66s" x="146" y="185" width="74" height="14" rx="7" fill="var(--accent)" fill-opacity=".85" stroke="none"/>
+          </g>
 
-          <!-- List item 3 -->
-          <line class="wf-stroke" style="--d:.58s" x1="40"  y1="263" x2="92"  y2="263" stroke-opacity=".08"/>
-          <rect class="wf-fill"   style="--d:.6s"  x="48"  y="265" width="32" height="4" rx="1" fill="currentColor" fill-opacity=".16" stroke="none"/>
-          <line class="wf-stroke" style="--d:.63s" x1="48"  y1="272" x2="80"  y2="272" stroke-opacity=".11"/>
-          <polyline class="wf-stroke" style="--d:.65s" points="86,267 88,269 86,271" stroke-opacity=".22"/>
+          <!-- ── Arrow S2→S3  L-shape dashed ───────────────────────── -->
+          <path     class="wf-stroke" style="--d:1.74s" d="M 268,134 H 296 Q 300,134 300,130 V 88 Q 300,84 304,84 H 332" stroke-opacity=".48"/>
+          <polyline class="wf-stroke" style="--d:1.86s" points="328,80 332,84 328,88" stroke-opacity=".48"/>
 
-          <!-- Screen label -->
-          <text class="wf-fill" style="--d:.68s" x="66" y="315" text-anchor="middle" font-size="7.5" fill="currentColor" fill-opacity=".45">My Trips</text>
+          <g transform="translate(80,0)">
+          <!-- ── S3 · Trip Management (cash expanded) ───────────────── -->
+          <text class="wf-fill" style="--d:1.90s" x="297" y="24" text-anchor="middle" font-size="6" font-weight="600" letter-spacing="0.5" fill="var(--accent)" fill-opacity=".65" stroke="none">TRIP MANAGEMENT</text>
+          <rect class="wf-stroke" style="--d:1.96s" x="252" y="32" width="90" height="175" rx="11" stroke-opacity=".45"/>
+          <circle class="wf-stroke" style="--d:2.02s" cx="289" cy="42" r="4"   stroke-opacity=".38"/>
+          <circle class="wf-fill"   style="--d:2.06s" cx="289" cy="42" r="1.6" fill="currentColor" fill-opacity=".35" stroke="none"/>
+          <rect   class="wf-stroke" style="--d:2.06s" x="297" y="39" width="26" height="6" rx="3" stroke-opacity=".32"/>
+          <line   class="wf-stroke" style="--d:2.11s" x1="252" y1="54" x2="342" y2="54" stroke-opacity=".18"/>
+          <polyline class="wf-stroke" style="--d:2.16s" points="258.5,64 256.5,66 258.5,68" stroke-opacity=".45"/>
+          <rect     class="wf-fill"   style="--d:2.20s" x="276" y="61" width="42" height="8" rx="2" fill="currentColor" fill-opacity=".25" stroke="none"/>
+          <line     class="wf-stroke" style="--d:2.24s" x1="252" y1="77" x2="342" y2="77" stroke-opacity=".15"/>
+          <rect class="wf-fill" style="--d:2.28s" x="260" y="84" width="62" height="9" rx="2" fill="currentColor" fill-opacity=".25" stroke="none"/>
+          <line class="wf-stroke" style="--d:2.32s" x1="252" y1="100" x2="342" y2="100" stroke-opacity=".12"/>
+          <!-- accordion 1: cash EXPANDED -->
+          <rect     class="wf-fill"   style="--d:2.36s" x="260" y="107" width="56" height="5" rx="1.5" fill="currentColor" fill-opacity=".22" stroke="none"/>
+          <polyline class="wf-stroke" style="--d:2.40s" points="333,110 335,108 337,110" stroke-opacity=".38"/>
+          <line class="wf-stroke" style="--d:2.44s" x1="260" y1="118" x2="336" y2="118" stroke-opacity=".20"/>
+          <line class="wf-stroke" style="--d:2.48s" x1="260" y1="125" x2="330" y2="125" stroke-opacity=".16"/>
+          <line class="wf-stroke" style="--d:2.52s" x1="260" y1="132" x2="334" y2="132" stroke-opacity=".13"/>
+          <line class="wf-stroke" style="--d:2.56s" x1="252" y1="140" x2="342" y2="140" stroke-opacity=".12"/>
+          <!-- accordion 2: credit collapsed -->
+          <rect     class="wf-fill"   style="--d:2.60s" x="260" y="147" width="54" height="5" rx="1.5" fill="currentColor" fill-opacity=".22" stroke="none"/>
+          <polyline class="wf-stroke" style="--d:2.64s" points="333,149 335,151 337,149" stroke-opacity=".38"/>
+          <line     class="wf-stroke" style="--d:2.68s" x1="252" y1="157" x2="342" y2="157" stroke-opacity=".12"/>
+          <rect class="wf-fill" style="--d:2.72s" x="260" y="185" width="74" height="14" rx="7" fill="var(--accent)" fill-opacity=".85" stroke="none"/>
+          </g>
 
-          <!-- Arrow → next screen -->
-          <line    class="wf-stroke" style="--d:.74s" x1="92"  y1="256" x2="115" y2="256" stroke-opacity=".45"/>
-          <polyline class="wf-stroke" style="--d:.79s" points="109,252 115,256 109,260" stroke-opacity=".45"/>
+          <!-- ── Arrow S3→S4  L-shape ──────────────────────────────── -->
+          <path     class="wf-stroke" style="--d:2.80s" d="M 422,192 H 450 Q 454,192 454,188 V 144 Q 454,140 458,140 H 486" stroke-opacity=".48"/>
+          <polyline class="wf-stroke" style="--d:2.86s" points="482,137 486,140 482,143" stroke-opacity=".48"/>
+
+          <g transform="translate(120,0)">
+          <!-- ── S4 · Confirm cancellation (bottom sheet modal) ─────── -->
+          <text class="wf-fill" style="--d:2.90s" x="411" y="24" text-anchor="middle" font-size="6" font-weight="600" letter-spacing="0.5" fill="var(--accent)" fill-opacity=".65" stroke="none">CONFIRM CANCELLATION</text>
+          <!-- dimmed app frame behind -->
+          <rect class="wf-stroke" style="--d:2.94s" x="366" y="32" width="90" height="175" rx="11" stroke-opacity=".20"/>
+          <!-- bottom sheet -->
+          <rect class="wf-stroke" style="--d:2.99s" x="366" y="112" width="90" height="95" rx="9" stroke-opacity=".40"/>
+          <!-- dark header bar -->
+          <rect class="wf-fill" style="--d:3.03s" x="366" y="112" width="90" height="12" rx="4" fill="currentColor" fill-opacity=".50" stroke="none"/>
+          <!-- X close -->
+          <line class="wf-stroke" style="--d:3.06s" x1="370.5" y1="116.5" x2="373.5" y2="119.5" stroke="#fff" stroke-opacity=".7"/>
+          <line class="wf-stroke" style="--d:3.06s" x1="373.5" y1="116.5" x2="370.5" y2="119.5" stroke="#fff" stroke-opacity=".7"/>
+          <!-- check badge -->
+          <circle   class="wf-fill"   style="--d:3.09s" cx="411" cy="124" r="3.6" fill="#fff" fill-opacity=".9" stroke="none"/>
+          <polyline class="wf-stroke" style="--d:3.12s" points="409.4,124 410.7,125.4 412.6,122.6" stroke-opacity=".55"/>
+          <!-- title -->
+          <rect class="wf-fill" style="--d:3.15s" x="388" y="134" width="46" height="6" rx="2" fill="currentColor" fill-opacity=".28" stroke="none"/>
+          <!-- body -->
+          <line class="wf-stroke" style="--d:3.18s" x1="380" y1="147" x2="442" y2="147" stroke-opacity=".16"/>
+          <line class="wf-stroke" style="--d:3.21s" x1="386" y1="153" x2="436" y2="153" stroke-opacity=".14"/>
+          <!-- CTA primary -->
+          <rect class="wf-fill" style="--d:3.25s" x="372" y="162" width="78" height="12" rx="6" fill="var(--accent)" fill-opacity=".85" stroke="none"/>
+          <!-- text link -->
+          <line class="wf-stroke" style="--d:3.29s" x1="396" y1="184" x2="426" y2="184" stroke-opacity=".30"/>
+          </g>
+
+          <!-- ── Arrow S4→S5  L-shape (Free Trial) ─────────────────── -->
+          <path     class="wf-stroke" style="--d:3.34s" d="M 576,150 H 656 Q 660,150 660,146 V 124 Q 660,120 664,120 H 732" stroke-opacity=".48"/>
+          <polyline class="wf-stroke" style="--d:3.42s" points="728,117 732,120 728,123" stroke-opacity=".48"/>
+          <text class="wf-fill" style="--d:3.38s" x="616" y="142" text-anchor="middle" font-size="6" font-weight="600" letter-spacing="0.5" fill="currentColor" fill-opacity=".40" stroke="none">FREE TRIAL</text>
+
+          <g transform="translate(192,0)">
+          <!-- ── S5 · Success — Free Trial ─────────────────────────── -->
+          <text class="wf-fill" style="--d:3.44s" x="585" y="24" text-anchor="middle" font-size="6" font-weight="600" letter-spacing="0.5" fill="var(--accent)" fill-opacity=".65" stroke="none">REGULAR CANCELLATION</text>
+          <rect class="wf-stroke" style="--d:3.48s" x="540" y="32" width="90" height="210" rx="11" stroke-opacity=".45"/>
+          <circle class="wf-stroke" style="--d:3.52s" cx="577" cy="42" r="4"   stroke-opacity=".38"/>
+          <circle class="wf-fill"   style="--d:3.55s" cx="577" cy="42" r="1.6" fill="currentColor" fill-opacity=".35" stroke="none"/>
+          <rect   class="wf-stroke" style="--d:3.55s" x="585" y="39" width="26" height="6" rx="3" stroke-opacity=".32"/>
+          <line   class="wf-stroke" style="--d:3.59s" x1="540" y1="54" x2="630" y2="54" stroke-opacity=".18"/>
+          <rect class="wf-fill" style="--d:3.62s" x="559" y="61" width="52" height="7" rx="2" fill="currentColor" fill-opacity=".25" stroke="none"/>
+          <line class="wf-stroke" style="--d:3.65s" x1="540" y1="76" x2="630" y2="76" stroke-opacity=".15"/>
+          <line class="wf-stroke" style="--d:3.68s" x1="548" y1="83" x2="594" y2="83" stroke-opacity=".25"/>
+          <rect class="wf-fill" style="--d:3.71s" x="548" y="88" width="70" height="7" rx="2" fill="currentColor" fill-opacity=".28" stroke="none"/>
+          <rect class="wf-fill" style="--d:3.74s" x="548" y="97" width="42" height="7" rx="2" fill="currentColor" fill-opacity=".28" stroke="none"/>
+          <rect class="wf-fill" style="--d:3.77s" x="548" y="108" width="54" height="5" rx="1.5" fill="currentColor" fill-opacity=".25" stroke="none"/>
+          <line class="wf-stroke" style="--d:3.80s" x1="548" y1="118" x2="620" y2="118" stroke-opacity=".15"/>
+          <line class="wf-stroke" style="--d:3.83s" x1="548" y1="123" x2="606" y2="123" stroke-opacity=".13"/>
+          <!-- Prime credit card -->
+          <rect class="wf-fill" style="--d:3.86s" x="548" y="129" width="74" height="34" rx="4" fill="currentColor" fill-opacity=".55" stroke="none"/>
+          <circle class="wf-fill" style="--d:3.89s" cx="554" cy="136" r="1.5" fill="#fff" fill-opacity=".55" stroke="none"/>
+          <line class="wf-stroke" style="--d:3.91s" x1="558" y1="136" x2="570" y2="136" stroke="#fff" stroke-opacity=".45"/>
+          <line class="wf-stroke" style="--d:3.93s" x1="596" y1="137" x2="616" y2="137" stroke="#fff" stroke-opacity=".40"/>
+          <rect class="wf-fill" style="--d:3.95s" x="592" y="141" width="26" height="9" rx="1.5" fill="#fff" fill-opacity=".65" stroke="none"/>
+          <line class="wf-stroke" style="--d:3.97s" x1="554" y1="155" x2="582" y2="155" stroke="#fff" stroke-opacity=".40"/>
+          <!-- light info box -->
+          <rect class="wf-fill" style="--d:4.00s" x="548" y="167" width="74" height="13" rx="3" fill="currentColor" fill-opacity=".07" stroke="none"/>
+          <line class="wf-stroke" style="--d:4.03s" x1="554" y1="173" x2="614" y2="173" stroke-opacity=".14"/>
+          <!-- Next steps row -->
+          <rect class="wf-stroke" style="--d:4.06s" x="548" y="184" width="74" height="12" rx="3" stroke-opacity=".30"/>
+          <rect class="wf-fill"   style="--d:4.08s" x="552" y="187" width="6" height="6" rx="1" fill="currentColor" fill-opacity=".18" stroke="none"/>
+          <line class="wf-stroke" style="--d:4.10s" x1="562" y1="190" x2="594" y2="190" stroke-opacity=".30"/>
+          <polyline class="wf-stroke" style="--d:4.12s" points="613,187 615.5,190 613,193" stroke-opacity=".35"/>
+          <!-- About credit refunds row -->
+          <rect class="wf-stroke" style="--d:4.15s" x="548" y="199" width="74" height="12" rx="3" stroke-opacity=".30"/>
+          <rect class="wf-fill"   style="--d:4.17s" x="552" y="202" width="6" height="6" rx="1" fill="currentColor" fill-opacity=".18" stroke="none"/>
+          <line class="wf-stroke" style="--d:4.19s" x1="562" y1="205" x2="600" y2="205" stroke-opacity=".30"/>
+          <polyline class="wf-stroke" style="--d:4.21s" points="613,202 615.5,205 613,208" stroke-opacity=".35"/>
+          <!-- CTA primary -->
+          <rect class="wf-fill" style="--d:4.24s" x="548" y="217" width="74" height="12" rx="6" fill="var(--accent)" fill-opacity=".85" stroke="none"/>
+          <!-- text link -->
+          <line class="wf-stroke" style="--d:4.27s" x1="566" y1="236" x2="604" y2="236" stroke-opacity=".30"/>
+          </g>
+
+          <!-- ── Arrow S4→S6  L-shape (Paid members) ───────────────── -->
+          <path     class="wf-stroke" style="--d:4.32s" d="M 576,196 H 656 Q 660,196 660,200 V 336 Q 660,340 664,340 H 732" stroke-opacity=".48"/>
+          <polyline class="wf-stroke" style="--d:4.40s" points="728,337 732,340 728,343" stroke-opacity=".48"/>
+          <text class="wf-fill" style="--d:4.36s" x="616" y="188" text-anchor="middle" font-size="6" font-weight="600" letter-spacing="0.5" fill="currentColor" fill-opacity=".40" stroke="none">PAID MEMBERS</text>
+
+          <g transform="translate(192,0)">
+          <!-- ── S6 · Success — Paid members ───────────────────────── -->
+          <text class="wf-fill" style="--d:4.42s" x="585" y="266" text-anchor="middle" font-size="6" font-weight="600" letter-spacing="0.5" fill="var(--accent)" fill-opacity=".65" stroke="none">REGULAR CANCELLATION</text>
+          <rect class="wf-stroke" style="--d:4.46s" x="540" y="274" width="90" height="210" rx="11" stroke-opacity=".45"/>
+          <circle class="wf-stroke" style="--d:4.50s" cx="577" cy="284" r="4"   stroke-opacity=".38"/>
+          <circle class="wf-fill"   style="--d:4.52s" cx="577" cy="284" r="1.6" fill="currentColor" fill-opacity=".35" stroke="none"/>
+          <rect   class="wf-stroke" style="--d:4.52s" x="585" y="281" width="26" height="6" rx="3" stroke-opacity=".32"/>
+          <line   class="wf-stroke" style="--d:4.55s" x1="540" y1="296" x2="630" y2="296" stroke-opacity=".18"/>
+          <rect class="wf-fill" style="--d:4.58s" x="559" y="303" width="52" height="7" rx="2" fill="currentColor" fill-opacity=".25" stroke="none"/>
+          <line class="wf-stroke" style="--d:4.60s" x1="540" y1="318" x2="630" y2="318" stroke-opacity=".15"/>
+          <line class="wf-stroke" style="--d:4.62s" x1="548" y1="325" x2="594" y2="325" stroke-opacity=".25"/>
+          <rect class="wf-fill" style="--d:4.64s" x="548" y="330" width="70" height="7" rx="2" fill="currentColor" fill-opacity=".28" stroke="none"/>
+          <rect class="wf-fill" style="--d:4.66s" x="548" y="339" width="42" height="7" rx="2" fill="currentColor" fill-opacity=".28" stroke="none"/>
+          <rect class="wf-fill" style="--d:4.68s" x="548" y="350" width="54" height="5" rx="1.5" fill="currentColor" fill-opacity=".25" stroke="none"/>
+          <line class="wf-stroke" style="--d:4.70s" x1="548" y1="360" x2="620" y2="360" stroke-opacity=".15"/>
+          <line class="wf-stroke" style="--d:4.72s" x1="548" y1="365" x2="606" y2="365" stroke-opacity=".13"/>
+          <!-- Prime credit card -->
+          <rect class="wf-fill" style="--d:4.74s" x="548" y="371" width="74" height="34" rx="4" fill="currentColor" fill-opacity=".55" stroke="none"/>
+          <circle class="wf-fill" style="--d:4.76s" cx="554" cy="378" r="1.5" fill="#fff" fill-opacity=".55" stroke="none"/>
+          <line class="wf-stroke" style="--d:4.77s" x1="558" y1="378" x2="570" y2="378" stroke="#fff" stroke-opacity=".45"/>
+          <line class="wf-stroke" style="--d:4.78s" x1="596" y1="379" x2="616" y2="379" stroke="#fff" stroke-opacity=".40"/>
+          <rect class="wf-fill" style="--d:4.79s" x="592" y="383" width="26" height="9" rx="1.5" fill="#fff" fill-opacity=".65" stroke="none"/>
+          <line class="wf-stroke" style="--d:4.80s" x1="554" y1="397" x2="582" y2="397" stroke="#fff" stroke-opacity=".40"/>
+          <!-- light info box -->
+          <rect class="wf-fill" style="--d:4.82s" x="548" y="409" width="74" height="13" rx="3" fill="currentColor" fill-opacity=".07" stroke="none"/>
+          <line class="wf-stroke" style="--d:4.84s" x1="554" y1="415" x2="614" y2="415" stroke-opacity=".14"/>
+          <!-- Next steps row -->
+          <rect class="wf-stroke" style="--d:4.86s" x="548" y="426" width="74" height="12" rx="3" stroke-opacity=".30"/>
+          <rect class="wf-fill"   style="--d:4.87s" x="552" y="429" width="6" height="6" rx="1" fill="currentColor" fill-opacity=".18" stroke="none"/>
+          <line class="wf-stroke" style="--d:4.88s" x1="562" y1="432" x2="594" y2="432" stroke-opacity=".30"/>
+          <polyline class="wf-stroke" style="--d:4.89s" points="613,429 615.5,432 613,435" stroke-opacity=".35"/>
+          <!-- About credit refunds row -->
+          <rect class="wf-stroke" style="--d:4.91s" x="548" y="441" width="74" height="12" rx="3" stroke-opacity=".30"/>
+          <rect class="wf-fill"   style="--d:4.92s" x="552" y="444" width="6" height="6" rx="1" fill="currentColor" fill-opacity=".18" stroke="none"/>
+          <line class="wf-stroke" style="--d:4.93s" x1="562" y1="447" x2="600" y2="447" stroke-opacity=".30"/>
+          <polyline class="wf-stroke" style="--d:4.94s" points="613,444 615.5,447 613,450" stroke-opacity=".35"/>
+          <!-- CTA primary -->
+          <rect class="wf-fill" style="--d:4.97s" x="548" y="459" width="74" height="12" rx="6" fill="var(--accent)" fill-opacity=".85" stroke="none"/>
+          <!-- text link -->
+          <line class="wf-stroke" style="--d:5.00s" x1="566" y1="478" x2="604" y2="478" stroke-opacity=".30"/>
+          </g>
+
+          <!-- ── Arrow S2→S3b  L-shape (branch from first Trip Mgmt) ─ -->
+          <path     class="wf-stroke" style="--d:5.04s" d="M 268,170 H 296 Q 300,170 300,174 V 306 Q 300,310 304,310 H 332" stroke-opacity=".48"/>
+          <polyline class="wf-stroke" style="--d:5.10s" points="328,307 332,310 328,313" stroke-opacity=".48"/>
+
+          <g transform="translate(80,0)">
+          <!-- ── S3b · Trip Management (credit expanded) ────────────── -->
+          <text class="wf-fill" style="--d:5.14s" x="297" y="242" text-anchor="middle" font-size="6" font-weight="600" letter-spacing="0.5" fill="var(--accent)" fill-opacity=".65" stroke="none">TRIP MANAGEMENT</text>
+          <rect class="wf-stroke" style="--d:5.18s" x="252" y="250" width="90" height="175" rx="11" stroke-opacity=".45"/>
+          <circle class="wf-stroke" style="--d:5.22s" cx="289" cy="260" r="4"   stroke-opacity=".38"/>
+          <circle class="wf-fill"   style="--d:5.24s" cx="289" cy="260" r="1.6" fill="currentColor" fill-opacity=".35" stroke="none"/>
+          <rect   class="wf-stroke" style="--d:5.24s" x="297" y="257" width="26" height="6" rx="3" stroke-opacity=".32"/>
+          <line   class="wf-stroke" style="--d:5.27s" x1="252" y1="272" x2="342" y2="272" stroke-opacity=".18"/>
+          <polyline class="wf-stroke" style="--d:5.30s" points="258.5,282 256.5,284 258.5,286" stroke-opacity=".45"/>
+          <rect     class="wf-fill"   style="--d:5.33s" x="276" y="279" width="42" height="8" rx="2" fill="currentColor" fill-opacity=".25" stroke="none"/>
+          <line     class="wf-stroke" style="--d:5.36s" x1="252" y1="295" x2="342" y2="295" stroke-opacity=".15"/>
+          <rect class="wf-fill" style="--d:5.39s" x="260" y="302" width="62" height="9" rx="2" fill="currentColor" fill-opacity=".25" stroke="none"/>
+          <line class="wf-stroke" style="--d:5.42s" x1="252" y1="318" x2="342" y2="318" stroke-opacity=".12"/>
+          <!-- accordion 1: cash collapsed -->
+          <rect     class="wf-fill"   style="--d:5.45s" x="260" y="325" width="56" height="5" rx="1.5" fill="currentColor" fill-opacity=".22" stroke="none"/>
+          <polyline class="wf-stroke" style="--d:5.47s" points="333,326 335,328 337,326" stroke-opacity=".38"/>
+          <line     class="wf-stroke" style="--d:5.50s" x1="252" y1="335" x2="342" y2="335" stroke-opacity=".12"/>
+          <!-- accordion 2: credit EXPANDED -->
+          <rect     class="wf-fill"   style="--d:5.53s" x="260" y="342" width="54" height="5" rx="1.5" fill="currentColor" fill-opacity=".22" stroke="none"/>
+          <polyline class="wf-stroke" style="--d:5.55s" points="333,343 335,341 337,343" stroke-opacity=".38"/>
+          <line class="wf-stroke" style="--d:5.58s" x1="260" y1="352" x2="336" y2="352" stroke-opacity=".20"/>
+          <line class="wf-stroke" style="--d:5.60s" x1="260" y1="359" x2="330" y2="359" stroke-opacity=".16"/>
+          <line class="wf-stroke" style="--d:5.62s" x1="260" y1="366" x2="334" y2="366" stroke-opacity=".13"/>
+          <line class="wf-stroke" style="--d:5.64s" x1="252" y1="374" x2="342" y2="374" stroke-opacity=".12"/>
+          <!-- CTA primary -->
+          <rect class="wf-fill" style="--d:5.67s" x="260" y="403" width="74" height="14" rx="7" fill="var(--accent)" fill-opacity=".85" stroke="none"/>
+          </g>
+
+          <!-- ── Arrow S3b→S7  L-shape ─────────────────────────────── -->
+          <path     class="wf-stroke" style="--d:5.72s" d="M 422,410 H 450 Q 454,410 454,406 V 364 Q 454,360 458,360 H 486" stroke-opacity=".48"/>
+          <polyline class="wf-stroke" style="--d:5.78s" points="482,357 486,360 482,363" stroke-opacity=".48"/>
+
+          <g transform="translate(120,0)">
+          <!-- ── S7 · Refund from the airline? (bottom sheet modal) ─── -->
+          <text class="wf-fill" style="--d:5.82s" x="411" y="242" text-anchor="middle" font-size="6" font-weight="600" letter-spacing="0.5" fill="var(--accent)" fill-opacity=".65" stroke="none">REFUND FROM THE AIRLINE?</text>
+          <!-- dimmed app frame behind -->
+          <rect class="wf-stroke" style="--d:5.86s" x="366" y="250" width="90" height="175" rx="11" stroke-opacity=".20"/>
+          <!-- bottom sheet -->
+          <rect class="wf-stroke" style="--d:5.90s" x="366" y="310" width="90" height="115" rx="9" stroke-opacity=".40"/>
+          <!-- dark header bar -->
+          <rect class="wf-fill" style="--d:5.93s" x="366" y="310" width="90" height="12" rx="4" fill="currentColor" fill-opacity=".50" stroke="none"/>
+          <!-- X close -->
+          <line class="wf-stroke" style="--d:5.95s" x1="370.5" y1="314.5" x2="373.5" y2="317.5" stroke="#fff" stroke-opacity=".7"/>
+          <line class="wf-stroke" style="--d:5.95s" x1="373.5" y1="314.5" x2="370.5" y2="317.5" stroke="#fff" stroke-opacity=".7"/>
+          <!-- $ coin badge -->
+          <circle class="wf-fill" style="--d:5.97s" cx="411" cy="322" r="3.6" fill="#fff" fill-opacity=".9" stroke="none"/>
+          <circle class="wf-fill" style="--d:5.99s" cx="411" cy="322" r="1.5" fill="currentColor" fill-opacity=".40" stroke="none"/>
+          <!-- title (2 lines) -->
+          <rect class="wf-fill" style="--d:6.01s" x="380" y="332" width="62" height="5" rx="1.5" fill="currentColor" fill-opacity=".28" stroke="none"/>
+          <rect class="wf-fill" style="--d:6.03s" x="392" y="340" width="38" height="5" rx="1.5" fill="currentColor" fill-opacity=".28" stroke="none"/>
+          <!-- body -->
+          <line class="wf-stroke" style="--d:6.05s" x1="376" y1="350" x2="446" y2="350" stroke-opacity=".15"/>
+          <line class="wf-stroke" style="--d:6.07s" x1="378" y1="355" x2="444" y2="355" stroke-opacity=".14"/>
+          <line class="wf-stroke" style="--d:6.09s" x1="382" y1="360" x2="440" y2="360" stroke-opacity=".13"/>
+          <!-- CTA primary -->
+          <rect class="wf-fill" style="--d:6.12s" x="372" y="367" width="78" height="11" rx="5.5" fill="var(--accent)" fill-opacity=".85" stroke="none"/>
+          <!-- secondary outlined button -->
+          <rect class="wf-stroke" style="--d:6.15s" x="372" y="381" width="78" height="11" rx="5.5" stroke-opacity=".40"/>
+          <!-- note line -->
+          <line class="wf-stroke" style="--d:6.18s" x1="388" y1="400" x2="434" y2="400" stroke-opacity=".20"/>
+          </g>
+
+          <!-- ── Arrow S7→Note  (straight down, no crossing) ───────── -->
+          <path     class="wf-stroke" style="--d:6.22s" d="M 538,425 V 448" stroke-opacity=".48"/>
+          <polyline class="wf-stroke" style="--d:6.28s" points="534,444 538,448 542,444" stroke-opacity=".48"/>
+
+          <g transform="translate(120,0)">
+          <!-- ── Note · Regular Cancellation funnel ─────────────────── -->
+          <text class="wf-fill" style="--d:6.31s" x="445" y="443" text-anchor="middle" font-size="6" font-weight="600" letter-spacing="0.5" fill="currentColor" fill-opacity=".40" stroke="none">NOTE</text>
+          <rect class="wf-stroke" style="--d:6.34s" x="380" y="448" width="130" height="24" rx="3" stroke-opacity=".35"/>
+          <text class="wf-fill" style="--d:6.37s" x="445" y="462" text-anchor="middle" font-size="6" font-weight="500" fill="currentColor" fill-opacity=".55" stroke="none">Regular Cancellation funnel</text>
+          </g>
+
+          <!-- ── Arrow S4→Error  (red · If error) ──────────────────── -->
+          <path     class="wf-stroke" style="--d:6.42s" d="M 576,168 H 696 Q 700,168 700,172 V 510" stroke="#c53030" stroke-opacity=".62"/>
+          <polyline class="wf-stroke" style="--d:6.50s" points="696,506 700,510 704,506" stroke="#c53030" stroke-opacity=".62"/>
+          <text class="wf-fill" style="--d:6.46s" x="618" y="164" text-anchor="middle" font-size="6" font-weight="600" letter-spacing="0.5" fill="#c53030" fill-opacity=".68" stroke="none">IF ERROR</text>
+
+          <!-- ── Arrow S7→Error  (red · merges into S4→Error line) ─── -->
+          <path     class="wf-stroke" style="--d:6.54s" d="M 576,388 H 696 Q 700,388 700,392" stroke="#c53030" stroke-opacity=".62"/>
+
+          <g transform="translate(164,0)">
+          <!-- ── S8 · Error ─────────────────────────────────────────── -->
+          <text class="wf-fill" style="--d:6.64s" x="505" y="502" text-anchor="middle" font-size="6" font-weight="600" letter-spacing="0.5" fill="var(--accent)" fill-opacity=".65" stroke="none">ERROR</text>
+          <rect class="wf-stroke" style="--d:6.68s" x="460" y="510" width="90" height="190" rx="11" stroke-opacity=".45"/>
+          <circle class="wf-stroke" style="--d:6.72s" cx="497" cy="520" r="4"   stroke-opacity=".38"/>
+          <circle class="wf-fill"   style="--d:6.74s" cx="497" cy="520" r="1.6" fill="currentColor" fill-opacity=".35" stroke="none"/>
+          <rect   class="wf-stroke" style="--d:6.74s" x="505" y="517" width="26" height="6" rx="3" stroke-opacity=".32"/>
+          <line   class="wf-stroke" style="--d:6.77s" x1="460" y1="532" x2="550" y2="532" stroke-opacity=".18"/>
+          <rect class="wf-fill" style="--d:6.80s" x="479" y="539" width="52" height="7" rx="2" fill="currentColor" fill-opacity=".25" stroke="none"/>
+          <line class="wf-stroke" style="--d:6.83s" x1="460" y1="554" x2="550" y2="554" stroke-opacity=".15"/>
+          <!-- red error triangle -->
+          <path   class="wf-stroke" style="--d:6.86s" d="M 505,568 L 518,590 L 492,590 Z" stroke="#c53030" stroke-opacity=".55"/>
+          <line   class="wf-stroke" style="--d:6.89s" x1="505" y1="576" x2="505" y2="583" stroke="#c53030" stroke-opacity=".55"/>
+          <circle class="wf-fill"   style="--d:6.91s" cx="505" cy="586" r="0.9" fill="#c53030" fill-opacity=".55" stroke="none"/>
+          <!-- title -->
+          <rect class="wf-fill" style="--d:6.94s" x="470" y="600" width="70" height="6" rx="2" fill="currentColor" fill-opacity=".28" stroke="none"/>
+          <rect class="wf-fill" style="--d:6.96s" x="478" y="609" width="54" height="6" rx="2" fill="currentColor" fill-opacity=".28" stroke="none"/>
+          <!-- body -->
+          <line class="wf-stroke" style="--d:6.99s" x1="472" y1="621" x2="538" y2="621" stroke-opacity=".15"/>
+          <line class="wf-stroke" style="--d:7.01s" x1="478" y1="626" x2="532" y2="626" stroke-opacity=".13"/>
+          <!-- refresh link -->
+          <line class="wf-stroke" style="--d:7.04s" x1="492" y1="688" x2="518" y2="688" stroke-opacity=".30"/>
+          </g>
+
+          <!-- ── Arrow S6→Notes box ────────────────────────────────── -->
+          <path     class="wf-stroke" style="--d:7.08s" d="M 777,484 V 510" stroke-opacity=".48"/>
+          <polyline class="wf-stroke" style="--d:7.14s" points="773,506 777,510 781,506" stroke-opacity=".48"/>
+
+          <g transform="translate(52,236)">
+          <!-- ── Notes box (Mobile / App / Desktop) ─────────────────── -->
+          <text class="wf-fill" style="--d:7.18s" x="740" y="266" text-anchor="middle" font-size="6" font-weight="600" letter-spacing="0.5" fill="currentColor" fill-opacity=".40" stroke="none">NOTES</text>
+          <rect class="wf-stroke" style="--d:7.22s" x="680" y="274" width="120" height="96" rx="4" stroke-opacity=".35"/>
+          <text class="wf-fill" style="--d:7.25s" x="688" y="293" text-anchor="start" font-size="6" font-weight="600" fill="currentColor" fill-opacity=".55" stroke="none">Mobile: Download the app</text>
+          <line class="wf-stroke" style="--d:7.27s" x1="680" y1="306" x2="800" y2="306" stroke-opacity=".15"/>
+          <text class="wf-fill" style="--d:7.30s" x="688" y="325" text-anchor="start" font-size="6" font-weight="600" fill="currentColor" fill-opacity=".55" stroke="none">App: Wallet</text>
+          <line class="wf-stroke" style="--d:7.32s" x1="680" y1="338" x2="800" y2="338" stroke-opacity=".15"/>
+          <text class="wf-fill" style="--d:7.35s" x="688" y="357" text-anchor="start" font-size="6" font-weight="600" fill="currentColor" fill-opacity=".55" stroke="none">Desktop: Download the app</text>
+          </g>
+
+          <!-- ── Arrow S5→S9  (main line into S9) ──────────────────── -->
+          <path     class="wf-stroke" style="--d:7.39s" d="M 822,205 H 856 Q 860,205 860,209 V 596 Q 860,600 864,600 H 896" stroke-opacity=".48"/>
+          <polyline class="wf-stroke" style="--d:7.45s" points="892,596 896,600 892,604" stroke-opacity=".48"/>
+
+          <!-- ── Arrow S6→S9  (merges into S5→S9 line) ─────────────── -->
+          <path     class="wf-stroke" style="--d:7.49s" d="M 822,447 H 856 Q 860,447 860,451" stroke-opacity=".48"/>
+
+          <g transform="translate(216,100)">
+          <!-- ── S9 · About credit refunds (modal) ──────────────────── -->
+          <text class="wf-fill" style="--d:7.58s" x="725" y="412" text-anchor="middle" font-size="6" font-weight="600" letter-spacing="0.5" fill="var(--accent)" fill-opacity=".65" stroke="none">CREDIT REFUND CONDITIONS</text>
+          <rect class="wf-stroke" style="--d:7.62s" x="680" y="420" width="90" height="185" rx="11" stroke-opacity=".45"/>
+          <!-- X close -->
+          <line class="wf-stroke" style="--d:7.65s" x1="687" y1="429" x2="691" y2="433" stroke-opacity=".45"/>
+          <line class="wf-stroke" style="--d:7.65s" x1="691" y1="429" x2="687" y2="433" stroke-opacity=".45"/>
+          <line class="wf-stroke" style="--d:7.68s" x1="680" y1="440" x2="770" y2="440" stroke-opacity=".18"/>
+          <!-- title -->
+          <rect class="wf-fill" style="--d:7.71s" x="688" y="448" width="66" height="7" rx="2" fill="currentColor" fill-opacity=".28" stroke="none"/>
+          <!-- check item 1 -->
+          <polyline class="wf-stroke" style="--d:7.74s" points="686,466 688,468 691,464" stroke-opacity=".45"/>
+          <line class="wf-stroke" style="--d:7.76s" x1="695" y1="466" x2="760" y2="466" stroke-opacity=".20"/>
+          <line class="wf-stroke" style="--d:7.78s" x1="695" y1="472" x2="746" y2="472" stroke-opacity=".16"/>
+          <!-- check item 2 -->
+          <polyline class="wf-stroke" style="--d:7.80s" points="686,482 688,484 691,480" stroke-opacity=".45"/>
+          <line class="wf-stroke" style="--d:7.82s" x1="695" y1="482" x2="758" y2="482" stroke-opacity=".20"/>
+          <line class="wf-stroke" style="--d:7.84s" x1="695" y1="488" x2="742" y2="488" stroke-opacity=".16"/>
+          <!-- check item 3 -->
+          <polyline class="wf-stroke" style="--d:7.86s" points="686,498 688,500 691,496" stroke-opacity=".45"/>
+          <line class="wf-stroke" style="--d:7.88s" x1="695" y1="498" x2="760" y2="498" stroke-opacity=".20"/>
+          <line class="wf-stroke" style="--d:7.90s" x1="695" y1="504" x2="750" y2="504" stroke-opacity=".16"/>
+          <!-- check item 4 -->
+          <polyline class="wf-stroke" style="--d:7.92s" points="686,514 688,516 691,512" stroke-opacity=".45"/>
+          <line class="wf-stroke" style="--d:7.94s" x1="695" y1="514" x2="756" y2="514" stroke-opacity=".20"/>
+          <line class="wf-stroke" style="--d:7.96s" x1="695" y1="520" x2="738" y2="520" stroke-opacity=".16"/>
+          <!-- check item 5 -->
+          <polyline class="wf-stroke" style="--d:7.98s" points="686,532 688,534 691,530" stroke-opacity=".45"/>
+          <line class="wf-stroke" style="--d:8.00s" x1="695" y1="532" x2="760" y2="532" stroke-opacity=".20"/>
+          <line class="wf-stroke" style="--d:8.02s" x1="695" y1="538" x2="752" y2="538" stroke-opacity=".16"/>
+          <line class="wf-stroke" style="--d:8.04s" x1="695" y1="544" x2="736" y2="544" stroke-opacity=".13"/>
+          <!-- check item 6 -->
+          <polyline class="wf-stroke" style="--d:8.06s" points="686,558 688,560 691,556" stroke-opacity=".45"/>
+          <line class="wf-stroke" style="--d:8.08s" x1="695" y1="558" x2="758" y2="558" stroke-opacity=".20"/>
+          <line class="wf-stroke" style="--d:8.10s" x1="695" y1="564" x2="744" y2="564" stroke-opacity=".16"/>
+          <!-- See terms link -->
+          <line class="wf-stroke" style="--d:8.13s" x1="688" y1="584" x2="740" y2="584" stroke-opacity=".30"/>
+          </g>
+
+          <!-- ── Arrow S5→Next steps · Free Trial ──────────────────── -->
+          <path     class="wf-stroke" style="--d:8.18s" d="M 822,190 H 1030" stroke-opacity=".48"/>
+          <polyline class="wf-stroke" style="--d:8.22s" points="1026,186 1030,190 1026,194" stroke-opacity=".48"/>
+
+          <g transform="translate(180,0)">
+          <!-- ── Section · Next steps — Free Trial ─────────────────── -->
+          <rect class="wf-stroke" style="--d:8.26s" x="850" y="24" width="440" height="270" rx="6" stroke-opacity=".28"/>
+          <text class="wf-fill" style="--d:8.33s" x="858" y="17" text-anchor="start" font-size="6" font-weight="600" letter-spacing="0.5" fill="var(--accent)" fill-opacity=".65" stroke="none">NEXT STEPS — FREE TRIAL</text>
+
+          <!-- Mobile -->
+          <text class="wf-fill" style="--d:8.37s" x="928" y="64" text-anchor="middle" font-size="6" font-weight="600" letter-spacing="0.5" fill="var(--accent)" fill-opacity=".65" stroke="none">NEXT STEPS</text>
+          <rect class="wf-stroke" style="--d:8.40s" x="886" y="70" width="84" height="115" rx="8" stroke-opacity=".42"/>
+          <line class="wf-stroke" style="--d:8.43s" x1="886" y1="82" x2="970" y2="82" stroke-opacity=".15"/>
+          <line class="wf-stroke" style="--d:8.45s" x1="892" y1="75" x2="896" y2="79" stroke-opacity=".45"/>
+          <line class="wf-stroke" style="--d:8.45s" x1="896" y1="75" x2="892" y2="79" stroke-opacity=".45"/>
+          <rect class="wf-fill" style="--d:8.48s" x="892" y="88" width="44" height="6" rx="2" fill="currentColor" fill-opacity=".28" stroke="none"/>
+          <circle class="wf-fill" style="--d:8.51s" cx="895" cy="105" r="3.2" fill="currentColor" fill-opacity=".5" stroke="none"/>
+          <rect class="wf-fill" style="--d:8.53s" x="902" y="103" width="40" height="4" rx="1" fill="currentColor" fill-opacity=".3" stroke="none"/>
+          <line class="wf-stroke" style="--d:8.55s" x1="902" y1="111" x2="960" y2="111" stroke-opacity=".15"/>
+          <line class="wf-stroke" style="--d:8.57s" x1="902" y1="116" x2="948" y2="116" stroke-opacity=".13"/>
+          <circle class="wf-fill" style="--d:8.60s" cx="895" cy="128" r="3.2" fill="currentColor" fill-opacity=".5" stroke="none"/>
+          <rect class="wf-fill" style="--d:8.62s" x="902" y="126" width="44" height="4" rx="1" fill="currentColor" fill-opacity=".3" stroke="none"/>
+          <line class="wf-stroke" style="--d:8.64s" x1="902" y1="134" x2="960" y2="134" stroke-opacity=".15"/>
+          <line class="wf-stroke" style="--d:8.66s" x1="902" y1="139" x2="946" y2="139" stroke-opacity=".13"/>
+          <line class="wf-stroke" style="--d:8.69s" x1="902" y1="152" x2="930" y2="152" stroke-opacity=".30"/>
+          <text class="wf-fill" style="--d:8.72s" x="928" y="200" text-anchor="middle" font-size="6" font-weight="600" fill="currentColor" fill-opacity=".5" stroke="none">Mobile</text>
+
+          <!-- App -->
+          <text class="wf-fill" style="--d:8.76s" x="1032" y="64" text-anchor="middle" font-size="6" font-weight="600" letter-spacing="0.5" fill="var(--accent)" fill-opacity=".65" stroke="none">NEXT STEPS</text>
+          <rect class="wf-stroke" style="--d:8.79s" x="990" y="70" width="84" height="115" rx="8" stroke-opacity=".42"/>
+          <line class="wf-stroke" style="--d:8.82s" x1="990" y1="82" x2="1074" y2="82" stroke-opacity=".15"/>
+          <line class="wf-stroke" style="--d:8.84s" x1="996" y1="75" x2="1000" y2="79" stroke-opacity=".45"/>
+          <line class="wf-stroke" style="--d:8.84s" x1="1000" y1="75" x2="996" y2="79" stroke-opacity=".45"/>
+          <rect class="wf-fill" style="--d:8.87s" x="996" y="88" width="44" height="6" rx="2" fill="currentColor" fill-opacity=".28" stroke="none"/>
+          <circle class="wf-fill" style="--d:8.90s" cx="999" cy="105" r="3.2" fill="currentColor" fill-opacity=".5" stroke="none"/>
+          <rect class="wf-fill" style="--d:8.92s" x="1006" y="103" width="42" height="4" rx="1" fill="currentColor" fill-opacity=".3" stroke="none"/>
+          <line class="wf-stroke" style="--d:8.94s" x1="1006" y1="111" x2="1064" y2="111" stroke-opacity=".15"/>
+          <line class="wf-stroke" style="--d:8.96s" x1="1006" y1="116" x2="1052" y2="116" stroke-opacity=".13"/>
+          <circle class="wf-fill" style="--d:8.99s" cx="999" cy="128" r="3.2" fill="currentColor" fill-opacity=".5" stroke="none"/>
+          <rect class="wf-fill" style="--d:9.01s" x="1006" y="126" width="44" height="4" rx="1" fill="currentColor" fill-opacity=".3" stroke="none"/>
+          <line class="wf-stroke" style="--d:9.03s" x1="1006" y1="134" x2="1064" y2="134" stroke-opacity=".15"/>
+          <line class="wf-stroke" style="--d:9.05s" x1="1006" y1="139" x2="1050" y2="139" stroke-opacity=".13"/>
+          <line class="wf-stroke" style="--d:9.08s" x1="1006" y1="152" x2="1034" y2="152" stroke-opacity=".30"/>
+          <text class="wf-fill" style="--d:9.11s" x="1032" y="200" text-anchor="middle" font-size="6" font-weight="600" fill="currentColor" fill-opacity=".5" stroke="none">App</text>
+
+          <!-- Desktop -->
+          <text class="wf-fill" style="--d:9.15s" x="1159" y="64" text-anchor="middle" font-size="6" font-weight="600" letter-spacing="0.5" fill="var(--accent)" fill-opacity=".65" stroke="none">NEXT STEPS</text>
+          <rect class="wf-stroke" style="--d:9.18s" x="1094" y="70" width="130" height="160" rx="8" stroke-opacity=".42"/>
+          <line class="wf-stroke" style="--d:9.21s" x1="1094" y1="82" x2="1224" y2="82" stroke-opacity=".15"/>
+          <line class="wf-stroke" style="--d:9.23s" x1="1100" y1="75" x2="1104" y2="79" stroke-opacity=".45"/>
+          <line class="wf-stroke" style="--d:9.23s" x1="1104" y1="75" x2="1100" y2="79" stroke-opacity=".45"/>
+          <rect class="wf-fill" style="--d:9.26s" x="1100" y="88" width="44" height="6" rx="2" fill="currentColor" fill-opacity=".28" stroke="none"/>
+          <circle class="wf-fill" style="--d:9.29s" cx="1103" cy="104" r="3.2" fill="currentColor" fill-opacity=".5" stroke="none"/>
+          <rect class="wf-fill" style="--d:9.31s" x="1110" y="102" width="40" height="4" rx="1" fill="currentColor" fill-opacity=".3" stroke="none"/>
+          <line class="wf-stroke" style="--d:9.33s" x1="1110" y1="110" x2="1214" y2="110" stroke-opacity=".15"/>
+          <!-- QR -->
+          <rect class="wf-stroke" style="--d:9.36s" x="1100" y="116" width="22" height="22" rx="1" stroke-opacity=".35"/>
+          <line class="wf-stroke" style="--d:9.38s" x1="1104" y1="120" x2="1104" y2="134" stroke-opacity=".30"/>
+          <line class="wf-stroke" style="--d:9.40s" x1="1109" y1="120" x2="1109" y2="134" stroke-opacity=".22"/>
+          <line class="wf-stroke" style="--d:9.42s" x1="1114" y1="120" x2="1114" y2="134" stroke-opacity=".30"/>
+          <line class="wf-stroke" style="--d:9.44s" x1="1118" y1="120" x2="1118" y2="134" stroke-opacity=".22"/>
+          <circle class="wf-fill" style="--d:9.47s" cx="1103" cy="148" r="3.2" fill="currentColor" fill-opacity=".5" stroke="none"/>
+          <rect class="wf-fill" style="--d:9.49s" x="1110" y="146" width="60" height="4" rx="1" fill="currentColor" fill-opacity=".3" stroke="none"/>
+          <line class="wf-stroke" style="--d:9.51s" x1="1110" y1="154" x2="1214" y2="154" stroke-opacity=".15"/>
+          <line class="wf-stroke" style="--d:9.53s" x1="1110" y1="159" x2="1200" y2="159" stroke-opacity=".13"/>
+          <circle class="wf-fill" style="--d:9.56s" cx="1103" cy="172" r="3.2" fill="currentColor" fill-opacity=".5" stroke="none"/>
+          <rect class="wf-fill" style="--d:9.58s" x="1110" y="170" width="50" height="4" rx="1" fill="currentColor" fill-opacity=".3" stroke="none"/>
+          <line class="wf-stroke" style="--d:9.60s" x1="1110" y1="178" x2="1210" y2="178" stroke-opacity=".15"/>
+          <line class="wf-stroke" style="--d:9.63s" x1="1110" y1="192" x2="1138" y2="192" stroke-opacity=".30"/>
+          <text class="wf-fill" style="--d:9.66s" x="1159" y="245" text-anchor="middle" font-size="6" font-weight="600" fill="currentColor" fill-opacity=".5" stroke="none">Desktop</text>
+          </g>
+
+          <!-- ── Arrow S6→Next steps · Paid members ────────────────── -->
+          <path     class="wf-stroke" style="--d:9.70s" d="M 822,432 H 1030" stroke-opacity=".48"/>
+          <polyline class="wf-stroke" style="--d:9.73s" points="1026,428 1030,432 1026,436" stroke-opacity=".48"/>
+
+          <g transform="translate(180,330)">
+          <!-- ── Section · Next steps — Paid members ───────────────── -->
+          <rect class="wf-stroke" style="--d:9.76s" x="850" y="24" width="440" height="270" rx="6" stroke-opacity=".28"/>
+          <text class="wf-fill" style="--d:9.83s" x="858" y="17" text-anchor="start" font-size="6" font-weight="600" letter-spacing="0.5" fill="var(--accent)" fill-opacity=".65" stroke="none">NEXT STEPS — PAID MEMBERS</text>
+
+          <!-- Mobile -->
+          <text class="wf-fill" style="--d:9.87s" x="928" y="64" text-anchor="middle" font-size="6" font-weight="600" letter-spacing="0.5" fill="var(--accent)" fill-opacity=".65" stroke="none">NEXT STEPS</text>
+          <rect class="wf-stroke" style="--d:9.90s" x="886" y="70" width="84" height="115" rx="8" stroke-opacity=".42"/>
+          <line class="wf-stroke" style="--d:9.93s" x1="886" y1="82" x2="970" y2="82" stroke-opacity=".15"/>
+          <line class="wf-stroke" style="--d:9.95s" x1="892" y1="75" x2="896" y2="79" stroke-opacity=".45"/>
+          <line class="wf-stroke" style="--d:9.95s" x1="896" y1="75" x2="892" y2="79" stroke-opacity=".45"/>
+          <rect class="wf-fill" style="--d:9.98s" x="892" y="88" width="44" height="6" rx="2" fill="currentColor" fill-opacity=".28" stroke="none"/>
+          <circle class="wf-fill" style="--d:10.01s" cx="895" cy="105" r="3.2" fill="currentColor" fill-opacity=".5" stroke="none"/>
+          <rect class="wf-fill" style="--d:10.03s" x="902" y="103" width="40" height="4" rx="1" fill="currentColor" fill-opacity=".3" stroke="none"/>
+          <line class="wf-stroke" style="--d:10.05s" x1="902" y1="111" x2="960" y2="111" stroke-opacity=".15"/>
+          <line class="wf-stroke" style="--d:10.07s" x1="902" y1="116" x2="948" y2="116" stroke-opacity=".13"/>
+          <circle class="wf-fill" style="--d:10.10s" cx="895" cy="128" r="3.2" fill="currentColor" fill-opacity=".5" stroke="none"/>
+          <rect class="wf-fill" style="--d:10.12s" x="902" y="126" width="44" height="4" rx="1" fill="currentColor" fill-opacity=".3" stroke="none"/>
+          <line class="wf-stroke" style="--d:10.14s" x1="902" y1="134" x2="960" y2="134" stroke-opacity=".15"/>
+          <line class="wf-stroke" style="--d:10.16s" x1="902" y1="139" x2="946" y2="139" stroke-opacity=".13"/>
+          <line class="wf-stroke" style="--d:10.19s" x1="902" y1="152" x2="930" y2="152" stroke-opacity=".30"/>
+          <text class="wf-fill" style="--d:10.22s" x="928" y="200" text-anchor="middle" font-size="6" font-weight="600" fill="currentColor" fill-opacity=".5" stroke="none">Mobile</text>
+
+          <!-- App -->
+          <text class="wf-fill" style="--d:10.26s" x="1032" y="64" text-anchor="middle" font-size="6" font-weight="600" letter-spacing="0.5" fill="var(--accent)" fill-opacity=".65" stroke="none">NEXT STEPS</text>
+          <rect class="wf-stroke" style="--d:10.29s" x="990" y="70" width="84" height="115" rx="8" stroke-opacity=".42"/>
+          <line class="wf-stroke" style="--d:10.32s" x1="990" y1="82" x2="1074" y2="82" stroke-opacity=".15"/>
+          <line class="wf-stroke" style="--d:10.34s" x1="996" y1="75" x2="1000" y2="79" stroke-opacity=".45"/>
+          <line class="wf-stroke" style="--d:10.34s" x1="1000" y1="75" x2="996" y2="79" stroke-opacity=".45"/>
+          <rect class="wf-fill" style="--d:10.37s" x="996" y="88" width="44" height="6" rx="2" fill="currentColor" fill-opacity=".28" stroke="none"/>
+          <circle class="wf-fill" style="--d:10.40s" cx="999" cy="105" r="3.2" fill="currentColor" fill-opacity=".5" stroke="none"/>
+          <rect class="wf-fill" style="--d:10.42s" x="1006" y="103" width="42" height="4" rx="1" fill="currentColor" fill-opacity=".3" stroke="none"/>
+          <line class="wf-stroke" style="--d:10.44s" x1="1006" y1="111" x2="1064" y2="111" stroke-opacity=".15"/>
+          <line class="wf-stroke" style="--d:10.46s" x1="1006" y1="116" x2="1052" y2="116" stroke-opacity=".13"/>
+          <circle class="wf-fill" style="--d:10.49s" cx="999" cy="128" r="3.2" fill="currentColor" fill-opacity=".5" stroke="none"/>
+          <rect class="wf-fill" style="--d:10.51s" x="1006" y="126" width="44" height="4" rx="1" fill="currentColor" fill-opacity=".3" stroke="none"/>
+          <line class="wf-stroke" style="--d:10.53s" x1="1006" y1="134" x2="1064" y2="134" stroke-opacity=".15"/>
+          <line class="wf-stroke" style="--d:10.55s" x1="1006" y1="139" x2="1050" y2="139" stroke-opacity=".13"/>
+          <line class="wf-stroke" style="--d:10.58s" x1="1006" y1="152" x2="1034" y2="152" stroke-opacity=".30"/>
+          <text class="wf-fill" style="--d:10.61s" x="1032" y="200" text-anchor="middle" font-size="6" font-weight="600" fill="currentColor" fill-opacity=".5" stroke="none">App</text>
+
+          <!-- Desktop -->
+          <text class="wf-fill" style="--d:10.65s" x="1159" y="64" text-anchor="middle" font-size="6" font-weight="600" letter-spacing="0.5" fill="var(--accent)" fill-opacity=".65" stroke="none">NEXT STEPS</text>
+          <rect class="wf-stroke" style="--d:10.68s" x="1094" y="70" width="130" height="160" rx="8" stroke-opacity=".42"/>
+          <line class="wf-stroke" style="--d:10.71s" x1="1094" y1="82" x2="1224" y2="82" stroke-opacity=".15"/>
+          <line class="wf-stroke" style="--d:10.73s" x1="1100" y1="75" x2="1104" y2="79" stroke-opacity=".45"/>
+          <line class="wf-stroke" style="--d:10.73s" x1="1104" y1="75" x2="1100" y2="79" stroke-opacity=".45"/>
+          <rect class="wf-fill" style="--d:10.76s" x="1100" y="88" width="44" height="6" rx="2" fill="currentColor" fill-opacity=".28" stroke="none"/>
+          <circle class="wf-fill" style="--d:10.79s" cx="1103" cy="104" r="3.2" fill="currentColor" fill-opacity=".5" stroke="none"/>
+          <rect class="wf-fill" style="--d:10.81s" x="1110" y="102" width="40" height="4" rx="1" fill="currentColor" fill-opacity=".3" stroke="none"/>
+          <line class="wf-stroke" style="--d:10.83s" x1="1110" y1="110" x2="1214" y2="110" stroke-opacity=".15"/>
+          <!-- QR -->
+          <rect class="wf-stroke" style="--d:10.86s" x="1100" y="116" width="22" height="22" rx="1" stroke-opacity=".35"/>
+          <line class="wf-stroke" style="--d:10.88s" x1="1104" y1="120" x2="1104" y2="134" stroke-opacity=".30"/>
+          <line class="wf-stroke" style="--d:10.90s" x1="1109" y1="120" x2="1109" y2="134" stroke-opacity=".22"/>
+          <line class="wf-stroke" style="--d:10.92s" x1="1114" y1="120" x2="1114" y2="134" stroke-opacity=".30"/>
+          <line class="wf-stroke" style="--d:10.94s" x1="1118" y1="120" x2="1118" y2="134" stroke-opacity=".22"/>
+          <circle class="wf-fill" style="--d:10.97s" cx="1103" cy="148" r="3.2" fill="currentColor" fill-opacity=".5" stroke="none"/>
+          <rect class="wf-fill" style="--d:10.99s" x="1110" y="146" width="60" height="4" rx="1" fill="currentColor" fill-opacity=".3" stroke="none"/>
+          <line class="wf-stroke" style="--d:11.01s" x1="1110" y1="154" x2="1214" y2="154" stroke-opacity=".15"/>
+          <line class="wf-stroke" style="--d:11.03s" x1="1110" y1="159" x2="1200" y2="159" stroke-opacity=".13"/>
+          <circle class="wf-fill" style="--d:11.06s" cx="1103" cy="172" r="3.2" fill="currentColor" fill-opacity=".5" stroke="none"/>
+          <rect class="wf-fill" style="--d:11.08s" x="1110" y="170" width="50" height="4" rx="1" fill="currentColor" fill-opacity=".3" stroke="none"/>
+          <line class="wf-stroke" style="--d:11.10s" x1="1110" y1="178" x2="1210" y2="178" stroke-opacity=".15"/>
+          <line class="wf-stroke" style="--d:11.13s" x1="1110" y1="192" x2="1138" y2="192" stroke-opacity=".30"/>
+          <text class="wf-fill" style="--d:11.16s" x="1159" y="245" text-anchor="middle" font-size="6" font-weight="600" fill="currentColor" fill-opacity=".5" stroke="none">Desktop</text>
+          </g>
 
         </svg>
         <p class="cs-flow-map__caption">

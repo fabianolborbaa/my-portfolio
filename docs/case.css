@@ -61,18 +61,37 @@
 .cs-hero-image {
   width: 100%;
   overflow: hidden;
-  background: var(--ink);
+  background: #0068c9;
   max-height: 72vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 4vh;
 }
 
-.cs-hero-image img {
-  width: 100%;
+.cs-hero-device-scale {
+  transform: scale(1.5);
+  transform-origin: top center;
+  flex: none;
+}
+
+/* confirmed.html ships its own (notched) status bar — cover it with a clean
+   white bar; iframe sits at top:0, skeleton + clean bar overlay above it */
+.cs-embed__device.cs-hero-device iframe {
+  top: 0;
   height: 100%;
-  max-height: 72vh;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-  animation: heroZoom 1.4s var(--ease) both;
+}
+.cs-hero-device .cs-embed__skeleton {
+  top: 47px;
+}
+.cs-embed__statusbar.cs-hero-statusbar {
+  height: 47px;
+  background: #fff;
+  align-items: center;
+  padding: 0 20px;
+}
+.cs-embed__statusbar.cs-hero-statusbar .cs-embed__statusbar-time {
+  color: #000;
 }
 
 @keyframes heroZoom {
@@ -1169,9 +1188,6 @@
 /* ─── Flow map ──────────────────────────────────────────────────────── */
 
 .cs-flow-map {
-  background: var(--white);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
   padding: 2.5rem var(--space-md);
   margin: 2rem 0;
 }
@@ -1182,6 +1198,11 @@
   display: block;
 }
 
+/* keep stroke width literal regardless of viewBox upscale */
+.cs-flow-map svg * {
+  vector-effect: non-scaling-stroke;
+}
+
 .cs-flow-map__caption {
   font-size: 0.75rem;
   color: var(--ink-60);
@@ -1190,15 +1211,21 @@
 }
 
 /* ─── Flow map wireframe draw animation ─────────────────────────────── */
+/* dedicated keyframe: large dash length so non-scaling-stroke (pixel-space)
+   still covers the longest path (phone frame perimeter) at wide renders */
+@keyframes wfDrawFlow {
+  from { stroke-dashoffset: 5000; }
+  to   { stroke-dashoffset: 0; }
+}
 .cs-flow-map svg .wf-stroke {
-  stroke-dasharray: 1200;
-  stroke-dashoffset: 1200;
+  stroke-dasharray: 5000;
+  stroke-dashoffset: 5000;
 }
 .cs-flow-map svg .wf-fill {
   opacity: 0;
 }
 .cs-flow-map.is-visible svg .wf-stroke {
-  animation: wfDraw 0.8s cubic-bezier(0.37, 0, 0.63, 1) var(--d, 0s) both;
+  animation: wfDrawFlow 0.8s cubic-bezier(0.37, 0, 0.63, 1) var(--d, 0s) both;
 }
 .cs-flow-map.is-visible svg .wf-fill {
   animation: wfFade 0.6s cubic-bezier(0.37, 0, 0.63, 1) var(--d, 0s) both;
