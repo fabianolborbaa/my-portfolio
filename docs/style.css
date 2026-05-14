@@ -552,6 +552,7 @@ img { display: block; max-width: 100%; }
   color: var(--white);
 }
 .case--featured .case__visual {
+  display: block;
   position: relative;
   color: rgba(255,255,255,1);
   padding: 0;
@@ -560,10 +561,8 @@ img { display: block; max-width: 100%; }
   align-self: flex-start;
 }
 .case--featured .case__visual svg {
-  position: absolute;
-  top: var(--space-sm);
-  left: 50%;
-  transform: translateX(-50%);
+  display: block;
+  margin: var(--space-sm) auto 0;
   width: 260px;
   max-width: none;
   height: auto;
