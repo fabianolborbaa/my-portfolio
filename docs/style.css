@@ -553,31 +553,39 @@ img { display: block; max-width: 100%; }
 }
 .case--featured .case__visual {
   color: rgba(255,255,255,1);
-  padding: var(--space-md) var(--space-sm) 0;
+  padding: var(--space-md) var(--space-md) 0;
   overflow: hidden;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: center;
 }
 .case--featured .case__visual svg {
-  width: 230px;
+  width: 250px;
   max-width: none;
   height: auto;
   flex-shrink: 0;
-  opacity: 0;
-  animation: phoneReveal 1s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
-}
-
-@keyframes phoneReveal {
-  from {
-    opacity: 0;
-    transform: translateY(48px);
-  }
-  to {
-    opacity: 0.2;
-    transform: translateY(0);
-  }
+  opacity: 0.18;
 }
 .case--featured:hover { background: #1a1917; }
+
+/* ─── Card entrance animations ──────────────────────────────────────── */
+
+.case .case__tag,
+.case .case__title,
+.case .case__desc,
+.case .case__outcomes,
+.case .case__link,
+.case .case__soon,
+.case .case__visual {
+  opacity: 0;
+}
+
+.case.is-visible .case__tag      { animation: fadeUp 0.5s var(--ease) 0.00s both; }
+.case.is-visible .case__title    { animation: fadeUp 0.5s var(--ease) 0.13s both; }
+.case.is-visible .case__desc     { animation: fadeUp 0.5s var(--ease) 0.24s both; }
+.case.is-visible .case__outcomes { animation: fadeUp 0.5s var(--ease) 0.32s both; }
+.case.is-visible .case__link     { animation: fadeUp 0.5s var(--ease) 0.38s both; }
+.case.is-visible .case__soon     { animation: fadeUp 0.5s var(--ease) 0.38s both; }
+.case.is-visible .case__visual   { animation: fadeUp 0.7s var(--ease) 0.08s both; }
 
 .case--soon {
   opacity: 0.5;
