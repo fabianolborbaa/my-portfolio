@@ -553,10 +553,29 @@ img { display: block; max-width: 100%; }
 }
 .case--featured .case__visual {
   color: rgba(255,255,255,1);
-  padding: var(--space-md);
+  padding: var(--space-md) var(--space-sm) 0;
+  overflow: hidden;
+  align-items: flex-end;
+  justify-content: center;
 }
 .case--featured .case__visual svg {
-  opacity: 0.18;
+  width: 230px;
+  max-width: none;
+  height: auto;
+  flex-shrink: 0;
+  opacity: 0;
+  animation: phoneReveal 1s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
+}
+
+@keyframes phoneReveal {
+  from {
+    opacity: 0;
+    transform: translateY(48px);
+  }
+  to {
+    opacity: 0.2;
+    transform: translateY(0);
+  }
 }
 .case--featured:hover { background: #1a1917; }
 
