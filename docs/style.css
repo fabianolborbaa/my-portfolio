@@ -530,24 +530,19 @@ img { display: block; max-width: 100%; }
 }
 
 .case__visual {
-  width: 300px;
+  width: 280px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-lg);
-  background: var(--cream);
-  border-left: 1.5px solid var(--border);
+  padding: var(--space-lg) var(--space-md);
   color: var(--ink-30);
-}
-.case:nth-child(even) .case__visual {
-  border-left: none;
-  border-right: 1.5px solid var(--border);
 }
 .case__visual svg {
   width: 100%;
   max-width: 220px;
   height: auto;
+  opacity: 0.55;
 }
 
 .case--featured {
@@ -556,9 +551,10 @@ img { display: block; max-width: 100%; }
   color: var(--white);
 }
 .case--featured .case__visual {
-  background: rgba(255,255,255,0.04);
-  border-left-color: rgba(255,255,255,0.08);
-  color: rgba(255,255,255,0.18);
+  color: rgba(255,255,255,1);
+}
+.case--featured .case__visual svg {
+  opacity: 0.12;
 }
 .case--featured:hover { background: #1a1917; }
 
@@ -878,12 +874,6 @@ img { display: block; max-width: 100%; }
   }
   .case__visual {
     width: 100%;
-    border-left: none !important;
-    border-right: none !important;
-    border-top: 1.5px solid var(--border);
-  }
-  .case--featured .case__visual {
-    border-top-color: rgba(255,255,255,0.08);
   }
 
   .about__grid {
