@@ -552,17 +552,18 @@ img { display: block; max-width: 100%; }
   color: var(--white);
 }
 .case--featured .case__visual {
+  position: relative;
   color: rgba(255,255,255,1);
-  padding: var(--space-md) var(--space-md) 0;
+  padding: 0;
   overflow: hidden;
-  align-items: flex-start;
-  justify-content: center;
 }
 .case--featured .case__visual svg {
+  position: absolute;
+  top: var(--space-md);
+  left: 50%;
+  transform: translateX(-50%);
   width: 220px;
-  max-width: none;
   height: auto;
-  flex-shrink: 0;
   opacity: 0.18;
 }
 .case--featured:hover { background: #1a1917; }
